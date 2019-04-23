@@ -1,0 +1,45 @@
+{
+    "hasError": false,
+    "data": [
+        {
+            "id": "5af9a2e4-3825-45d6-8445-419b1cb365dc",
+            "kind": "NEWSFEED",
+            "title": "AFN",
+            "bundleTitle": "ANP",
+            "displayType": "default",
+            "hasPressalert": false
+        },
+        {
+            "id": "3dc77946-38dc-4469-b0a9-c10519035824",
+            "kind": "NEWSFEED",
+            "title": "AFN Web",
+            "bundleTitle": "ANP",
+            "displayType": "default",
+            "hasPressalert": false
+        },
+        {
+            "id": "5b8bc05d-2421-454d-b363-b043d503c6b7",
+            "kind": "NEWSFEED",
+            "title": "AFP (Editorial)",
+            "bundleTitle": "Buitenlandredactie",
+            "displayType": "default",
+            "hasPressalert": false
+        },
+        {
+            "id": "03b7a184-f6f4-4879-85f6-b43f21acb940",
+            "kind": "NEWSFEED",
+            "title": "AFP EN (Editorial)",
+            "bundleTitle": "Buitenlandredactie",
+            "displayType": "default",
+            "hasPressalert": false
+        },
+        {
+            "id": "4ad32715-3221-49b1-b93b-30b02c1c6eb6",
+            "kind": "NEWSFEED",
+            "title": "ANP 101",
+            "bundleTitle": "ANP",
+            "displayType": "default",
+            "hasPressalert": false
+        }
+    ]
+}

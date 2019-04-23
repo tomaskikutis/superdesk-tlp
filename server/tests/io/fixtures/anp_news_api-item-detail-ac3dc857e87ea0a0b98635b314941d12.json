@@ -1,0 +1,85 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "ac3dc857e87ea0a0b98635b314941d12",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:35:32Z",
+        "firstIssueDate": "2019-05-02T12:35:32Z",
+        "modified": "2019-05-02T12:35:34Z",
+        "source": "5af9a2e4-3825-45d6-8445-419b1cb365dc",
+        "title": "Financieel directeur Kellogg vertrekt",
+        "sourceTitle": "AFN",
+        "bodyText": "<p>BATTLE CREEK (AFN/BLOOMBERG) - Financieel directeur Fareed Khan vertrekt deze zomer bij ontbijtgranenmaker Kellog. Hij wordt opgevolgd door Amit Banati, die nu nog de regio Azië, Midden-Oosten en Afrika leidt. De stoelendans vindt plaats op 1 juli, zo meldde Kellogg bij de publicatie van de kwartaalcijfers.</p><p>Kellogg voerde de omzet in het eerste kwartaal dit jaar op naar 3,5 miljard dollar. Dat was een jaar eerder nog 3,4 miljard dollar. De groei, die gehinderd werd door wisselkoerseffecten, werd deels op eigen kracht gerealiseerd. Ook de overname van de Nigeriaanse distributeur Multipro droeg daar aan bij.</p><p>De winst viel lager uit dan een jaar eerder. Deze bedroeg 285 miljoen dollar, waar dat in de eerste drie maanden van 2018 nog 444 miljoen dollar was. Dat kwam volgens het bedrijf door hogere belastingen en hogere kosten.</p>\n\n<p/><p>(ANP Redactie AFN/Economie, email economie(at)anp.nl, +31 20 560 6070)</p>",
+        "urgency": 3,
+        "version": 1,
+        "authors": [
+            "Marnix Heijboer (mhe)"
+        ],
+        "category": "FIN",
+        "keywords": [
+            "CIJFERS",
+            "KWARTAAL",
+            "UNILEVER",
+            "DR"
+        ],
+        "categories": [
+            "FIN"
+        ],
+        "entities": [
+            {
+                "id": "20535",
+                "value": "Kellogg",
+                "kind": "organisation"
+            },
+            {
+                "id": "8389",
+                "value": "Midden-Oosten",
+                "kind": "location"
+            },
+            {
+                "id": "305419",
+                "value": "Ontbijtgranenmaker",
+                "kind": "organisationtype"
+            },
+            {
+                "id": "8523",
+                "value": "Azië",
+                "kind": "location"
+            },
+            {
+                "id": "8549",
+                "value": "Afrika",
+                "kind": "location"
+            },
+            {
+                "id": "110746",
+                "value": "Economie",
+                "kind": "sector"
+            },
+            {
+                "id": "101242",
+                "value": "Distributeur",
+                "kind": "organisationtype"
+            }
+        ],
+        "financialCodes": [
+            {
+                "isin": "NL0000009355",
+                "ticker": "UNA",
+                "entity": "9107"
+            }
+        ],
+        "links": [],
+        "hasMedia": false,
+        "itemId": "AFN-020519-082",
+        "wordCount": 136,
+        "charCount": 832,
+        "isBillable": true,
+        "copyrightNotice": "© 2019 ANP",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "7404db79e88ae6483f56941204943a4a",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:50:24Z",
+        "firstIssueDate": "2019-05-02T12:20:15Z",
+        "modified": "2019-05-02T12:50:26Z",
+        "source": "4ad32715-3221-49b1-b93b-30b02c1c6eb6",
+        "title": "Assange wil zich niet 'overgeven' aan VS",
+        "sourceTitle": "ANP 101",
+        "bodyText": "<p>LONDEN (ANP/RTR/BLOOMBERG) - WikiLeaks-oprichter Julian Assange verzet zich tegen een uitleveringsverzoek van de Verenigde Staten. Hij zei tegen een Londense rechtbank dat hij zich niet wil ,,overgeven aan Amerika''.</p><p>Washington vroeg om de uitlevering van Assange nadat hij in april uit de Ecuadoraanse ambassade in Londen was gehaald. Hij had daar zeven jaar lang gezeten om uit handen van de autoriteiten te blijven.</p><p>Assange riskeert in de VS een gevangenisstraf van vijf jaar. De Amerikaanse autoriteiten zeggen dat hij in 2010 samenwerkte met Chelsea Manning om geheime overheidsdocumenten te bemachtigen.</p><p><b>Manning</b></p><p>Manning, destijds een legeranalist, speelde geheime informatie door aan de klokkenluiderssite van Assange. Die wordt ervan beschuldigd dat hij Manning probeerde te helpen bij het kraken van een wachtwoord op computers van het ministerie van Defensie. Die poging lijkt te zijn mislukt.</p><p>De Australiër wordt in de VS vooralsnog alleen beschuldigd van een ,,samenzwering'' om illegaal toegang te krijgen tot een overheidscomputer. Hij kreeg donderdag de vraag of hij wil meewerken aan zijn uitlevering, maar dat is hij niet van plan. Assange stelde zelf dat hij journalistiek bedreef en daar veel mensen mee heeft beschermd. Daarom wil hij niet vrijwillig naar de VS gaan.</p><p>De WikiLeaks-oprichter moet ondertussen ook nog een gevangenisstraf uitzitten in het Verenigd Koninkrijk. Daar schond hij de voorwaarden van zijn borgtocht toen hij in 2012 onderdook in de ambassade. Een rechtbank veroordeelde hem woensdag tot vijftig weken cel.</p>",
+        "urgency": 3,
+        "version": 2,
+        "authors": [
+            "ANP Producties"
+        ],
+        "category": "ANP/BUI",
+        "categories": [
+            "ANP/BUI",
+            "XANP/101",
+            "XANP/BUI"
+        ],
+        "entities": [
+            {
+                "id": "8161",
+                "value": "Verenigde Staten",
+                "kind": "location"
+            },
+            {
+                "id": "20368",
+                "value": "Julian Assange",
+                "kind": "person"
+            },
+            {
+                "id": "75259",
+                "value": "Rechtbank",
+                "kind": "organisationtype"
+            },
+            {
+                "id": "20324",
+                "value": "WikiLeaks",
+                "kind": "organisation"
+            },
+            {
+                "id": "10923",
+                "value": "Ministerie van Defensie",
+                "kind": "organisation"
+            },
+            {
+                "id": "88079",
+                "value": "Klokkenluidersplatform",
+                "kind": "organisationtype"
+            },
+            {
+                "id": "8046",
+                "value": "Groot-Brittannië",
+                "kind": "location"
+            },
+            {
+                "id": "129539",
+                "value": "Chelsea Manning",
+                "kind": "person"
+            },
+            {
+                "id": "246883",
+                "value": "Amerika",
+                "kind": "location"
+            },
+            {
+                "id": "8227",
+                "value": "Londen",
+                "kind": "location"
+            },
+            {
+                "id": "8280",
+                "value": "Washington",
+                "kind": "location"
+            },
+            {
+                "id": "79449",
+                "value": "Journalistiek",
+                "kind": "sector"
+            }
+        ],
+        "links": [],
+        "hasMedia": true,
+        "itemId": "ANP-020519-224",
+        "wordCount": 233,
+        "charCount": 1550,
+        "isBillable": true,
+        "copyrightNotice": "© 2019",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}

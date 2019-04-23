@@ -1,0 +1,57 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "864f00ba5bcacd0fe6e6e5b506b26307",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:09:38Z",
+        "firstIssueDate": "2019-05-02T12:09:38Z",
+        "modified": "2019-05-02T12:09:42Z",
+        "source": "3dc77946-38dc-4469-b0a9-c10519035824",
+        "title": "Caterpillar gaat aandeelhouders belonen",
+        "sourceTitle": "AFN Web",
+        "bodyText": "<p>DEERFIELD (AFN) - Caterpillar, 's werelds grootste fabrikant van graafmachines, bulldozers en mijnbouwtrucks, gaat zijn aandeelhouders belonen. Het Amerikaanse bedrijf stelde zijn investeerders een verhoging van het kwartaaldividend van 20 procent in het vooruitzicht. Daarnaast mogen zij de komende jaren rekenen op een verdere toename van hun winstaandeel.</p><p>Caterpillar praat zijn investeerders donderdag bij over de te varen koers. Gelet op de huidige kasstroom van het bedrijf denkt Caterpillar er ook over na om op een meer ,,consistente basis\" eigen aandelen in te gaan kopen.</p><p>Het eerste kwartaal van dit jaar profiteerde het bedrijf met name van verbeteringen bij de mijnbouwtak. Daarbij sprak Caterpillar de verwachting uit dat de financiële prestaties een vlucht kunnen nemen. Het bedrijf merkt op dat met name mijnbouwers meer geld steken in het moderniseren en vervangen van apparatuur en uitrustingen.</p>",
+        "urgency": 3,
+        "version": 1,
+        "authors": [
+            "ANP Producties"
+        ],
+        "category": "AFN",
+        "keywords": [
+            "NEW",
+            "FNG",
+            "CMP"
+        ],
+        "categories": [
+            "AFN"
+        ],
+        "entities": [
+            {
+                "id": "20463",
+                "value": "Caterpillar Inc",
+                "kind": "organisation"
+            },
+            {
+                "id": "377718",
+                "value": "Graafmachineproducent",
+                "kind": "organisationtype"
+            },
+            {
+                "id": "74599",
+                "value": "Mijnbouwconcern",
+                "kind": "organisationtype"
+            }
+        ],
+        "links": [],
+        "hasMedia": true,
+        "itemId": "ANP-020519-218",
+        "wordCount": 135,
+        "charCount": 910,
+        "isBillable": true,
+        "copyrightNotice": "© 2019 ANP",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}

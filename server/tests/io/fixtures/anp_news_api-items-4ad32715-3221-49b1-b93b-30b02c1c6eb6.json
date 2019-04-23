@@ -1,0 +1,18 @@
+{
+    "hasError": false,
+    "data": {
+        "items": [
+            {
+                "id": "7404db79e88ae6483f56941204943a4a",
+                "kind": "TEXTARTICLE",
+                "modified": "2019-05-02T12:20:18Z"
+            },
+            {
+                "id": "38bdbbbdae1320f77049b5a32538e09c",
+                "kind": "TEXTARTICLE",
+                "modified": "2019-05-02T12:04:59Z"
+            }
+        ],
+        "hasMore": true
+    }
+}
