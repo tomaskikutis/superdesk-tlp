@@ -6,6 +6,12 @@
  */
 module.exports = function(grunt) {
     return {
+        apps: [
+            'anp',
+        ],
+        importApps: [
+            '../anp',
+        ],
         defaultRoute: '/workspace/personal',
 
         langOverride: {
@@ -25,7 +31,8 @@ module.exports = function(grunt) {
             swimlane: {defaultNumberOfColumns: 4},
             editor3: true,
             validatePointOfInterestForImages: false,
-            editorHighlights: true
+            editorHighlights: true,
+            searchShortcut: true,
         },
         workspace: {
         }

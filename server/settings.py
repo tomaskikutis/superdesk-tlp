@@ -31,9 +31,10 @@ init_data = Path(ABS_PATH) / 'data'
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
-INSTALLED_APPS.extend([
+INSTALLED_APPS = [
     'apps.languages',
-])
+    'anp.photo',
+]
 
 RENDITIONS = {
     'picture': {
@@ -58,4 +59,3 @@ if env('REDIS_PORT'):
 BROKER_URL = env('CELERY_BROKER_URL', REDIS_URL)
 
 SECRET_KEY = env('SECRET_KEY', '')
-
