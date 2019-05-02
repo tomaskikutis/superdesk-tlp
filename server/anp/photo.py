@@ -1,5 +1,6 @@
 
 import math
+import enum
 import requests
 import superdesk
 
@@ -9,20 +10,28 @@ from xmlrpc.client import ServerProxy
 from superdesk.utils import ListCursor
 from superdesk.utc import local_to_utc
 from superdesk.logging import logger
+from superdesk.media.renditions import update_renditions
 
 
 TZ = 'Europe/Amsterdam'
 
-THUMBNAIL = 1
-PREVIEW = 2
-TITLE = 4
-DESCRIPTION = 8
-KEYWORDS = 16
 
-PICTURE_DATE = 2
+class Fields(enum.IntEnum):
+    thumbnail = 1
+    preview = 2
+    title = 4
+    description = 8
+    keywords = 16
 
-ASC = 0
-DESC = 1
+    @classmethod
+    def search(cls):
+        return cls.thumbnail | cls.preview | cls.title | cls.description
+
+
+class SortOptions(enum.IntEnum):
+    asc = 0
+    desc = 1
+
 
 TYPES = {
     0: 'picture',
@@ -58,16 +67,16 @@ class PhotoSearchProvider(superdesk.SearchProvider):
     def find(self, query, params=None):
         pagesize = query.get('size', 25)
         try:
-            sortorder = ASC if query['sort'][0]['versioncreated'] == 'asc' else DESC
+            sortorder = SortOptions.asc if query['sort'][0]['versioncreated'] == 'asc' else SortOptions.desc
         except KeyError:
-            sortorder = DESC
+            sortorder = SortOptions.desc
         _params = {
             'api_key': self.provider.get('config', {}).get('password', ''),
             'page': math.ceil(query.get('from', 0) / pagesize) + 1,
             'pagesize': pagesize,
             'sortfield': 0,
-            'sortorder': sortorder,
-            'returnfields': THUMBNAIL | PREVIEW | TITLE | DESCRIPTION,
+            'sortorder': int(sortorder),
+            'returnfields': Fields.search(),
         }
 
         if params is None and request.args.get('params'):
@@ -82,7 +91,7 @@ class PhotoSearchProvider(superdesk.SearchProvider):
                 _params['filename'] = params['filename']
             if params.get('firstdate'):
                 _params['firstdate'] = params['firstdate'].split('T')[0]
-                _params['sortorder'] = ASC
+                _params['sortorder'] = int(SortOptions.asc)
 
         try:
             query_string = query['query']['filtered']['query']['query_string']['query']
@@ -125,6 +134,28 @@ class PhotoSearchProvider(superdesk.SearchProvider):
     def _parse_date(self, string):
         local = datetime.strptime(string, '%Y%m%d %H:%M:%S')
         return local_to_utc(TZ, local)
+
+    def fetch(self, guid):
+        _id = int(guid.split(':')[-1])
+        base_params = {
+            'api_key': self.provider.get('config', {}).get('password', ''),
+        }
+        search_params = base_params.copy()
+        search_params.update({
+            'pagesize': 1,
+            'reference': str(_id),
+            'returnfields': Fields.search(),
+        })
+
+        search = self.proxy.search(search_params)
+        item = self._parse_item(search['1'])
+
+        location_params = base_params.copy()
+        location_params.update({'id': _id})
+        location = self.proxy.getmedialocation(location_params)
+        update_renditions(item, location['url'], None)
+
+        return item
 
 
 def init_app(app):

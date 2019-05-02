@@ -33,6 +33,7 @@ module.exports = function(grunt) {
             validatePointOfInterestForImages: false,
             editorHighlights: true,
             searchShortcut: true,
+            editFeaturedImage: true,
         },
         workspace: {
         }
