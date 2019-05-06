@@ -39,7 +39,28 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
     HTTP_SOURCES_URL = 'https://newsapi.anp.nl/services/sources'
     HTTP_ITEMS_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items'
     HTTP_ITEM_DETAILS_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items/{item_id}'
-    ALLOWED_KINDS = ('TEXTARTICLE', )
+    ALLOWED_KINDS = ('TEXTARTICLE',)
+
+    def get_url(self, url=None, **kwargs):
+        """Do an HTTP Get on URL and validate response.
+
+        :param string url: url to use (None to use self.HTTP_URL)
+        :param **kwargs: extra parameter for requests
+        :return dict: response content
+        """
+        response = super().get_url(url=url, **kwargs)
+        content = json.loads(response.content)
+
+        if content['hasError']:
+            msg = "Error in GET: '{}'. ErrorCode: '{}'. Description: '{}'".format(
+                url,
+                content['data']['errorCode'],
+                content['data']['description']
+            )
+            logger.error(msg)
+            raise IngestApiError.apiGeneralError(Exception(msg), self.provider)
+
+        return content
 
     def _update(self, provider, update):
         """
@@ -87,19 +108,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         :return: a list of news sources.
         """
 
-        response = self.get_url(
-            url=self.HTTP_SOURCES_URL
-        )
-        sources = json.loads(response.content)
-
-        if sources['hasError']:
-            msg = "Error in GET: '{}'. ErrorCode: '{}'. Description: '{}'".format(
-                self.HTTP_SOURCES_URL,
-                sources['data']['errorCode'],
-                sources['data']['description']
-            )
-            logger.error(msg)
-            raise IngestApiError.apiGeneralError(Exception(msg), self.provider)
+        sources = self.get_url(url=self.HTTP_SOURCES_URL)
 
         return [
             src for src in sources['data'] if src['title'].lower() in [
@@ -119,21 +128,9 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         payload = {}
         if to_item:
             payload['params'] = {'toItem': to_item}
-
-        response = self.get_url(
+        items = self.get_url(
             url=self.HTTP_ITEMS_URL.format(source_id=source_id), **payload
         )
-        items = json.loads(response.content)
-
-        if items['hasError']:
-            msg = "Error in GET: '{}'. ErrorCode: '{}'. Description: '{}'".format(
-                self.HTTP_ITEMS_URL.format(source_id=source_id),
-                items['data']['errorCode'],
-                items['data']['description']
-            )
-            logger.error(msg)
-
-            return []
         items['data']['items'].reverse()
 
         return items['data']['items']
@@ -148,19 +145,9 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         :return: a dict with item's details
         """
 
-        response = self.get_url(
+        item_details = self.get_url(
             url=self.HTTP_ITEM_DETAILS_URL.format(source_id=source_id, item_id=item_id)
         )
-        item_details = json.loads(response.content)
-
-        if item_details['hasError']:
-            msg = "Error in GET: '{}'. ErrorCode: '{}'. Description: '{}'".format(
-                self.HTTP_ITEM_DETAILS_URL.format(source_id=source_id, item_id=item_id),
-                item_details['data']['errorCode'],
-                item_details['data']['description']
-            )
-            logger.error(msg)
-            return None
 
         return item_details['data']
 
