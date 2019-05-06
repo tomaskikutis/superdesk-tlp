@@ -1,0 +1,42 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "c4b893fec041a87ee340b513e8b11860",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:39:55Z",
+        "firstIssueDate": "2019-05-02T12:39:55Z",
+        "modified": "2019-05-02T12:40:06Z",
+        "source": "03b7a184-f6f4-4879-85f6-b43f21acb940",
+        "title": "Maduro exhorts Venezuela military to fight 'any coup plotter'",
+        "sourceTitle": "AFP EN (Editorial)",
+        "bodyText": "<p>Maduro exhorts Venezuela military to fight 'any coup plotter' </p><p>axm/ch/jm</p>",
+        "urgency": 2,
+        "version": 1,
+        "category": "ALL",
+        "keywords": [
+            "ALERT",
+            "army"
+        ],
+        "categories": [
+            "ALL"
+        ],
+        "entities": [
+            {
+                "id": "8159",
+                "value": "Venezuela",
+                "kind": "location"
+            }
+        ],
+        "links": [],
+        "hasMedia": false,
+        "itemId": "TX-PAR-ABP96",
+        "wordCount": 10,
+        "isBillable": true,
+        "copyrightNotice": "© 2019",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}

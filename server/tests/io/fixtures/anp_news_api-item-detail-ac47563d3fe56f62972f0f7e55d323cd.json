@@ -1,0 +1,64 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "ac47563d3fe56f62972f0f7e55d323cd",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:44:20Z",
+        "firstIssueDate": "2019-05-02T12:44:20Z",
+        "modified": "2019-05-02T12:44:40Z",
+        "source": "03b7a184-f6f4-4879-85f6-b43f21acb940",
+        "title": "Bank of England sees temporary boost from Brexit stockpiling",
+        "sourceTitle": "AFP EN (Editorial)",
+        "bodyText": "<p>The Bank of England on Thursday raised its forecast for UK economic growth this year, as stockpiling offsets lower business investment elsewhere ahead of Brexit.</p><p>Economic activity was given a temporary boost as companies rushed to stockpile components and goods before the original March 29 Brexit deadline, the BoE said alongside an announcement that it had kept its main interest rate at 0.75 percent.</p><p>\"Brexit-related uncertainty has led to a reduction in business investment and an increase in stockbuilding,\" the central bank said.</p><p>\"In comparison, household spending has been relatively resilient, although the housing market has remained subdued.\"</p><p>The BoE added that the UK economy was expected to expand by 1.6 percent in 2020, up slightly from its earlier guidance of 1.5 percent.</p><p/><hl2>- Rate hike warning -</hl2><p/><p>The latest predictions assume a smooth path towards Britain's eventual exit from the European Union, of which it has been a member since 1973.</p><p>BoE Governor Mark Carney later told a press conference Thursday that interest rates would have to increase faster than anticipated if the predictions proved correct.</p><p>\"If something like this forecast comes to pass, we could see a period where the economy is growing and pressures continue to build despite this uncertainty,\" Carney said.</p><p>\"If a Brexit resolution is some form of arrangement with some smooth resolution to it, it will require rate increases, and more frequent rate increases than the market currently expects,\" he added.</p><p>Britain is now due to leave the EU by October 31 after two delays were triggered by MPs rejecting the divorce deal Prime Minister Theresa May had struck with the bloc.</p><p>The delays boosted Britain's gross domestic product (GDP) in the first three months of 2019 thanks to stockpiling, but the BoE anticipates a moderate slowdown in the second quarter.</p><p>\"GDP is expected to have grown by 0.5 percent in the first quarter, in part a reflection of a larger-than-expected boost from companies in the United Kingdom and the European Union building stocks ahead of recent Brexit deadlines,\" the bank said Thursday.</p><p>\"That boost is expected to be temporary, however, and quarterly growth is expected to slow to around 0.2 percent in the second quarter.\"</p><p>The BoE said that while the \"pace of GDP growth appears to be slightly stronger than previously anticipated\", it was \"marginally below potential\".</p><p>\"That subdued pace reflects the impact of the slowdown in global growth and ongoing Brexit uncertainties,\" it added.</p><p>Thursday's updates come one day after the US Federal Reserve dented prospects for a possible cut in American interest rates as solid US economic growth helps to offset a slowdown elsewhere.</p><p>The BoE upgrades also come after it recently fired the starting gun on the search for a replacement for Carney.</p><p>The Canadian leaves his role on January 31, having extended his tenure twice owing to Brexit turmoil.</p><p>Carney, 54, took up the post in July 2013, with the UK economy struggling to recover from the global financial crisis and with the Bank of England's main interest rate at a then record-low 0.50 percent. </p><p>rfj/bcp/dl</p><p/>",
+        "urgency": 4,
+        "version": 1,
+        "category": "2ndlead",
+        "keywords": [
+            "Britain",
+            "economy",
+            "bank",
+            "rate",
+            "Brexit",
+            "Mark",
+            "Carney",
+            "Theresa",
+            "May"
+        ],
+        "categories": [
+            "2ndlead"
+        ],
+        "entities": [
+            {
+                "id": "8046",
+                "value": "Groot-Brittannië",
+                "kind": "location"
+            },
+            {
+                "id": "26640",
+                "value": "Theresa May",
+                "kind": "person"
+            },
+            {
+                "id": "15372",
+                "value": "Europese Unie",
+                "kind": "location"
+            },
+            {
+                "id": "108357",
+                "value": "Mark Carney",
+                "kind": "person"
+            }
+        ],
+        "links": [],
+        "hasMedia": false,
+        "itemId": "TX-PAR-ABQ07",
+        "wordCount": 493,
+        "isBillable": true,
+        "copyrightNotice": "© 2019",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}

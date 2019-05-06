@@ -33,6 +33,7 @@ if init_data.exists():
 
 INSTALLED_APPS = [
     'apps.languages',
+    'anp.io',
     'anp.photo',
 ]
 

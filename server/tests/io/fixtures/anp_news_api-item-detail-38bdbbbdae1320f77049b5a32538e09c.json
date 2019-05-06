@@ -1,0 +1,77 @@
+{
+    "hasError": false,
+    "data": {
+        "id": "38bdbbbdae1320f77049b5a32538e09c",
+        "kind": "TEXTARTICLE",
+        "pubDate": "2019-05-02T12:04:56Z",
+        "firstIssueDate": "2019-05-02T12:04:56Z",
+        "modified": "2019-05-02T12:04:59Z",
+        "source": "4ad32715-3221-49b1-b93b-30b02c1c6eb6",
+        "title": "Zanger Dotan maakt comeback na trollenaffaire",
+        "sourceTitle": "ANP 101",
+        "bodyText": "<p>AMSTERDAM (ANP) - Zanger Dotan wil een comeback maken en komt nog dit jaar met nieuwe nummers. De zanger kwam vorig jaar onder vuur te liggen omdat hij een aantal nepaccounts op social media had om zijn muziek te promoten. De Volkskrant onthulde de 'trollenaffaire'. Platenmaatschappij 8Ball Music heeft het bericht over de comeback van Dotan, waarover Het Parool schrijft, bevestigd.</p><p>Het nieuwe werk zou nog dit jaar uit moeten komen. De laatste plaat van Dotan dateert uit 2014. Hij werkt momenteel aan de nieuwe nummers. Daarmee zou de zanger zijn imago willen oppoetsen.</p><p>De zanger had ook diverse verhalen over ontmoetingen met fans verzonnen. De Volkskrant wist te melden dat er vanaf 2011 minstens 140 nepprofielen zijn aangemaakt om op Twitter, Facebook en Instagram het imago van de zanger op te poetsen. Dotan ontkende eerst er iets mee te maken te hebben, maar gaf later toe dat het klopte.</p><p>Meer toelichting op de comeback wil 8Ball Music niet geven. De manager van Dotan was donderdag niet bereikbaar voor commentaar.</p>",
+        "urgency": 3,
+        "version": 1,
+        "authors": [
+            "ANP Producties"
+        ],
+        "category": "ANP/BIN",
+        "categories": [
+            "ANP/BIN",
+            "ANP/ENTERTAINMENT",
+            "ANP/MUZIEK",
+            "XANP/101",
+            "XANP/BIN",
+            "XANP/KCE"
+        ],
+        "entities": [
+            {
+                "id": "321676",
+                "value": "Dotan",
+                "kind": "person"
+            },
+            {
+                "id": "95434",
+                "value": "Instagram",
+                "kind": "organisation"
+            },
+            {
+                "id": "8437",
+                "value": "Twitter",
+                "kind": "organisation"
+            },
+            {
+                "id": "12508",
+                "value": "Volkskrant",
+                "kind": "organisation"
+            },
+            {
+                "id": "12613",
+                "value": "Het Parool",
+                "kind": "organisation"
+            },
+            {
+                "id": "75069",
+                "value": "Platenmaatschappij",
+                "kind": "organisationtype"
+            },
+            {
+                "id": "8421",
+                "value": "Facebook",
+                "kind": "organisation"
+            }
+        ],
+        "links": [],
+        "hasMedia": true,
+        "itemId": "ANP-020519-216",
+        "wordCount": 170,
+        "charCount": 1025,
+        "isBillable": true,
+        "copyrightNotice": "© 2019",
+        "relationships": [
+            "alike"
+        ],
+        "isRead": false,
+        "isClipped": false
+    }
+}
