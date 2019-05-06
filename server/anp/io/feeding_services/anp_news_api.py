@@ -46,7 +46,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
 
         :param string url: url to use (None to use self.HTTP_URL)
         :param **kwargs: extra parameter for requests
-        :return dict: response content
+        :return dict: response content data
         """
         response = super().get_url(url=url, **kwargs)
         content = json.loads(response.content)
@@ -60,7 +60,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
             logger.error(msg)
             raise IngestApiError.apiGeneralError(Exception(msg), self.provider)
 
-        return content
+        return content['data']
 
     def _update(self, provider, update):
         """
@@ -111,7 +111,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         sources = self.get_url(url=self.HTTP_SOURCES_URL)
 
         return [
-            src for src in sources['data'] if src['title'].lower() in [
+            src for src in sources if src['title'].lower() in [
                 title.lower().strip() for title in [
                     title_conf.lower().strip() for title_conf in self.config['source_titles'].split(',')
                 ]
@@ -131,9 +131,9 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         items = self.get_url(
             url=self.HTTP_ITEMS_URL.format(source_id=source_id), **payload
         )
-        items['data']['items'].reverse()
+        items['items'].reverse()
 
-        return items['data']['items']
+        return items['items']
 
     def _fetch_item_details(self, source_id, item_id):
         """
@@ -149,7 +149,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
             url=self.HTTP_ITEM_DETAILS_URL.format(source_id=source_id, item_id=item_id)
         )
 
-        return item_details['data']
+        return item_details
 
 
 register_feeding_service(ANPNewsApiFeedingService)
