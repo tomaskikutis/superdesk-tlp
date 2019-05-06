@@ -31,10 +31,11 @@ init_data = Path(ABS_PATH) / 'data'
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
-INSTALLED_APPS.extend([
+INSTALLED_APPS = [
     'apps.languages',
-    'anp.io'
-])
+    'anp.io',
+    'anp.photo',
+]
 
 RENDITIONS = {
     'picture': {
