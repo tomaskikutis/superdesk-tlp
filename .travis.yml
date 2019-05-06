@@ -30,10 +30,11 @@ before_install:
     - npm install -g grunt-cli
 
 install:
-    - cd server && pip install -r dev-requirements.txt && cd ..
-    - cd client && npm install && cd ..
+    - cd $TRAVIS_BUILD_DIR/server && pip install -r dev-requirements.txt
+    - cd $TRAVIS_BUILD_DIR/client && npm install
 
 script:
-    - cd server && flake8 && cd ..
-    - cd client && grunt build && cd ..
-    - cd server && python manage.py users:create -u test -p test -e test@localhost --admin && cd ..
+    - cd $TRAVIS_BUILD_DIR/server && flake8
+    - cd $TRAVIS_BUILD_DIR/server && nosetests
+    - cd $TRAVIS_BUILD_DIR/client && grunt build
+    - cd $TRAVIS_BUILD_DIR/server && python manage.py users:create -u test -p test -e test@localhost --admin
