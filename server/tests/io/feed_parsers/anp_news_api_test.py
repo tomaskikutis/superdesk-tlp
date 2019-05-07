@@ -85,6 +85,6 @@ class ANPNewsApiFeedParserTestCase(TestCase):
             3
         )
         self.assertEqual(
-            self.item['authors'],
-            [{'name': 'ANP Producties', 'role': 'writer'}]
+            self.item['byline'],
+            'ANP Producties'
         )

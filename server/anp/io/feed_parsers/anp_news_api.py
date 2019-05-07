@@ -56,12 +56,7 @@ class ANPNewsApiFeedParser(FeedParser):
         item['copyrightholder'] = article.get('sourceTitle', '')
         item['urgency'] = int(article.get('urgency', 0))
         item['priority'] = item['urgency']
-
-        for author in article.get('authors', []):
-            item.setdefault('authors', []).append({
-                'name': author,
-                'role': 'writer'
-            })
+        item['byline'] = ', '.join(article.get('authors', []))
 
         for category in article.get('categories', []):
             item.setdefault('anpa_category', []).append({
