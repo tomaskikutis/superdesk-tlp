@@ -7,41 +7,106 @@
     "items": [
       {
         "name": "Persalarm",
-        "qcode": "1",
+        "qcode": 1,
         "is_active": true
       },
       {
         "name": "Live",
-        "qcode": "2",
+        "qcode": 2,
         "is_active": true
       },
       {
         "name": "Normal",
-        "qcode": "3",
+        "qcode": 3,
         "is_active": true
       },
       {
         "name": "Lower",
-        "qcode": "4",
+        "qcode": 4,
         "is_active": true
       },
       {
         "name": "unused",
-        "qcode": "5",
+        "qcode": 5,
         "is_active": false
       },
       {
         "name": "unused",
-        "qcode": "6",
+        "qcode": 6,
         "is_active": false
       }
     ]
+  },
+  {
+    "_id": "urgency",
+    "display_name": "Urgency",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "unique_field": "qcode",
+    "items": [
+      {
+        "is_active": true,
+        "name": "1",
+        "qcode": 1
+      },
+      {
+        "is_active": true,
+        "name": "2",
+        "qcode": 2
+      },
+      {
+        "is_active": true,
+        "name": "3",
+        "qcode": 3
+      },
+      {
+        "is_active": true,
+        "name": "4",
+        "qcode": 4
+      },
+      {
+        "is_active": true,
+        "name": "5",
+        "qcode": 5
+      },
+      {
+        "is_active": true,
+        "name": "6",
+        "qcode": 6
+      }
+    ],
+    "schema": {
+      "name": {
+        "translate": true
+      },
+      "qcode": {
+        "type": "integer"
+      },
+      "color": {
+        "type": "color",
+        "label": "Сolour"
+      },
+      "short": {
+        "type": "short",
+        "label": "List Name",
+        "maxlength": 2,
+        "translate": true
+      }
+    }
   },
   {
     "_id": "regions",
     "display_name": "Regions",
     "type": "manageable",
     "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "parent": {}
+    },
+    "service": {
+      "all": 1
+    },
     "items": [
       {
         "name": "Oost-Groningen",
@@ -2427,6 +2492,13 @@
     "type": "manageable",
     "unique_field": "qcode",
     "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {}
+    },
+    "service": {
+      "all": 1
+    },
     "items": [
       {
         "name": "Afghanistan",
@@ -3681,6 +3753,14 @@
     "type": "manageable",
     "unique_field": "qcode",
     "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "ticker": {}
+    },
+    "service": {
+      "all": 1
+    },
     "items": [
       {
         "name": "Advanced Micro Devices",
@@ -4524,6 +4604,14 @@
     "type": "manageable",
     "unique_field": "qcode",
     "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "ticker": {}
+    },
+    "service": {
+      "all": 1
+    },
     "items": [
       {
         "name": "AALBERTS INDUSTR",
@@ -5521,5 +5609,39 @@
         "type": "int"
       }
     }
+  },
+  {
+    "_id": "categories",
+    "display_name": "Categories",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "unique_field": "qcode",
+    "items": [
+      {
+        "is_active": true,
+        "name": "Algemeen",
+        "qcode": "Algemeen"
+      },
+      {
+        "is_active": true,
+        "name": "Bekend Nederland",
+        "qcode": "Bekend Nederland"
+      },
+      {
+        "is_active": true,
+        "name": "Sport",
+        "qcode": "Sport"
+      },
+      {
+        "is_active": true,
+        "name": "Weer",
+        "qcode": "Weer"
+      },
+      {
+        "is_active": true,
+        "name": "Live",
+        "qcode": "Live"
+      }
+    ]
   }
 ]
