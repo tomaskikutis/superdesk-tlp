@@ -8,7 +8,6 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 
-import json
 import logging
 
 from superdesk.errors import IngestApiError
@@ -49,7 +48,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         :return dict: response content data
         """
         response = super().get_url(url=url, **kwargs)
-        content = json.loads(response.content)
+        content = response.json()
 
         if content['hasError']:
             msg = "Error in GET: '{}'. ErrorCode: '{}'. Description: '{}'".format(

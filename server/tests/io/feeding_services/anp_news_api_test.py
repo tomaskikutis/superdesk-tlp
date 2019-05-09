@@ -8,7 +8,7 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 
-
+import json
 import re
 from unittest import mock
 import os
@@ -58,7 +58,7 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
         # sources
         sources = os.path.normpath(os.path.join(dirname, '../fixtures', 'anp_news_api-sources.json'))
         with open(sources, 'r') as f:
-            self.fixtures['sources'] = f.read()
+            self.fixtures['sources'] = json.loads(f.read())
         # items
         for source_id in ('5af9a2e4-3825-45d6-8445-419b1cb365dc',
                           '3dc77946-38dc-4469-b0a9-c10519035824',
@@ -69,7 +69,7 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
                 os.path.join(dirname, '../fixtures', 'anp_news_api-items-{}.json'.format(source_id))
             )
             with open(items, 'r') as f:
-                self.fixtures.setdefault('items', {})[source_id] = f.read()
+                self.fixtures.setdefault('items', {})[source_id] = json.loads(f.read())
         # items details
         for item_id in ('ac3dc857e87ea0a0b98635b314941d12',
                         'bd34da5aa71ea490639e5601f98b238a',
@@ -79,7 +79,7 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
                 os.path.join(dirname, '../fixtures', 'anp_news_api-item-detail-{}.json'.format(item_id))
             )
             with open(items, 'r') as f:
-                self.fixtures.setdefault('item-details', {})[item_id] = f.read()
+                self.fixtures.setdefault('item-details', {})[item_id] = json.loads(f.read())
 
     @mock.patch.object(http_base_service, 'requests')
     @mock.patch.object(ANPNewsApiFeedingService, 'get_feed_parser')
@@ -92,13 +92,13 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
             match_details = re.match(r'https://newsapi.anp.nl/services/sources/(.*)/items/(.*)$', url)
 
             if url == 'https://newsapi.anp.nl/services/sources':
-                response.content = self.fixtures['sources']
+                response.json.return_value = self.fixtures['sources']
             elif match_items:
                 source_id = match_items.group(1)
-                response.content = self.fixtures['items'][source_id]
+                response.json.return_value = self.fixtures['items'][source_id]
             elif match_details:
                 item_id = match_details.group(2)
-                response.content = self.fixtures['item-details'][item_id]
+                response.json.return_value = self.fixtures['item-details'][item_id]
 
             return response
 
