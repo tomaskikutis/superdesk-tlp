@@ -1,0 +1,5647 @@
+[
+  {
+    "_id": "priority",
+    "display_name": "Priority",
+    "type": "manageable",
+    "selection_type": "single selection",
+    "items": [
+      {
+        "name": "Persalarm",
+        "qcode": 1,
+        "is_active": true
+      },
+      {
+        "name": "Live",
+        "qcode": 2,
+        "is_active": true
+      },
+      {
+        "name": "Normal",
+        "qcode": 3,
+        "is_active": true
+      },
+      {
+        "name": "Lower",
+        "qcode": 4,
+        "is_active": true
+      },
+      {
+        "name": "unused",
+        "qcode": 5,
+        "is_active": false
+      },
+      {
+        "name": "unused",
+        "qcode": 6,
+        "is_active": false
+      }
+    ]
+  },
+  {
+    "_id": "urgency",
+    "display_name": "Urgency",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "unique_field": "qcode",
+    "items": [
+      {
+        "is_active": true,
+        "name": "1",
+        "qcode": 1
+      },
+      {
+        "is_active": true,
+        "name": "2",
+        "qcode": 2
+      },
+      {
+        "is_active": true,
+        "name": "3",
+        "qcode": 3
+      },
+      {
+        "is_active": true,
+        "name": "4",
+        "qcode": 4
+      },
+      {
+        "is_active": true,
+        "name": "5",
+        "qcode": 5
+      },
+      {
+        "is_active": true,
+        "name": "6",
+        "qcode": 6
+      }
+    ],
+    "schema": {
+      "name": {
+        "translate": true
+      },
+      "qcode": {
+        "type": "integer"
+      },
+      "color": {
+        "type": "color",
+        "label": "Сolour"
+      },
+      "short": {
+        "type": "short",
+        "label": "List Name",
+        "maxlength": 2,
+        "translate": true
+      }
+    }
+  },
+  {
+    "_id": "regions",
+    "display_name": "Regions",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "parent": {}
+    },
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "name": "Oost-Groningen",
+        "qcode": "Oost-Groningen",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Delfzijl en omgeving",
+        "qcode": "Delfzijl en omgeving",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Overig Groningen",
+        "qcode": "Overig Groningen",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Noord-Friesland",
+        "qcode": "Noord-Friesland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidwest-Friesland",
+        "qcode": "Zuidwest-Friesland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidoost-Friesland",
+        "qcode": "Zuidoost-Friesland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Noord-Drenthe",
+        "qcode": "Noord-Drenthe",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidoost-Drenthe",
+        "qcode": "Zuidoost-Drenthe",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidwest-Drenthe",
+        "qcode": "Zuidwest-Drenthe",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Noord-Overijssel",
+        "qcode": "Noord-Overijssel",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidwest-Overijssel",
+        "qcode": "Zuidwest-Overijssel",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Twente",
+        "qcode": "Twente",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Veluwe",
+        "qcode": "Veluwe",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Achterhoek",
+        "qcode": "Achterhoek",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Arnhem/Nijmegen",
+        "qcode": "Arnhem/Nijmegen",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidwest-Gelderland",
+        "qcode": "Zuidwest-Gelderland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Utrecht",
+        "qcode": "Utrecht",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Kop van Noord-Holland",
+        "qcode": "Kop van Noord-Holland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Alkmaar en omgeving",
+        "qcode": "Alkmaar en omgeving",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "IJmond",
+        "qcode": "IJmond",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Agglomeratie Haarlem",
+        "qcode": "Agglomeratie Haarlem",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zaanstreek",
+        "qcode": "Zaanstreek",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Groot-Amsterdam",
+        "qcode": "Groot-Amsterdam",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Het Gooi en Vechtstreek",
+        "qcode": "Het Gooi en Vechtstreek",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Agglomeratie Leiden en Bollenstreek",
+        "qcode": "Agglomeratie Leiden en Bollenstreek",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Agglomeratie 's-Gravenhage",
+        "qcode": "Agglomeratie 's-Gravenhage",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Delft en Westland",
+        "qcode": "Delft en Westland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Oost-Zuid-Holland",
+        "qcode": "Oost-Zuid-Holland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Groot-Rijnmond",
+        "qcode": "Groot-Rijnmond",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidoost-Zuid-Holland",
+        "qcode": "Zuidoost-Zuid-Holland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zeeuws-Vlaanderen",
+        "qcode": "Zeeuws-Vlaanderen",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Overig Zeeland",
+        "qcode": "Overig Zeeland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "West-Noord-Brabant",
+        "qcode": "West-Noord-Brabant",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Midden-Noord-Brabant",
+        "qcode": "Midden-Noord-Brabant",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Noordoost-Noord-Brabant",
+        "qcode": "Noordoost-Noord-Brabant",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuidoost-Noord-Brabant",
+        "qcode": "Zuidoost-Noord-Brabant",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Noord-Limburg",
+        "qcode": "Noord-Limburg",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Midden-Limburg",
+        "qcode": "Midden-Limburg",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Zuid-Limburg",
+        "qcode": "Zuid-Limburg",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Flevoland",
+        "qcode": "Flevoland",
+        "parent": null,
+        "is_active": true
+      },
+      {
+        "name": "Oldambt",
+        "qcode": "Oldambt",
+        "parent": "Oost-Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Pekela",
+        "qcode": "Pekela",
+        "parent": "Oost-Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Stadskanaal",
+        "qcode": "Stadskanaal",
+        "parent": "Oost-Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Veendam",
+        "qcode": "Veendam",
+        "parent": "Oost-Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Westerwolde",
+        "qcode": "Westerwolde",
+        "parent": "Oost-Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Appingedam",
+        "qcode": "Appingedam",
+        "parent": "Delfzijl en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Delfzijl",
+        "qcode": "Delfzijl",
+        "parent": "Delfzijl en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Loppersum",
+        "qcode": "Loppersum",
+        "parent": "Delfzijl en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Groningen",
+        "qcode": "Groningen",
+        "parent": "Overig Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Het Hogeland",
+        "qcode": "Het Hogeland",
+        "parent": "Overig Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Midden-Groningen",
+        "qcode": "Midden-Groningen",
+        "parent": "Overig Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Westerkwartier",
+        "qcode": "Westerkwartier",
+        "parent": "Overig Groningen",
+        "is_active": true
+      },
+      {
+        "name": "Achtkarspelen",
+        "qcode": "Achtkarspelen",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Ameland",
+        "qcode": "Ameland",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Dantumadeel",
+        "qcode": "Dantumadeel",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Harlingen",
+        "qcode": "Harlingen",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Leeuwarden",
+        "qcode": "Leeuwarden",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Noardeast-Fryslân",
+        "qcode": "Noardeast-Fryslân",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Schiermonnikoog",
+        "qcode": "Schiermonnikoog",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Terschelling",
+        "qcode": "Terschelling",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Tietjerksteradeel",
+        "qcode": "Tietjerksteradeel",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Vlieland",
+        "qcode": "Vlieland",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Waadhoeke",
+        "qcode": "Waadhoeke",
+        "parent": "Noord-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "De Friese Meren",
+        "qcode": "De Friese Meren",
+        "parent": "Zuidwest-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Súdwest-Fryslân",
+        "qcode": "Súdwest-Fryslân",
+        "parent": "Zuidwest-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Heerenveen",
+        "qcode": "Heerenveen",
+        "parent": "Zuidoost-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Ooststellingwerf",
+        "qcode": "Ooststellingwerf",
+        "parent": "Zuidoost-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Opsterland",
+        "qcode": "Opsterland",
+        "parent": "Zuidoost-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Smallingerland",
+        "qcode": "Smallingerland",
+        "parent": "Zuidoost-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Weststellingwerf",
+        "qcode": "Weststellingwerf",
+        "parent": "Zuidoost-Friesland",
+        "is_active": true
+      },
+      {
+        "name": "Aa en Hunze",
+        "qcode": "Aa en Hunze",
+        "parent": "Noord-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Assen",
+        "qcode": "Assen",
+        "parent": "Noord-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Midden-Drenthe",
+        "qcode": "Midden-Drenthe",
+        "parent": "Noord-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Noordenveld",
+        "qcode": "Noordenveld",
+        "parent": "Noord-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Tynaarlo",
+        "qcode": "Tynaarlo",
+        "parent": "Noord-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Borger-Odoorn",
+        "qcode": "Borger-Odoorn",
+        "parent": "Zuidoost-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Coevorden",
+        "qcode": "Coevorden",
+        "parent": "Zuidoost-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Emmen",
+        "qcode": "Emmen",
+        "parent": "Zuidoost-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Hoogeveen",
+        "qcode": "Hoogeveen",
+        "parent": "Zuidwest-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Meppel",
+        "qcode": "Meppel",
+        "parent": "Zuidwest-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Westerveld",
+        "qcode": "Westerveld",
+        "parent": "Zuidwest-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "De Wolden",
+        "qcode": "De Wolden",
+        "parent": "Zuidwest-Drenthe",
+        "is_active": true
+      },
+      {
+        "name": "Dalfsen",
+        "qcode": "Dalfsen",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Hardenberg",
+        "qcode": "Hardenberg",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Kampen",
+        "qcode": "Kampen",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Ommen",
+        "qcode": "Ommen",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Staphorst",
+        "qcode": "Staphorst",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Steenwijkerland",
+        "qcode": "Steenwijkerland",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Zwartewaterland",
+        "qcode": "Zwartewaterland",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Zwolle",
+        "qcode": "Zwolle",
+        "parent": "Noord-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Deventer",
+        "qcode": "Deventer",
+        "parent": "Zuidwest-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Olst-Wijhe",
+        "qcode": "Olst-Wijhe",
+        "parent": "Zuidwest-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Raalte",
+        "qcode": "Raalte",
+        "parent": "Zuidwest-Overijssel",
+        "is_active": true
+      },
+      {
+        "name": "Almelo",
+        "qcode": "Almelo",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Borne",
+        "qcode": "Borne",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Dinkelland",
+        "qcode": "Dinkelland",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Enschede",
+        "qcode": "Enschede",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Haaksbergen",
+        "qcode": "Haaksbergen",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Hellendoorn",
+        "qcode": "Hellendoorn",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Hengelo",
+        "qcode": "Hengelo",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Hof van Twente",
+        "qcode": "Hof van Twente",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Losser",
+        "qcode": "Losser",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Oldenzaal",
+        "qcode": "Oldenzaal",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Rijssen-Holten",
+        "qcode": "Rijssen-Holten",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Tubbergen",
+        "qcode": "Tubbergen",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Twenterand",
+        "qcode": "Twenterand",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Wierden",
+        "qcode": "Wierden",
+        "parent": "Twente",
+        "is_active": true
+      },
+      {
+        "name": "Apeldoorn",
+        "qcode": "Apeldoorn",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Barneveld",
+        "qcode": "Barneveld",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Ede",
+        "qcode": "Ede",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Elburg",
+        "qcode": "Elburg",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Epe",
+        "qcode": "Epe",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Ermelo",
+        "qcode": "Ermelo",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Harderwijk",
+        "qcode": "Harderwijk",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Hattem",
+        "qcode": "Hattem",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Heerde",
+        "qcode": "Heerde",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Nijkerk",
+        "qcode": "Nijkerk",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Nunspeet",
+        "qcode": "Nunspeet",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Oldebroek",
+        "qcode": "Oldebroek",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Putten",
+        "qcode": "Putten",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Scherpenzeel",
+        "qcode": "Scherpenzeel",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Voorst",
+        "qcode": "Voorst",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Wageningen",
+        "qcode": "Wageningen",
+        "parent": "Veluwe",
+        "is_active": true
+      },
+      {
+        "name": "Aalten",
+        "qcode": "Aalten",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Berkelland",
+        "qcode": "Berkelland",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Bronckhorst",
+        "qcode": "Bronckhorst",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Brummen",
+        "qcode": "Brummen",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Doetinchem",
+        "qcode": "Doetinchem",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Lochem",
+        "qcode": "Lochem",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Montferland",
+        "qcode": "Montferland",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Oost Gelre",
+        "qcode": "Oost Gelre",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Oude IJsselstreek",
+        "qcode": "Oude IJsselstreek",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Winterswijk",
+        "qcode": "Winterswijk",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Zutphen",
+        "qcode": "Zutphen",
+        "parent": "Achterhoek",
+        "is_active": true
+      },
+      {
+        "name": "Arnhem",
+        "qcode": "Arnhem",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Berg en Dal",
+        "qcode": "Berg en Dal",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Beuningen",
+        "qcode": "Beuningen",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Doesburg",
+        "qcode": "Doesburg",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Druten",
+        "qcode": "Druten",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Duiven",
+        "qcode": "Duiven",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Heumen",
+        "qcode": "Heumen",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Lingewaard",
+        "qcode": "Lingewaard",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Nijmegen",
+        "qcode": "Nijmegen",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Overbetuwe",
+        "qcode": "Overbetuwe",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Renkum",
+        "qcode": "Renkum",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Rheden",
+        "qcode": "Rheden",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Rozendaal",
+        "qcode": "Rozendaal",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Westervoort",
+        "qcode": "Westervoort",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Wijchen",
+        "qcode": "Wijchen",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Zevenaar",
+        "qcode": "Zevenaar",
+        "parent": "Arnhem/Nijmegen",
+        "is_active": true
+      },
+      {
+        "name": "Buren",
+        "qcode": "Buren",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Culemborg",
+        "qcode": "Culemborg",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Maasdriel",
+        "qcode": "Maasdriel",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Neder-Betuwe",
+        "qcode": "Neder-Betuwe",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Tiel",
+        "qcode": "Tiel",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "West Betuwe",
+        "qcode": "West Betuwe",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "West Maas en Waal",
+        "qcode": "West Maas en Waal",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Zaltbommel",
+        "qcode": "Zaltbommel",
+        "parent": "Zuidwest-Gelderland",
+        "is_active": true
+      },
+      {
+        "name": "Amersfoort",
+        "qcode": "Amersfoort",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Baarn",
+        "qcode": "Baarn",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "De Bilt",
+        "qcode": "De Bilt",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Bunnik",
+        "qcode": "Bunnik",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Bunschoten",
+        "qcode": "Bunschoten",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Eemnes",
+        "qcode": "Eemnes",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Houten",
+        "qcode": "Houten",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "IJsselstein",
+        "qcode": "IJsselstein",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Leusden",
+        "qcode": "Leusden",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Lopik",
+        "qcode": "Lopik",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Montfoort",
+        "qcode": "Montfoort",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Nieuwegein",
+        "qcode": "Nieuwegein",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Oudewater",
+        "qcode": "Oudewater",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Renswoude",
+        "qcode": "Renswoude",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Rhenen",
+        "qcode": "Rhenen",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "De Ronde Venen",
+        "qcode": "De Ronde Venen",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Soest",
+        "qcode": "Soest",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Stichtse Vecht",
+        "qcode": "Stichtse Vecht",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Utrecht",
+        "qcode": "Utrecht",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Utrechtse Heuvelrug",
+        "qcode": "Utrechtse Heuvelrug",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Veenendaal",
+        "qcode": "Veenendaal",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Vijfheerenlanden",
+        "qcode": "Vijfheerenlanden",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Wijk bij Duurstede",
+        "qcode": "Wijk bij Duurstede",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Woerden",
+        "qcode": "Woerden",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Woudenberg",
+        "qcode": "Woudenberg",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Zeist",
+        "qcode": "Zeist",
+        "parent": "Utrecht",
+        "is_active": true
+      },
+      {
+        "name": "Den Helder",
+        "qcode": "Den Helder",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Drechterland",
+        "qcode": "Drechterland",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Enkhuizen",
+        "qcode": "Enkhuizen",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Hollands Kroon",
+        "qcode": "Hollands Kroon",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Hoorn",
+        "qcode": "Hoorn",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Koggenland",
+        "qcode": "Koggenland",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Medemblik",
+        "qcode": "Medemblik",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Opmeer",
+        "qcode": "Opmeer",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Schagen",
+        "qcode": "Schagen",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Stede Broec",
+        "qcode": "Stede Broec",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Texel",
+        "qcode": "Texel",
+        "parent": "Kop van Noord-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Alkmaar",
+        "qcode": "Alkmaar",
+        "parent": "Alkmaar en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Bergen",
+        "qcode": "Bergen",
+        "parent": "Alkmaar en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Heerhugowaard",
+        "qcode": "Heerhugowaard",
+        "parent": "Alkmaar en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Heiloo",
+        "qcode": "Heiloo",
+        "parent": "Alkmaar en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Langedijk",
+        "qcode": "Langedijk",
+        "parent": "Alkmaar en omgeving",
+        "is_active": true
+      },
+      {
+        "name": "Beverwijk",
+        "qcode": "Beverwijk",
+        "parent": "IJmond",
+        "is_active": true
+      },
+      {
+        "name": "Castricum",
+        "qcode": "Castricum",
+        "parent": "IJmond",
+        "is_active": true
+      },
+      {
+        "name": "Heemskerk",
+        "qcode": "Heemskerk",
+        "parent": "IJmond",
+        "is_active": true
+      },
+      {
+        "name": "Uitgeest",
+        "qcode": "Uitgeest",
+        "parent": "IJmond",
+        "is_active": true
+      },
+      {
+        "name": "Velsen",
+        "qcode": "Velsen",
+        "parent": "IJmond",
+        "is_active": true
+      },
+      {
+        "name": "Bloemendaal",
+        "qcode": "Bloemendaal",
+        "parent": "Agglomeratie Haarlem",
+        "is_active": true
+      },
+      {
+        "name": "Haarlem",
+        "qcode": "Haarlem",
+        "parent": "Agglomeratie Haarlem",
+        "is_active": true
+      },
+      {
+        "name": "Heemstede",
+        "qcode": "Heemstede",
+        "parent": "Agglomeratie Haarlem",
+        "is_active": true
+      },
+      {
+        "name": "Zandvoort",
+        "qcode": "Zandvoort",
+        "parent": "Agglomeratie Haarlem",
+        "is_active": true
+      },
+      {
+        "name": "Wormerland",
+        "qcode": "Wormerland",
+        "parent": "Zaanstreek",
+        "is_active": true
+      },
+      {
+        "name": "Zaanstad",
+        "qcode": "Zaanstad",
+        "parent": "Zaanstreek",
+        "is_active": true
+      },
+      {
+        "name": "Aalsmeer",
+        "qcode": "Aalsmeer",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Amstelveen",
+        "qcode": "Amstelveen",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Amsterdam",
+        "qcode": "Amsterdam",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Beemster",
+        "qcode": "Beemster",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Diemen",
+        "qcode": "Diemen",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Edam-Volendam",
+        "qcode": "Edam-Volendam",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Haarlemmermeer",
+        "qcode": "Haarlemmermeer",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Landsmeer",
+        "qcode": "Landsmeer",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Oostzaan",
+        "qcode": "Oostzaan",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Ouder-Amstel",
+        "qcode": "Ouder-Amstel",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Purmerend",
+        "qcode": "Purmerend",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Uithoorn",
+        "qcode": "Uithoorn",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Waterland",
+        "qcode": "Waterland",
+        "parent": "Groot-Amsterdam",
+        "is_active": true
+      },
+      {
+        "name": "Blaricum",
+        "qcode": "Blaricum",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Gooise Meren",
+        "qcode": "Gooise Meren",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Hilversum",
+        "qcode": "Hilversum",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Huizen",
+        "qcode": "Huizen",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Laren",
+        "qcode": "Laren",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Weesp",
+        "qcode": "Weesp",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Wijdemeren",
+        "qcode": "Wijdemeren",
+        "parent": "Het Gooi en Vechtstreek",
+        "is_active": true
+      },
+      {
+        "name": "Hillegom",
+        "qcode": "Hillegom",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Kaag en Braassem",
+        "qcode": "Kaag en Braassem",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Katwijk",
+        "qcode": "Katwijk",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Leiden",
+        "qcode": "Leiden",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Leiderdorp",
+        "qcode": "Leiderdorp",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Lisse",
+        "qcode": "Lisse",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Noordwijk",
+        "qcode": "Noordwijk",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Oegstgeest",
+        "qcode": "Oegstgeest",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Teylingen",
+        "qcode": "Teylingen",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Voorschoten",
+        "qcode": "Voorschoten",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "Zoeterwoude",
+        "qcode": "Zoeterwoude",
+        "parent": "Agglomeratie Leiden en Bollenstreek",
+        "is_active": true
+      },
+      {
+        "name": "s-Gravenhage",
+        "qcode": "s-Gravenhage",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Leidschendam-Voorburg",
+        "qcode": "Leidschendam-Voorburg",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Pijnacker-Nootdorp",
+        "qcode": "Pijnacker-Nootdorp",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Rijswijk",
+        "qcode": "Rijswijk",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Wassenaar",
+        "qcode": "Wassenaar",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Zoetermeer",
+        "qcode": "Zoetermeer",
+        "parent": "Agglomeratie 's-Gravenhagec",
+        "is_active": true
+      },
+      {
+        "name": "Delft",
+        "qcode": "Delft",
+        "parent": "Delft en Westland",
+        "is_active": true
+      },
+      {
+        "name": "Midden-Delfland",
+        "qcode": "Midden-Delfland",
+        "parent": "Delft en Westland",
+        "is_active": true
+      },
+      {
+        "name": "Westland",
+        "qcode": "Westland",
+        "parent": "Delft en Westland",
+        "is_active": true
+      },
+      {
+        "name": "Alphen aan den Rijn",
+        "qcode": "Alphen aan den Rijn",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Bodegraven-Reeuwijk",
+        "qcode": "Bodegraven-Reeuwijk",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Gouda",
+        "qcode": "Gouda",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Krimpenerwaard",
+        "qcode": "Krimpenerwaard",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Nieuwkoop",
+        "qcode": "Nieuwkoop",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Waddinxveen",
+        "qcode": "Waddinxveen",
+        "parent": "Oost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Albrandswaard",
+        "qcode": "Albrandswaard",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Barendrecht",
+        "qcode": "Barendrecht",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Brielle",
+        "qcode": "Brielle",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Capelle aan den IJssel",
+        "qcode": "Capelle aan den IJssel",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Goeree-Overflakkee",
+        "qcode": "Goeree-Overflakkee",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Hellevoetsluis",
+        "qcode": "Hellevoetsluis",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Hoeksche Waard",
+        "qcode": "Hoeksche Waard",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Krimpen aan den IJssel",
+        "qcode": "Krimpen aan den IJssel",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Lansingerland",
+        "qcode": "Lansingerland",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Maassluis",
+        "qcode": "Maassluis",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Nissewaard",
+        "qcode": "Nissewaard",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Ridderkerk",
+        "qcode": "Ridderkerk",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Rotterdam",
+        "qcode": "Rotterdam",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Schiedam",
+        "qcode": "Schiedam",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Vlaardingen",
+        "qcode": "Vlaardingen",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Westvoorne",
+        "qcode": "Westvoorne",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Zuidplas",
+        "qcode": "Zuidplas",
+        "parent": "Groot-Rijnmond",
+        "is_active": true
+      },
+      {
+        "name": "Alblasserdam",
+        "qcode": "Alblasserdam",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Dordrecht",
+        "qcode": "Dordrecht",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Gorinchem",
+        "qcode": "Gorinchem",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Hardinxveld-Giessendam",
+        "qcode": "Hardinxveld-Giessendam",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Hendrik-Ido-Ambacht",
+        "qcode": "Hendrik-Ido-Ambacht",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Molenlanden",
+        "qcode": "Molenlanden",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Papendrecht",
+        "qcode": "Papendrecht",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Sliedrecht",
+        "qcode": "Sliedrecht",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Zwijndrecht",
+        "qcode": "Zwijndrecht",
+        "parent": "Zuidoost-Zuid-Holland",
+        "is_active": true
+      },
+      {
+        "name": "Hulst",
+        "qcode": "Hulst",
+        "parent": "Zeeuws-Vlaanderen",
+        "is_active": true
+      },
+      {
+        "name": "Sluis",
+        "qcode": "Sluis",
+        "parent": "Zeeuws-Vlaanderen",
+        "is_active": true
+      },
+      {
+        "name": "Terneuzen",
+        "qcode": "Terneuzen",
+        "parent": "Zeeuws-Vlaanderen",
+        "is_active": true
+      },
+      {
+        "name": "Borsele",
+        "qcode": "Borsele",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Goes",
+        "qcode": "Goes",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Kapelle",
+        "qcode": "Kapelle",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Middelburg",
+        "qcode": "Middelburg",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Noord-Beveland",
+        "qcode": "Noord-Beveland",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Reimerswaal",
+        "qcode": "Reimerswaal",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Schouwen-Duiveland",
+        "qcode": "Schouwen-Duiveland",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Tholen",
+        "qcode": "Tholen",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Veere",
+        "qcode": "Veere",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Vlissingen",
+        "qcode": "Vlissingen",
+        "parent": "Overig Zeeland",
+        "is_active": true
+      },
+      {
+        "name": "Bergen op Zoom",
+        "qcode": "Bergen op Zoom",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Breda",
+        "qcode": "Breda",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Drimmelen",
+        "qcode": "Drimmelen",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Etten-Leur",
+        "qcode": "Etten-Leur",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Geertruidenberg",
+        "qcode": "Geertruidenberg",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Halderberge",
+        "qcode": "Halderberge",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Moerdijk",
+        "qcode": "Moerdijk",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Oosterhout",
+        "qcode": "Oosterhout",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Roosendaal",
+        "qcode": "Roosendaal",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Rucphen",
+        "qcode": "Rucphen",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Steenbergen",
+        "qcode": "Steenbergen",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Woensdrecht",
+        "qcode": "Woensdrecht",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Zundert",
+        "qcode": "Zundert",
+        "parent": "West-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Alphen-Chaam",
+        "qcode": "Alphen-Chaam",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Altena",
+        "qcode": "Altena",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Baarle-Nassau",
+        "qcode": "Baarle-Nassau",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Dongen",
+        "qcode": "Dongen",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Gilze en Rijen",
+        "qcode": "Gilze en Rijen",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Goirle",
+        "qcode": "Goirle",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Hilvarenbeek",
+        "qcode": "Hilvarenbeek",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Loon op Zand",
+        "qcode": "Loon op Zand",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Oisterwijk",
+        "qcode": "Oisterwijk",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Tilburg",
+        "qcode": "Tilburg",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Waalwijk",
+        "qcode": "Waalwijk",
+        "parent": "Midden-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Bernheze",
+        "qcode": "Bernheze",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Boekel",
+        "qcode": "Boekel",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Boxmeer",
+        "qcode": "Boxmeer",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Boxtel",
+        "qcode": "Boxtel",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Cuijk",
+        "qcode": "Cuijk",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Grave",
+        "qcode": "Grave",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Haaren",
+        "qcode": "Haaren",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "s-Hertogenbosch",
+        "qcode": "s-Hertogenbosch",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Heusden",
+        "qcode": "Heusden",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Landerd",
+        "qcode": "Landerd",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Meierijstad",
+        "qcode": "Meierijstad",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Mill en Sint Hubert",
+        "qcode": "Mill en Sint Hubert",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Oss",
+        "qcode": "Oss",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Sint Anthonis",
+        "qcode": "Sint Anthonis",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Sint-Michielsgestel",
+        "qcode": "Sint-Michielsgestel",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Uden",
+        "qcode": "Uden",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Vught",
+        "qcode": "Vught",
+        "parent": "Noordoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Asten",
+        "qcode": "Asten",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Bergeijk",
+        "qcode": "Bergeijk",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Best",
+        "qcode": "Best",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Bladel",
+        "qcode": "Bladel",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Cranendonck",
+        "qcode": "Cranendonck",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Deurne",
+        "qcode": "Deurne",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Eersel",
+        "qcode": "Eersel",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Eindhoven",
+        "qcode": "Eindhoven",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Geldrop-Mierlo",
+        "qcode": "Geldrop-Mierlo",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Gemert-Bakel",
+        "qcode": "Gemert-Bakel",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Heeze-Leende",
+        "qcode": "Heeze-Leende",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Helmond",
+        "qcode": "Helmond",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Laarbeek",
+        "qcode": "Laarbeek",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Nuenen",
+        "qcode": "Nuenen",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Gerwen en Nederwetten",
+        "qcode": "Gerwen en Nederwetten",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Oirschot",
+        "qcode": "Oirschot",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Reusel-De Mierden",
+        "qcode": "Reusel-De Mierden",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Someren",
+        "qcode": "Someren",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Son en Breugel",
+        "qcode": "Son en Breugel",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Valkenswaard",
+        "qcode": "Valkenswaard",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Veldhoven",
+        "qcode": "Veldhoven",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Waalre",
+        "qcode": "Waalre",
+        "parent": "Zuidoost-Noord-Brabant",
+        "is_active": true
+      },
+      {
+        "name": "Beesel",
+        "qcode": "Beesel",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Bergen",
+        "qcode": "Bergen",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Gennep",
+        "qcode": "Gennep",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Horst aan de Maas",
+        "qcode": "Horst aan de Maas",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Mook en Middelaar",
+        "qcode": "Mook en Middelaar",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Peel en Maas",
+        "qcode": "Peel en Maas",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Venlo",
+        "qcode": "Venlo",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Venray",
+        "qcode": "Venray",
+        "parent": "Noord-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Echt-Susteren",
+        "qcode": "Echt-Susteren",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Leudal",
+        "qcode": "Leudal",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Maasgouw",
+        "qcode": "Maasgouw",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Nederweert",
+        "qcode": "Nederweert",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Roerdalen",
+        "qcode": "Roerdalen",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Roermond",
+        "qcode": "Roermond",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Weert",
+        "qcode": "Weert",
+        "parent": "Midden-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Beek",
+        "qcode": "Beek",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Beekdaelen",
+        "qcode": "Beekdaelen",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Brunssum",
+        "qcode": "Brunssum",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Eijsden-Margraten",
+        "qcode": "Eijsden-Margraten",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Gulpen-Wittem",
+        "qcode": "Gulpen-Wittem",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Heerlen",
+        "qcode": "Heerlen",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Kerkrade",
+        "qcode": "Kerkrade",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Landgraaf",
+        "qcode": "Landgraaf",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Maastricht",
+        "qcode": "Maastricht",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Meerssen",
+        "qcode": "Meerssen",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Simpelveld",
+        "qcode": "Simpelveld",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Sittard-Geleen",
+        "qcode": "Sittard-Geleen",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Stein",
+        "qcode": "Stein",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Vaals",
+        "qcode": "Vaals",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Valkenburg aan de Geul",
+        "qcode": "Valkenburg aan de Geul",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Voerendaal",
+        "qcode": "Voerendaal",
+        "parent": "Zuid-Limburg",
+        "is_active": true
+      },
+      {
+        "name": "Almere",
+        "qcode": "Almere",
+        "parent": "Flevoland",
+        "is_active": true
+      },
+      {
+        "name": "Dronten",
+        "qcode": "Dronten",
+        "parent": "Flevoland",
+        "is_active": true
+      },
+      {
+        "name": "Lelystad",
+        "qcode": "Lelystad",
+        "parent": "Flevoland",
+        "is_active": true
+      },
+      {
+        "name": "Noordoostpolder",
+        "qcode": "Noordoostpolder",
+        "parent": "Flevoland",
+        "is_active": true
+      },
+      {
+        "name": "Urk",
+        "qcode": "Urk",
+        "parent": "Flevoland",
+        "is_active": true
+      },
+      {
+        "name": "Zeewolde",
+        "qcode": "Zeewolde",
+        "parent": "Flevoland",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "_id": "countries",
+    "display_name": "Countries",
+    "type": "manageable",
+    "unique_field": "qcode",
+    "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {}
+    },
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "name": "Afghanistan",
+        "qcode": "AF",
+        "is_active": true
+      },
+      {
+        "name": "Åland",
+        "qcode": "AX",
+        "is_active": true
+      },
+      {
+        "name": "Albanië",
+        "qcode": "AL",
+        "is_active": true
+      },
+      {
+        "name": "Algerije",
+        "qcode": "DZ",
+        "is_active": true
+      },
+      {
+        "name": "Amerikaanse Maagdeneilanden",
+        "qcode": "VI",
+        "is_active": true
+      },
+      {
+        "name": "Amerikaans-Samoa",
+        "qcode": "AS",
+        "is_active": true
+      },
+      {
+        "name": "Andorra",
+        "qcode": "AD",
+        "is_active": true
+      },
+      {
+        "name": "Angola",
+        "qcode": "AO",
+        "is_active": true
+      },
+      {
+        "name": "Anguilla",
+        "qcode": "AI",
+        "is_active": true
+      },
+      {
+        "name": "Antarctica",
+        "qcode": "AQ",
+        "is_active": true
+      },
+      {
+        "name": "Antigua en Barbuda",
+        "qcode": "AG",
+        "is_active": true
+      },
+      {
+        "name": "Argentinië",
+        "qcode": "AR",
+        "is_active": true
+      },
+      {
+        "name": "Armenië",
+        "qcode": "AM",
+        "is_active": true
+      },
+      {
+        "name": "Aruba",
+        "qcode": "AW",
+        "is_active": true
+      },
+      {
+        "name": "Australië",
+        "qcode": "AU",
+        "is_active": true
+      },
+      {
+        "name": "Azerbeidzjan",
+        "qcode": "AZ",
+        "is_active": true
+      },
+      {
+        "name": "Bahama's",
+        "qcode": "BS",
+        "is_active": true
+      },
+      {
+        "name": "Bahrein",
+        "qcode": "BH",
+        "is_active": true
+      },
+      {
+        "name": "Bangladesh",
+        "qcode": "BD",
+        "is_active": true
+      },
+      {
+        "name": "Barbados",
+        "qcode": "BB",
+        "is_active": true
+      },
+      {
+        "name": "België",
+        "qcode": "BE",
+        "is_active": true
+      },
+      {
+        "name": "Belize",
+        "qcode": "BZ",
+        "is_active": true
+      },
+      {
+        "name": "Benin",
+        "qcode": "BJ",
+        "is_active": true
+      },
+      {
+        "name": "Bermuda",
+        "qcode": "BM",
+        "is_active": true
+      },
+      {
+        "name": "Bhutan",
+        "qcode": "BT",
+        "is_active": true
+      },
+      {
+        "name": "Bolivia",
+        "qcode": "BO",
+        "is_active": true
+      },
+      {
+        "name": "Bosnië en Herzegovina",
+        "qcode": "BA",
+        "is_active": true
+      },
+      {
+        "name": "Botswana",
+        "qcode": "BW",
+        "is_active": true
+      },
+      {
+        "name": "Bouveteiland",
+        "qcode": "BV",
+        "is_active": true
+      },
+      {
+        "name": "Brazilië",
+        "qcode": "BR",
+        "is_active": true
+      },
+      {
+        "name": "Britse Maagdeneilanden",
+        "qcode": "VG",
+        "is_active": true
+      },
+      {
+        "name": "Brits Indische Oceaanterritorium",
+        "qcode": "IO",
+        "is_active": true
+      },
+      {
+        "name": "Brunei",
+        "qcode": "BN",
+        "is_active": true
+      },
+      {
+        "name": "Bulgarije",
+        "qcode": "BG",
+        "is_active": true
+      },
+      {
+        "name": "Burkina Faso",
+        "qcode": "BF",
+        "is_active": true
+      },
+      {
+        "name": "Burundi",
+        "qcode": "BI",
+        "is_active": true
+      },
+      {
+        "name": "Cambodja",
+        "qcode": "KH",
+        "is_active": true
+      },
+      {
+        "name": "Canada",
+        "qcode": "CA",
+        "is_active": true
+      },
+      {
+        "name": "Caribisch Nederland",
+        "qcode": "BQ",
+        "is_active": true
+      },
+      {
+        "name": "Centraal-Afrikaanse Republiek",
+        "qcode": "CF",
+        "is_active": true
+      },
+      {
+        "name": "Chili",
+        "qcode": "CL",
+        "is_active": true
+      },
+      {
+        "name": "China",
+        "qcode": "CN",
+        "is_active": true
+      },
+      {
+        "name": "Christmaseiland",
+        "qcode": "CX",
+        "is_active": true
+      },
+      {
+        "name": "Cocoseilanden",
+        "qcode": "CC",
+        "is_active": true
+      },
+      {
+        "name": "Colombia",
+        "qcode": "CO",
+        "is_active": true
+      },
+      {
+        "name": "Comoren",
+        "qcode": "KM",
+        "is_active": true
+      },
+      {
+        "name": "Congo-Brazzaville",
+        "qcode": "CG",
+        "is_active": true
+      },
+      {
+        "name": "Congo-Kinshasa",
+        "qcode": "CD",
+        "is_active": true
+      },
+      {
+        "name": "Cookeilanden",
+        "qcode": "CK",
+        "is_active": true
+      },
+      {
+        "name": "Costa Rica",
+        "qcode": "CR",
+        "is_active": true
+      },
+      {
+        "name": "Cuba",
+        "qcode": "CU",
+        "is_active": true
+      },
+      {
+        "name": "Curaçao",
+        "qcode": "CW",
+        "is_active": true
+      },
+      {
+        "name": "Cyprus",
+        "qcode": "CY",
+        "is_active": true
+      },
+      {
+        "name": "Denemarken",
+        "qcode": "DK",
+        "is_active": true
+      },
+      {
+        "name": "Djibouti",
+        "qcode": "DJ",
+        "is_active": true
+      },
+      {
+        "name": "Dominica",
+        "qcode": "DM",
+        "is_active": true
+      },
+      {
+        "name": "Dominicaanse Republiek",
+        "qcode": "DO",
+        "is_active": true
+      },
+      {
+        "name": "Duitsland",
+        "qcode": "DE",
+        "is_active": true
+      },
+      {
+        "name": "Ecuador",
+        "qcode": "EC",
+        "is_active": true
+      },
+      {
+        "name": "Egypte",
+        "qcode": "EG",
+        "is_active": true
+      },
+      {
+        "name": "El Salvador",
+        "qcode": "SV",
+        "is_active": true
+      },
+      {
+        "name": "Equatoriaal-Guinea",
+        "qcode": "GQ",
+        "is_active": true
+      },
+      {
+        "name": "Eritrea",
+        "qcode": "ER",
+        "is_active": true
+      },
+      {
+        "name": "Estland",
+        "qcode": "EE",
+        "is_active": true
+      },
+      {
+        "name": "Ethiopië",
+        "qcode": "ET",
+        "is_active": true
+      },
+      {
+        "name": "Faeröer",
+        "qcode": "FO",
+        "is_active": true
+      },
+      {
+        "name": "Falklandeilanden",
+        "qcode": "FK",
+        "is_active": true
+      },
+      {
+        "name": "Fiji",
+        "qcode": "FJ",
+        "is_active": true
+      },
+      {
+        "name": "Filipijnen",
+        "qcode": "PH",
+        "is_active": true
+      },
+      {
+        "name": "Finland",
+        "qcode": "FI",
+        "is_active": true
+      },
+      {
+        "name": "Frankrijk",
+        "qcode": "FR",
+        "is_active": true
+      },
+      {
+        "name": "Franse Zuidelijke en Antarctische Gebieden",
+        "qcode": "TF",
+        "is_active": true
+      },
+      {
+        "name": "Frans-Guyana",
+        "qcode": "GF",
+        "is_active": true
+      },
+      {
+        "name": "Frans-Polynesië",
+        "qcode": "PF",
+        "is_active": true
+      },
+      {
+        "name": "Gabon",
+        "qcode": "GA",
+        "is_active": true
+      },
+      {
+        "name": "Gambia",
+        "qcode": "GM",
+        "is_active": true
+      },
+      {
+        "name": "Georgië",
+        "qcode": "GE",
+        "is_active": true
+      },
+      {
+        "name": "Ghana",
+        "qcode": "GH",
+        "is_active": true
+      },
+      {
+        "name": "Gibraltar",
+        "qcode": "GI",
+        "is_active": true
+      },
+      {
+        "name": "Grenada",
+        "qcode": "GD",
+        "is_active": true
+      },
+      {
+        "name": "Griekenland",
+        "qcode": "GR",
+        "is_active": true
+      },
+      {
+        "name": "Groenland",
+        "qcode": "GL",
+        "is_active": true
+      },
+      {
+        "name": "Guadeloupe",
+        "qcode": "GP",
+        "is_active": true
+      },
+      {
+        "name": "Guam",
+        "qcode": "GU",
+        "is_active": true
+      },
+      {
+        "name": "Guatemala",
+        "qcode": "GT",
+        "is_active": true
+      },
+      {
+        "name": "Guernsey",
+        "qcode": "GG",
+        "is_active": true
+      },
+      {
+        "name": "Guinee",
+        "qcode": "GN",
+        "is_active": true
+      },
+      {
+        "name": "Guinee-Bissau",
+        "qcode": "GW",
+        "is_active": true
+      },
+      {
+        "name": "Guyana",
+        "qcode": "GY",
+        "is_active": true
+      },
+      {
+        "name": "Haïti",
+        "qcode": "HT",
+        "is_active": true
+      },
+      {
+        "name": "Heard en McDonaldeilanden",
+        "qcode": "HM",
+        "is_active": true
+      },
+      {
+        "name": "Honduras",
+        "qcode": "HN",
+        "is_active": true
+      },
+      {
+        "name": "Hongarije",
+        "qcode": "HU",
+        "is_active": true
+      },
+      {
+        "name": "Hongkong",
+        "qcode": "HK",
+        "is_active": true
+      },
+      {
+        "name": "Ierland",
+        "qcode": "IE",
+        "is_active": true
+      },
+      {
+        "name": "IJsland",
+        "qcode": "IS",
+        "is_active": true
+      },
+      {
+        "name": "India",
+        "qcode": "IN",
+        "is_active": true
+      },
+      {
+        "name": "Indonesië",
+        "qcode": "ID",
+        "is_active": true
+      },
+      {
+        "name": "Irak",
+        "qcode": "IQ",
+        "is_active": true
+      },
+      {
+        "name": "Iran",
+        "qcode": "IR",
+        "is_active": true
+      },
+      {
+        "name": "Israël",
+        "qcode": "IL",
+        "is_active": true
+      },
+      {
+        "name": "Italië",
+        "qcode": "IT",
+        "is_active": true
+      },
+      {
+        "name": "Ivoorkust",
+        "qcode": "CI",
+        "is_active": true
+      },
+      {
+        "name": "Jamaica",
+        "qcode": "JM",
+        "is_active": true
+      },
+      {
+        "name": "Japan",
+        "qcode": "JP",
+        "is_active": true
+      },
+      {
+        "name": "Jemen",
+        "qcode": "YE",
+        "is_active": true
+      },
+      {
+        "name": "Jersey",
+        "qcode": "JE",
+        "is_active": true
+      },
+      {
+        "name": "Jordanië",
+        "qcode": "JO",
+        "is_active": true
+      },
+      {
+        "name": "Kaaimaneilanden",
+        "qcode": "KY",
+        "is_active": true
+      },
+      {
+        "name": "Kaapverdië",
+        "qcode": "CV",
+        "is_active": true
+      },
+      {
+        "name": "Kameroen",
+        "qcode": "CM",
+        "is_active": true
+      },
+      {
+        "name": "Kazachstan",
+        "qcode": "KZ",
+        "is_active": true
+      },
+      {
+        "name": "Kenia",
+        "qcode": "KE",
+        "is_active": true
+      },
+      {
+        "name": "Kirgizië",
+        "qcode": "KG",
+        "is_active": true
+      },
+      {
+        "name": "Kiribati",
+        "qcode": "KI",
+        "is_active": true
+      },
+      {
+        "name": "Kleine afgelegen eilanden van de Verenigde Staten",
+        "qcode": "UM",
+        "is_active": true
+      },
+      {
+        "name": "Koeweit",
+        "qcode": "KW",
+        "is_active": true
+      },
+      {
+        "name": "Kroatië",
+        "qcode": "HR",
+        "is_active": true
+      },
+      {
+        "name": "Laos",
+        "qcode": "LA",
+        "is_active": true
+      },
+      {
+        "name": "Lesotho",
+        "qcode": "LS",
+        "is_active": true
+      },
+      {
+        "name": "Letland",
+        "qcode": "LV",
+        "is_active": true
+      },
+      {
+        "name": "Libanon",
+        "qcode": "LB",
+        "is_active": true
+      },
+      {
+        "name": "Liberia",
+        "qcode": "LR",
+        "is_active": true
+      },
+      {
+        "name": "Libië",
+        "qcode": "LY",
+        "is_active": true
+      },
+      {
+        "name": "Liechtenstein",
+        "qcode": "LI",
+        "is_active": true
+      },
+      {
+        "name": "Litouwen",
+        "qcode": "LT",
+        "is_active": true
+      },
+      {
+        "name": "Luxemburg",
+        "qcode": "LU",
+        "is_active": true
+      },
+      {
+        "name": "Macau",
+        "qcode": "MO",
+        "is_active": true
+      },
+      {
+        "name": "Madagaskar",
+        "qcode": "MG",
+        "is_active": true
+      },
+      {
+        "name": "Malawi",
+        "qcode": "MW",
+        "is_active": true
+      },
+      {
+        "name": "Maldiven",
+        "qcode": "MV",
+        "is_active": true
+      },
+      {
+        "name": "Maleisië",
+        "qcode": "MY",
+        "is_active": true
+      },
+      {
+        "name": "Mali",
+        "qcode": "ML",
+        "is_active": true
+      },
+      {
+        "name": "Malta",
+        "qcode": "MT",
+        "is_active": true
+      },
+      {
+        "name": "Man",
+        "qcode": "IM",
+        "is_active": true
+      },
+      {
+        "name": "Marokko",
+        "qcode": "MA",
+        "is_active": true
+      },
+      {
+        "name": "Marshalleilanden",
+        "qcode": "MH",
+        "is_active": true
+      },
+      {
+        "name": "Martinique",
+        "qcode": "MQ",
+        "is_active": true
+      },
+      {
+        "name": "Mauritanië",
+        "qcode": "MR",
+        "is_active": true
+      },
+      {
+        "name": "Mauritius",
+        "qcode": "MU",
+        "is_active": true
+      },
+      {
+        "name": "Mayotte",
+        "qcode": "YT",
+        "is_active": true
+      },
+      {
+        "name": "Mexico",
+        "qcode": "MX",
+        "is_active": true
+      },
+      {
+        "name": "Micronesia",
+        "qcode": "FM",
+        "is_active": true
+      },
+      {
+        "name": "Moldavië",
+        "qcode": "MD",
+        "is_active": true
+      },
+      {
+        "name": "Monaco",
+        "qcode": "MC",
+        "is_active": true
+      },
+      {
+        "name": "Mongolië",
+        "qcode": "MN",
+        "is_active": true
+      },
+      {
+        "name": "Montenegro",
+        "qcode": "ME",
+        "is_active": true
+      },
+      {
+        "name": "Montserrat",
+        "qcode": "MS",
+        "is_active": true
+      },
+      {
+        "name": "Mozambique",
+        "qcode": "MZ",
+        "is_active": true
+      },
+      {
+        "name": "Myanmar",
+        "qcode": "MM",
+        "is_active": true
+      },
+      {
+        "name": "Namibië",
+        "qcode": "NA",
+        "is_active": true
+      },
+      {
+        "name": "Nauru",
+        "qcode": "NR",
+        "is_active": true
+      },
+      {
+        "name": "Nederland",
+        "qcode": "NL",
+        "is_active": true
+      },
+      {
+        "name": "Nepal",
+        "qcode": "NP",
+        "is_active": true
+      },
+      {
+        "name": "Nicaragua",
+        "qcode": "NI",
+        "is_active": true
+      },
+      {
+        "name": "Nieuw-Caledonië",
+        "qcode": "NC",
+        "is_active": true
+      },
+      {
+        "name": "Nieuw-Zeeland",
+        "qcode": "NZ",
+        "is_active": true
+      },
+      {
+        "name": "Niger",
+        "qcode": "NE",
+        "is_active": true
+      },
+      {
+        "name": "Nigeria",
+        "qcode": "NG",
+        "is_active": true
+      },
+      {
+        "name": "Niue",
+        "qcode": "NU",
+        "is_active": true
+      },
+      {
+        "name": "Noordelijke Marianen",
+        "qcode": "MP",
+        "is_active": true
+      },
+      {
+        "name": "Noord-Korea",
+        "qcode": "KP",
+        "is_active": true
+      },
+      {
+        "name": "Noord-Macedonië",
+        "qcode": "MK",
+        "is_active": true
+      },
+      {
+        "name": "Noorwegen",
+        "qcode": "NO",
+        "is_active": true
+      },
+      {
+        "name": "Norfolk",
+        "qcode": "NF",
+        "is_active": true
+      },
+      {
+        "name": "Oeganda",
+        "qcode": "UG",
+        "is_active": true
+      },
+      {
+        "name": "Oekraïne",
+        "qcode": "UA",
+        "is_active": true
+      },
+      {
+        "name": "Oezbekistan",
+        "qcode": "UZ",
+        "is_active": true
+      },
+      {
+        "name": "Oman",
+        "qcode": "OM",
+        "is_active": true
+      },
+      {
+        "name": "Oostenrijk",
+        "qcode": "AT",
+        "is_active": true
+      },
+      {
+        "name": "Oost-Timor",
+        "qcode": "TL",
+        "is_active": true
+      },
+      {
+        "name": "Pakistan",
+        "qcode": "PK",
+        "is_active": true
+      },
+      {
+        "name": "Palau",
+        "qcode": "PW",
+        "is_active": true
+      },
+      {
+        "name": "Palestina",
+        "qcode": "PS",
+        "is_active": true
+      },
+      {
+        "name": "Panama",
+        "qcode": "PA",
+        "is_active": true
+      },
+      {
+        "name": "Papoea-Nieuw-Guinea",
+        "qcode": "PG",
+        "is_active": true
+      },
+      {
+        "name": "Paraguay",
+        "qcode": "PY",
+        "is_active": true
+      },
+      {
+        "name": "Peru",
+        "qcode": "PE",
+        "is_active": true
+      },
+      {
+        "name": "Pitcairneilanden",
+        "qcode": "PN",
+        "is_active": true
+      },
+      {
+        "name": "Polen",
+        "qcode": "PL",
+        "is_active": true
+      },
+      {
+        "name": "Portugal",
+        "qcode": "PT",
+        "is_active": true
+      },
+      {
+        "name": "Puerto Rico",
+        "qcode": "PR",
+        "is_active": true
+      },
+      {
+        "name": "Qatar",
+        "qcode": "QA",
+        "is_active": true
+      },
+      {
+        "name": "Réunion",
+        "qcode": "RE",
+        "is_active": true
+      },
+      {
+        "name": "Roemenië",
+        "qcode": "RO",
+        "is_active": true
+      },
+      {
+        "name": "Rusland",
+        "qcode": "RU",
+        "is_active": true
+      },
+      {
+        "name": "Rwanda",
+        "qcode": "RW",
+        "is_active": true
+      },
+      {
+        "name": "Saint-Barthélemy",
+        "qcode": "BL",
+        "is_active": true
+      },
+      {
+        "name": "Saint Kitts en Nevis",
+        "qcode": "KN",
+        "is_active": true
+      },
+      {
+        "name": "Saint Lucia",
+        "qcode": "LC",
+        "is_active": true
+      },
+      {
+        "name": "Saint-Pierre en Miquelon",
+        "qcode": "PM",
+        "is_active": true
+      },
+      {
+        "name": "Saint Vincent en de Grenadines",
+        "qcode": "VC",
+        "is_active": true
+      },
+      {
+        "name": "Salomonseilanden",
+        "qcode": "SB",
+        "is_active": true
+      },
+      {
+        "name": "Samoa",
+        "qcode": "WS",
+        "is_active": true
+      },
+      {
+        "name": "San Marino",
+        "qcode": "SM",
+        "is_active": true
+      },
+      {
+        "name": "Saoedi-Arabië",
+        "qcode": "SA",
+        "is_active": true
+      },
+      {
+        "name": "Sao Tomé en Principe",
+        "qcode": "ST",
+        "is_active": true
+      },
+      {
+        "name": "Senegal",
+        "qcode": "SN",
+        "is_active": true
+      },
+      {
+        "name": "Servië",
+        "qcode": "RS",
+        "is_active": true
+      },
+      {
+        "name": "Seychellen",
+        "qcode": "SC",
+        "is_active": true
+      },
+      {
+        "name": "Sierra Leone",
+        "qcode": "SL",
+        "is_active": true
+      },
+      {
+        "name": "Singapore",
+        "qcode": "SG",
+        "is_active": true
+      },
+      {
+        "name": "Sint-Helena, Ascension en Tristan da Cunha",
+        "qcode": "SH",
+        "is_active": true
+      },
+      {
+        "name": "Sint-Maarten",
+        "qcode": "MF",
+        "is_active": true
+      },
+      {
+        "name": "Sint Maarten",
+        "qcode": "SX",
+        "is_active": true
+      },
+      {
+        "name": "Slovenië",
+        "qcode": "SI",
+        "is_active": true
+      },
+      {
+        "name": "Slowakije",
+        "qcode": "SK",
+        "is_active": true
+      },
+      {
+        "name": "Soedan",
+        "qcode": "SD",
+        "is_active": true
+      },
+      {
+        "name": "Somalië",
+        "qcode": "SO",
+        "is_active": true
+      },
+      {
+        "name": "Spanje",
+        "qcode": "ES",
+        "is_active": true
+      },
+      {
+        "name": "Spitsbergen en Jan Mayen",
+        "qcode": "SJ",
+        "is_active": true
+      },
+      {
+        "name": "Sri Lanka",
+        "qcode": "LK",
+        "is_active": true
+      },
+      {
+        "name": "Suriname",
+        "qcode": "SR",
+        "is_active": true
+      },
+      {
+        "name": "Swaziland",
+        "qcode": "SZ",
+        "is_active": true
+      },
+      {
+        "name": "Syrië",
+        "qcode": "SY",
+        "is_active": true
+      },
+      {
+        "name": "Tadzjikistan",
+        "qcode": "TJ",
+        "is_active": true
+      },
+      {
+        "name": "Taiwan",
+        "qcode": "TW",
+        "is_active": true
+      },
+      {
+        "name": "Tanzania",
+        "qcode": "TZ",
+        "is_active": true
+      },
+      {
+        "name": "Thailand",
+        "qcode": "TH",
+        "is_active": true
+      },
+      {
+        "name": "Togo",
+        "qcode": "TG",
+        "is_active": true
+      },
+      {
+        "name": "Tokelau",
+        "qcode": "TK",
+        "is_active": true
+      },
+      {
+        "name": "Tonga",
+        "qcode": "TO",
+        "is_active": true
+      },
+      {
+        "name": "Trinidad en Tobago",
+        "qcode": "TT",
+        "is_active": true
+      },
+      {
+        "name": "Tsjaad",
+        "qcode": "TD",
+        "is_active": true
+      },
+      {
+        "name": "Tsjechië",
+        "qcode": "CZ",
+        "is_active": true
+      },
+      {
+        "name": "Tunesië",
+        "qcode": "TN",
+        "is_active": true
+      },
+      {
+        "name": "Turkije",
+        "qcode": "TR",
+        "is_active": true
+      },
+      {
+        "name": "Turkmenistan",
+        "qcode": "TM",
+        "is_active": true
+      },
+      {
+        "name": "Turks- en Caicoseilanden",
+        "qcode": "TC",
+        "is_active": true
+      },
+      {
+        "name": "Tuvalu",
+        "qcode": "TV",
+        "is_active": true
+      },
+      {
+        "name": "Uruguay",
+        "qcode": "UY",
+        "is_active": true
+      },
+      {
+        "name": "Vanuatu",
+        "qcode": "VU",
+        "is_active": true
+      },
+      {
+        "name": "Vaticaanstad",
+        "qcode": "VA",
+        "is_active": true
+      },
+      {
+        "name": "Venezuela",
+        "qcode": "VE",
+        "is_active": true
+      },
+      {
+        "name": "Verenigde Arabische Emiraten",
+        "qcode": "AE",
+        "is_active": true
+      },
+      {
+        "name": "Verenigde Staten",
+        "qcode": "US",
+        "is_active": true
+      },
+      {
+        "name": "Verenigd Koninkrijk",
+        "qcode": "GB",
+        "is_active": true
+      },
+      {
+        "name": "Vietnam",
+        "qcode": "VN",
+        "is_active": true
+      },
+      {
+        "name": "Wallis en Futuna",
+        "qcode": "WF",
+        "is_active": true
+      },
+      {
+        "name": "Westelijke Sahara",
+        "qcode": "EH",
+        "is_active": true
+      },
+      {
+        "name": "Wit-Rusland",
+        "qcode": "BY",
+        "is_active": true
+      },
+      {
+        "name": "Zambia",
+        "qcode": "ZM",
+        "is_active": true
+      },
+      {
+        "name": "Zimbabwe",
+        "qcode": "ZW",
+        "is_active": true
+      },
+      {
+        "name": "Zuid-Afrika",
+        "qcode": "ZA",
+        "is_active": true
+      },
+      {
+        "name": "Zuid-Georgia en de Zuidelijke Sandwicheilanden",
+        "qcode": "GS",
+        "is_active": true
+      },
+      {
+        "name": "Zuid-Korea",
+        "qcode": "KR",
+        "is_active": true
+      },
+      {
+        "name": "Zuid-Soedan",
+        "qcode": "SS",
+        "is_active": true
+      },
+      {
+        "name": "Zweden",
+        "qcode": "SE",
+        "is_active": true
+      },
+      {
+        "name": "Zwitserland",
+        "qcode": "CH",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "_id": "afn_bluechips",
+    "display_name": "Bluechips Codes",
+    "type": "manageable",
+    "unique_field": "qcode",
+    "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "ticker": {}
+    },
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "name": "Advanced Micro Devices",
+        "qcode": "US0079031078",
+        "ticker": "AMD",
+        "is_active": true
+      },
+      {
+        "name": "Ageas",
+        "qcode": "BE0974264930",
+        "ticker": "AGA",
+        "is_active": true
+      },
+      {
+        "name": "Alibaba",
+        "qcode": "US01609W1027",
+        "ticker": "BABA",
+        "is_active": true
+      },
+      {
+        "name": "Allianz -DE-",
+        "qcode": "DE0008404005",
+        "ticker": "ALV",
+        "is_active": true
+      },
+      {
+        "name": "Alphabet -A-",
+        "qcode": "US02079K3059",
+        "ticker": "GOOGL",
+        "is_active": true
+      },
+      {
+        "name": "Alphabet -C-",
+        "qcode": "US02079K1079",
+        "ticker": "GOOG",
+        "is_active": true
+      },
+      {
+        "name": "Amazon.com",
+        "qcode": "US0231351067",
+        "ticker": "AMZN",
+        "is_active": true
+      },
+      {
+        "name": "Anheuser-Busch InBev",
+        "qcode": "BE0974293251",
+        "ticker": "INT",
+        "is_active": true
+      },
+      {
+        "name": "Apple",
+        "qcode": "US0378331005",
+        "ticker": "AAPL",
+        "is_active": true
+      },
+      {
+        "name": "Bayer",
+        "qcode": "DE000BAY0017",
+        "ticker": "BAY",
+        "is_active": true
+      },
+      {
+        "name": "Berkshire Hathaway -B-",
+        "qcode": "US0846707026",
+        "ticker": "BRKB",
+        "is_active": true
+      },
+      {
+        "name": "CapGemini",
+        "qcode": "FR0000125338",
+        "ticker": "CP1",
+        "is_active": true
+      },
+      {
+        "name": "Carrefour",
+        "qcode": "FR0000120172",
+        "ticker": "CAR",
+        "is_active": true
+      },
+      {
+        "name": "Cisco Systems",
+        "qcode": "US17275R1023",
+        "ticker": "CSCO",
+        "is_active": true
+      },
+      {
+        "name": "Coca-Cola",
+        "qcode": "US1912161007",
+        "ticker": "KO",
+        "is_active": true
+      },
+      {
+        "name": "Commerzbank",
+        "qcode": "DE000CBK1001",
+        "ticker": "CBK",
+        "is_active": true
+      },
+      {
+        "name": "Daimler -EUR-",
+        "qcode": "DE0007100000",
+        "ticker": "DAI",
+        "is_active": true
+      },
+      {
+        "name": "Danone",
+        "qcode": "FR0000120644",
+        "ticker": "DA1",
+        "is_active": true
+      },
+      {
+        "name": "Deutsche Bank -EUR-",
+        "qcode": "DE0005140008",
+        "ticker": "DBK",
+        "is_active": true
+      },
+      {
+        "name": "Deutsche Post",
+        "qcode": "DE0005552004",
+        "ticker": "DPW",
+        "is_active": true
+      },
+      {
+        "name": "Deutsche Telekom",
+        "qcode": "DE0005557508",
+        "ticker": "DTE",
+        "is_active": true
+      },
+      {
+        "name": "Engie",
+        "qcode": "FR0010208488",
+        "ticker": "GA1",
+        "is_active": true
+      },
+      {
+        "name": "Exxon Mobil",
+        "qcode": "US30231G1022",
+        "ticker": "XOM",
+        "is_active": true
+      },
+      {
+        "name": "Facebook",
+        "qcode": "US30303M1027",
+        "ticker": "FB",
+        "is_active": true
+      },
+      {
+        "name": "Fagron",
+        "qcode": "BE0003874915",
+        "ticker": "RCU",
+        "is_active": true
+      },
+      {
+        "name": "First Solar",
+        "qcode": "US3364331070",
+        "ticker": "FSLR",
+        "is_active": true
+      },
+      {
+        "name": "General Electric -USD-",
+        "qcode": "US3696041033",
+        "ticker": "GE",
+        "is_active": true
+      },
+      {
+        "name": "Genmab -DKK-",
+        "qcode": "DK0010272202",
+        "ticker": "GENMAB A/S -DK-",
+        "is_active": true
+      },
+      {
+        "name": "Gilead Sciences",
+        "qcode": "US3755581036",
+        "ticker": "GILD",
+        "is_active": true
+      },
+      {
+        "name": "GlaxoSmithKline",
+        "qcode": "GB0009252882",
+        "ticker": "GXO",
+        "is_active": true
+      },
+      {
+        "name": "HeadFirstSourceGroup",
+        "qcode": "CWN814651014",
+        "ticker": "HFS",
+        "is_active": true
+      },
+      {
+        "name": "Intel -US-",
+        "qcode": "US4581401001",
+        "ticker": "INTC",
+        "is_active": true
+      },
+      {
+        "name": "Johnson & Johnson",
+        "qcode": "US4781601046",
+        "ticker": "JNJ",
+        "is_active": true
+      },
+      {
+        "name": "Klepierre",
+        "qcode": "FR0000121964",
+        "ticker": "KLE",
+        "is_active": true
+      },
+      {
+        "name": "Liberty Global -A- -USD-",
+        "qcode": "GB00B8W67662",
+        "ticker": "LBTA",
+        "is_active": true
+      },
+      {
+        "name": "Liberty Global -C- -USD-",
+        "qcode": "GB00B8W67B19",
+        "ticker": "LBTK",
+        "is_active": true
+      },
+      {
+        "name": "LVMH Moet Hennessy Louis Vuitton",
+        "qcode": "FR0000121014",
+        "ticker": "MC1",
+        "is_active": true
+      },
+      {
+        "name": "MDxHealth",
+        "qcode": "BE0003844611",
+        "ticker": "MDXHEALTH",
+        "is_active": true
+      },
+      {
+        "name": "Micron Technology",
+        "qcode": "US5951121038",
+        "ticker": "MU-",
+        "is_active": true
+      },
+      {
+        "name": "Microsoft",
+        "qcode": "US5949181045",
+        "ticker": "MSFT",
+        "is_active": true
+      },
+      {
+        "name": "Nestlé -CHF-",
+        "qcode": "CH0038863350",
+        "ticker": "NESN",
+        "is_active": true
+      },
+      {
+        "name": "Netflix -USD-",
+        "qcode": "US64110L1061",
+        "ticker": "NFLX",
+        "is_active": true
+      },
+      {
+        "name": "Nike -B-",
+        "qcode": "US6541061031",
+        "ticker": "NKE-",
+        "is_active": true
+      },
+      {
+        "name": "Nokia",
+        "qcode": "FI0009000681",
+        "ticker": "NOA3",
+        "is_active": true
+      },
+      {
+        "name": "Novartis",
+        "qcode": "CH0012005267",
+        "ticker": "NOVN",
+        "is_active": true
+      },
+      {
+        "name": "Nvidia",
+        "qcode": "US67066G1040",
+        "ticker": "NVDA",
+        "is_active": true
+      },
+      {
+        "name": "NXP Semiconductors",
+        "qcode": "NL0009538784",
+        "ticker": "NXPI",
+        "is_active": true
+      },
+      {
+        "name": "Nyrstar",
+        "qcode": "BE0974294267",
+        "ticker": "NYR-",
+        "is_active": true
+      },
+      {
+        "name": "Pfizer -US-",
+        "qcode": "US7170811035",
+        "ticker": "PFE",
+        "is_active": true
+      },
+      {
+        "name": "Procter & Gamble",
+        "qcode": "US7427181091",
+        "ticker": "PG",
+        "is_active": true
+      },
+      {
+        "name": "Prysmian",
+        "qcode": "IT0004176001",
+        "ticker": "PRY",
+        "is_active": true
+      },
+      {
+        "name": "Roche Holding",
+        "qcode": "CH0012032048",
+        "ticker": "ROG",
+        "is_active": true
+      },
+      {
+        "name": "Royal Bank of Scotland Group -GBP-",
+        "qcode": "GB00B7T77214",
+        "ticker": "ROYAL BANK -GB-",
+        "is_active": true
+      },
+      {
+        "name": "Sanofi",
+        "qcode": "FR0000120578",
+        "ticker": "SNW",
+        "is_active": true
+      },
+      {
+        "name": "SAP",
+        "qcode": "DE0007164600",
+        "ticker": "SAP",
+        "is_active": true
+      },
+      {
+        "name": "Siemens",
+        "qcode": "DE0007236101",
+        "ticker": "SIE",
+        "is_active": true
+      },
+      {
+        "name": "SIF",
+        "qcode": "NL0011660485",
+        "ticker": "SIFG",
+        "is_active": true
+      },
+      {
+        "name": "Spotify",
+        "qcode": "LU1778762911",
+        "ticker": "SPOTIFY",
+        "is_active": true
+      },
+      {
+        "name": "Starbucks",
+        "qcode": "US8552441094",
+        "ticker": "SBUX",
+        "is_active": true
+      },
+      {
+        "name": "Telefonica",
+        "qcode": "ES0178430E18",
+        "ticker": "TNE5",
+        "is_active": true
+      },
+      {
+        "name": "Tencent Holdings",
+        "qcode": "US88032Q1094",
+        "ticker": "TENCENT HOLDING",
+        "is_active": true
+      },
+      {
+        "name": "Tesla",
+        "qcode": "US88160R1014",
+        "ticker": "TSLA",
+        "is_active": true
+      },
+      {
+        "name": "Total",
+        "qcode": "FR0000120271",
+        "ticker": "TO1",
+        "is_active": true
+      },
+      {
+        "name": "Vestas Wind Systems -DKK-",
+        "qcode": "DK0010268606",
+        "ticker": "VWS",
+        "is_active": true
+      },
+      {
+        "name": "Vodafone Group",
+        "qcode": "GB00BH4HKS39",
+        "ticker": "VOD-",
+        "is_active": true
+      },
+      {
+        "name": "Volkswagen",
+        "qcode": "DE0007664039",
+        "ticker": "VO3",
+        "is_active": true
+      },
+      {
+        "name": "Walt Disney",
+        "qcode": "US2546871060",
+        "ticker": "DIS",
+        "is_active": true
+      },
+      {
+        "name": "HEIJMANS",
+        "qcode": "NL0009269109",
+        "ticker": "HEIJM",
+        "is_active": true
+      },
+      {
+        "name": "HEINEKEN HOLDING",
+        "qcode": "NL0000008977",
+        "ticker": "HEIO",
+        "is_active": true
+      },
+      {
+        "name": "HEINEKEN",
+        "qcode": "NL0000009165",
+        "ticker": "HEIA",
+        "is_active": true
+      },
+      {
+        "name": "HES BEHEER",
+        "qcode": "NL0000358125",
+        "ticker": "HES",
+        "is_active": true
+      },
+      {
+        "name": "HOLLAND COLOURS",
+        "qcode": "NL0000440311",
+        "ticker": "HOLCO",
+        "is_active": true
+      },
+      {
+        "name": "HUNTER DOUGLAS",
+        "qcode": "ANN4327C1220",
+        "ticker": "HDG",
+        "is_active": true
+      },
+      {
+        "name": "HYDRATEC",
+        "qcode": "NL0009391242",
+        "ticker": "HYDRA",
+        "is_active": true
+      },
+      {
+        "name": "ICT GROUP",
+        "qcode": "NL0000359537",
+        "ticker": "ICT",
+        "is_active": true
+      },
+      {
+        "name": "IEX GROUP",
+        "qcode": "NL0010556726",
+        "ticker": "IEX",
+        "is_active": true
+      },
+      {
+        "name": "IMCD",
+        "qcode": "NL0010801007",
+        "ticker": "IMCD",
+        "is_active": true
+      },
+      {
+        "name": "ING GROEP",
+        "qcode": "NL0011821202",
+        "ticker": "INGA",
+        "is_active": true
+      },
+      {
+        "name": "INTERTRUST",
+        "qcode": "NL0010937058",
+        "ticker": "INTERTRUST",
+        "is_active": true
+      },
+      {
+        "name": "KARDAN",
+        "qcode": "NL0000113652",
+        "ticker": "KARD",
+        "is_active": true
+      },
+      {
+        "name": "KAS BANK",
+        "qcode": "NL0000362648",
+        "ticker": "KA",
+        "is_active": true
+      },
+      {
+        "name": "KENDRION",
+        "qcode": "NL0000852531",
+        "ticker": "KENDR",
+        "is_active": true
+      },
+      {
+        "name": "KIADIS PHARMA",
+        "qcode": "NL0011323407",
+        "ticker": "KDS",
+        "is_active": true
+      },
+      {
+        "name": "KPN",
+        "qcode": "NL0000009082",
+        "ticker": "KPN",
+        "is_active": true
+      },
+      {
+        "name": "LAVIDE",
+        "qcode": "NL0010545679",
+        "ticker": "LVIDE",
+        "is_active": true
+      },
+      {
+        "name": "NATIONALE NEDERLANDEN",
+        "qcode": "NL0010773842",
+        "ticker": "NN",
+        "is_active": true
+      },
+      {
+        "name": "NEDAP",
+        "qcode": "NL0000371243",
+        "ticker": "NEDAP",
+        "is_active": true
+      },
+      {
+        "name": "NEDSENSE ENTERPR",
+        "qcode": "NL0009312842",
+        "ticker": "NEDSE",
+        "is_active": true
+      },
+      {
+        "name": "NEPIROCKCASTLE",
+        "qcode": "IM00BDD7WV31",
+        "ticker": "NEPI",
+        "is_active": true
+      },
+      {
+        "name": "NEW SOURCES ENERGY",
+        "qcode": "NL0009822014",
+        "ticker": "NSE",
+        "is_active": true
+      },
+      {
+        "name": "NEWAYS ELECTRONICS",
+        "qcode": "NL0000440618",
+        "ticker": "NEWAY",
+        "is_active": true
+      },
+      {
+        "name": "NIBC",
+        "qcode": "NL0012756316-NIBC",
+        "ticker": "NIBC",
+        "is_active": true
+      },
+      {
+        "name": "NOVISOURCE",
+        "qcode": "NL0010696704",
+        "ticker": "NOVI",
+        "is_active": true
+      },
+      {
+        "name": "NSI",
+        "qcode": "NL0012365084",
+        "ticker": "NISTI",
+        "is_active": true
+      },
+      {
+        "name": "OCI",
+        "qcode": "NL0010558797",
+        "ticker": "OCI",
+        "is_active": true
+      },
+      {
+        "name": "ORANJEWOUD A",
+        "qcode": "NL0000370419",
+        "ticker": "ORANW",
+        "is_active": true
+      },
+      {
+        "name": "ORDINA",
+        "qcode": "NL0000440584",
+        "ticker": "ORDI",
+        "is_active": true
+      },
+      {
+        "name": "PERSHING SQUARE HOLDINGS",
+        "qcode": "GG00BPFJTF46",
+        "ticker": "PSH",
+        "is_active": true
+      },
+      {
+        "name": "PHARMING GROUP",
+        "qcode": "NL0010391025",
+        "ticker": "PHARM",
+        "is_active": true
+      },
+      {
+        "name": "PHILIPS KON",
+        "qcode": "NL0000009538",
+        "ticker": "PHIA",
+        "is_active": true
+      },
+      {
+        "name": "POSTNL",
+        "qcode": "NL0009739416",
+        "ticker": "PNL",
+        "is_active": true
+      },
+      {
+        "name": "PROBIODRUG AG",
+        "qcode": "DE0007921835",
+        "ticker": "PBD",
+        "is_active": true
+      },
+      {
+        "name": "R&S",
+        "qcode": "NL0009733351",
+        "ticker": "RNS",
+        "is_active": true
+      },
+      {
+        "name": "RANDSTAD",
+        "qcode": "NL0000379121",
+        "ticker": "RAND",
+        "is_active": true
+      },
+      {
+        "name": "REFRESCO",
+        "qcode": "NL0011214010",
+        "ticker": "RFRG",
+        "is_active": true
+      },
+      {
+        "name": "RELX",
+        "qcode": "GB00B2B0DG97",
+        "ticker": "RELX",
+        "is_active": true
+      },
+      {
+        "name": "RELX",
+        "qcode": "NL0006144495",
+        "ticker": "REN",
+        "is_active": true
+      },
+      {
+        "name": "RETAILESTATES",
+        "qcode": "BE0003720340",
+        "ticker": "RETAIL",
+        "is_active": true
+      },
+      {
+        "name": "ROODMICROTEC",
+        "qcode": "NL0000440477",
+        "ticker": "ROOD",
+        "is_active": true
+      },
+      {
+        "name": "ROYALDELFT",
+        "qcode": "NL0000378669",
+        "ticker": "PORF",
+        "is_active": true
+      },
+      {
+        "name": "SBM OFFSHORE",
+        "qcode": "NL0000360618",
+        "ticker": "SBMO",
+        "is_active": true
+      },
+      {
+        "name": "SHELLA",
+        "qcode": "GB00B03MLX29",
+        "ticker": "RDSA",
+        "is_active": true
+      },
+      {
+        "name": "SIF",
+        "qcode": "NL0011660485",
+        "ticker": "SIFG",
+        "is_active": true
+      },
+      {
+        "name": "SIGNIFY",
+        "qcode": "NL0011821392",
+        "ticker": "LIGHT",
+        "is_active": true
+      },
+      {
+        "name": "SLIGRO FOOD GROUP",
+        "qcode": "NL0000817179",
+        "ticker": "SLIGR",
+        "is_active": true
+      },
+      {
+        "name": "SNOWWORLD",
+        "qcode": "NL0010627865",
+        "ticker": "SNOW",
+        "is_active": true
+      },
+      {
+        "name": "STERN GROEP",
+        "qcode": "NL0000336303",
+        "ticker": "STRN",
+        "is_active": true
+      },
+      {
+        "name": "TAKEAWAY",
+        "qcode": "NL0012015705",
+        "ticker": "TKWY",
+        "is_active": true
+      },
+      {
+        "name": "TELEGRAAF MEDIA GR",
+        "qcode": "NL0000386605",
+        "ticker": "TMG",
+        "is_active": true
+      },
+      {
+        "name": "TEN CATE",
+        "qcode": "NL0000375749",
+        "ticker": "KTC",
+        "is_active": true
+      },
+      {
+        "name": "THUNDERBIRD",
+        "qcode": "VGG885761061",
+        "ticker": "TBIRD",
+        "is_active": true
+      },
+      {
+        "name": "TIE KINETIX",
+        "qcode": "NL0010389508",
+        "ticker": "TIE",
+        "is_active": true
+      },
+      {
+        "name": "TKH GROUP",
+        "qcode": "NL0000852523",
+        "ticker": "TWEKA",
+        "is_active": true
+      },
+      {
+        "name": "TNT EXPRESS",
+        "qcode": "NL0009739424",
+        "ticker": "TNTE",
+        "is_active": true
+      },
+      {
+        "name": "TOMTOM",
+        "qcode": "NL0000387058",
+        "ticker": "TOM2",
+        "is_active": true
+      },
+      {
+        "name": "UNIBAIL-RODAMCO",
+        "qcode": "FR0000124711",
+        "ticker": "UL",
+        "is_active": true
+      },
+      {
+        "name": "UNILEVER DR",
+        "qcode": "NL0000009355",
+        "ticker": "UNA",
+        "is_active": true
+      },
+      {
+        "name": "USG PEOPLE",
+        "qcode": "NL0000354488",
+        "ticker": "USG",
+        "is_active": true
+      },
+      {
+        "name": "VALUE8",
+        "qcode": "NL0010661864",
+        "ticker": "VALUE",
+        "is_active": true
+      },
+      {
+        "name": "VAN LANSCHOT KEMPEN",
+        "qcode": "NL0000302636",
+        "ticker": "VLK",
+        "is_active": true
+      },
+      {
+        "name": "VASTNED",
+        "qcode": "NL0000288918",
+        "ticker": "VASTN",
+        "is_active": true
+      },
+      {
+        "name": "VEON",
+        "qcode": "BMG9349W1038",
+        "ticker": "VEON",
+        "is_active": true
+      },
+      {
+        "name": "DGB",
+        "qcode": "NL0009169515",
+        "ticker": "VNC",
+        "is_active": true
+      },
+      {
+        "name": "VOLKERWESSELS",
+        "qcode": "NL0012294466",
+        "ticker": "VKW",
+        "is_active": true
+      },
+      {
+        "name": "VOPAK",
+        "qcode": "NL0009432491",
+        "ticker": "VPK",
+        "is_active": true
+      },
+      {
+        "name": "WDP",
+        "qcode": "BE0003763779",
+        "ticker": "WDP",
+        "is_active": true
+      },
+      {
+        "name": "WERELDHAVE",
+        "qcode": "NL0000289213",
+        "ticker": "WHA",
+        "is_active": true
+      },
+      {
+        "name": "WESSANEN KON",
+        "qcode": "NL0000395317",
+        "ticker": "WES",
+        "is_active": true
+      },
+      {
+        "name": "WOLTERS KLUWER",
+        "qcode": "NL0000395903",
+        "ticker": "WKL",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "_id": "afn_dutchstocks",
+    "display_name": "Dutstocks Codes",
+    "type": "manageable",
+    "unique_field": "qcode",
+    "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {},
+      "ticker": {}
+    },
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "name": "AALBERTS INDUSTR",
+        "qcode": "NL0000852564",
+        "ticker": "AALB",
+        "is_active": true
+      },
+      {
+        "name": "ABNAMRO",
+        "qcode": "NL0011540547",
+        "ticker": "ABN",
+        "is_active": true
+      },
+      {
+        "name": "ACCELL GROUP",
+        "qcode": "NL0009767532",
+        "ticker": "ACCEL",
+        "is_active": true
+      },
+      {
+        "name": "ACCSYS",
+        "qcode": "GB00B0LMC530",
+        "ticker": "AXS",
+        "is_active": true
+      },
+      {
+        "name": "ADYEN",
+        "qcode": "NL0012969182",
+        "ticker": "ADYEN",
+        "is_active": true
+      },
+      {
+        "name": "AEGON",
+        "qcode": "NL0000303709",
+        "ticker": "AGN",
+        "is_active": true
+      },
+      {
+        "name": "AEX",
+        "qcode": "NL0000000107",
+        "ticker": "AEX",
+        "is_active": true
+      },
+      {
+        "name": "AHOLD DELHAIZE KON",
+        "qcode": "NL0011794037",
+        "ticker": "AH",
+        "is_active": true
+      },
+      {
+        "name": "AIR FRANCE-KLM",
+        "qcode": "FR0000031122",
+        "ticker": "AF",
+        "is_active": true
+      },
+      {
+        "name": "AJAX",
+        "qcode": "NL0000018034",
+        "ticker": "AJAX",
+        "is_active": true
+      },
+      {
+        "name": "AKZONOBEL",
+        "qcode": "NL0013267909",
+        "ticker": "AKZA",
+        "is_active": true
+      },
+      {
+        "name": "ALFEN",
+        "qcode": "NL0012817175",
+        "ticker": "ALFEN",
+        "is_active": true
+      },
+      {
+        "name": "ALTICE",
+        "qcode": "NL0011333752",
+        "ticker": "ATC",
+        "is_active": true
+      },
+      {
+        "name": "ALUMEXX",
+        "qcode": "NL0012194724",
+        "ticker": "ALUMEXX",
+        "is_active": true
+      },
+      {
+        "name": "AMG",
+        "qcode": "NL0000888691",
+        "ticker": "AMG",
+        "is_active": true
+      },
+      {
+        "name": "AMSTERDAM COMMOD.",
+        "qcode": "NL0000313286",
+        "ticker": "ACOMO",
+        "is_active": true
+      },
+      {
+        "name": "AMX",
+        "qcode": "NL0000249274",
+        "ticker": "AMX",
+        "is_active": true
+      },
+      {
+        "name": "AND INTERNATIONAL",
+        "qcode": "NL0000430106",
+        "ticker": "AND",
+        "is_active": true
+      },
+      {
+        "name": "APERAM",
+        "qcode": "LU0569974404",
+        "ticker": "APAM",
+        "is_active": true
+      },
+      {
+        "name": "ARCADIS",
+        "qcode": "NL0006237562",
+        "ticker": "ARCAD",
+        "is_active": true
+      },
+      {
+        "name": "ARCELORMITTAL",
+        "qcode": "LU1598757687",
+        "ticker": "MT",
+        "is_active": true
+      },
+      {
+        "name": "ARSEUS (D)",
+        "qcode": "BE0003874915",
+        "ticker": "RCUS",
+        "is_active": true
+      },
+      {
+        "name": "ASCX",
+        "qcode": "NL0000249142",
+        "ticker": "ASCX",
+        "is_active": true
+      },
+      {
+        "name": "ASM INTERNATIONAL",
+        "qcode": "NL0000334118",
+        "ticker": "ASM",
+        "is_active": true
+      },
+      {
+        "name": "ASML HOLDING",
+        "qcode": "NL0010273215",
+        "ticker": "ASML",
+        "is_active": true
+      },
+      {
+        "name": "ASR",
+        "qcode": "NL0011872643",
+        "ticker": "",
+        "is_active": true
+      },
+      {
+        "name": "ATRIUM EUR REALEST",
+        "qcode": "JE00B3DCF752",
+        "ticker": "ATRS",
+        "is_active": true
+      },
+      {
+        "name": "AVANTIUM",
+        "qcode": "NL0012047823",
+        "ticker": "AVTX",
+        "is_active": true
+      },
+      {
+        "name": "B&S",
+        "qcode": "LU1789205884",
+        "ticker": "BSGR",
+        "is_active": true
+      },
+      {
+        "name": "BALLAST NEDAM",
+        "qcode": "NL0000336543",
+        "ticker": "BALNE",
+        "is_active": true
+      },
+      {
+        "name": "BAM GROEP KON",
+        "qcode": "NL0000337319",
+        "ticker": "BAMNB",
+        "is_active": true
+      },
+      {
+        "name": "BASIC FIT",
+        "qcode": "NL0011872650",
+        "ticker": "BFIT",
+        "is_active": true
+      },
+      {
+        "name": "BATENBURG TECHNIEK",
+        "qcode": "NL0006292906",
+        "ticker": "BATEN",
+        "is_active": true
+      },
+      {
+        "name": "BE SEMICONDUCTOR",
+        "qcode": "NL0000339760",
+        "ticker": "BESI",
+        "is_active": true
+      },
+      {
+        "name": "BETER BED",
+        "qcode": "NL0000339703",
+        "ticker": "BBED",
+        "is_active": true
+      },
+      {
+        "name": "BEVER HOLDING",
+        "qcode": "NL0000285278",
+        "ticker": "BEVER",
+        "is_active": true
+      },
+      {
+        "name": "BINCKBANK",
+        "qcode": "NL0000335578",
+        "ticker": "BINCK",
+        "is_active": true
+      },
+      {
+        "name": "BOLS",
+        "qcode": "NL0010998878",
+        "ticker": "BOLS",
+        "is_active": true
+      },
+      {
+        "name": "BOSKALIS WESTMIN",
+        "qcode": "NL0000852580",
+        "ticker": "BOKA",
+        "is_active": true
+      },
+      {
+        "name": "BRILL KON",
+        "qcode": "NL0000442523",
+        "ticker": "BRILL",
+        "is_active": true
+      },
+      {
+        "name": "BRUNEL INTERNAT",
+        "qcode": "NL0010776944",
+        "ticker": "BRNL",
+        "is_active": true
+      },
+      {
+        "name": "COCACOLAENTERPRISES",
+        "qcode": "US19122T1097",
+        "ticker": "CCE",
+        "is_active": true
+      },
+      {
+        "name": "CORBION",
+        "qcode": "NL0010583399",
+        "ticker": "CRBN",
+        "is_active": true
+      },
+      {
+        "name": "CORE LABORATORIES",
+        "qcode": "NL0000200384",
+        "ticker": "CLB",
+        "is_active": true
+      },
+      {
+        "name": "CTAC",
+        "qcode": "NL0000345577",
+        "ticker": "CTAC",
+        "is_active": true
+      },
+      {
+        "name": "CURETIS",
+        "qcode": "NL0011509294",
+        "ticker": "CUR",
+        "is_active": true
+      },
+      {
+        "name": "DELTA LLOYD",
+        "qcode": "NL0009294552",
+        "ticker": "DL",
+        "is_active": true
+      },
+      {
+        "name": "DPA GROUP",
+        "qcode": "NL0009197771",
+        "ticker": "DPA",
+        "is_active": true
+      },
+      {
+        "name": "DSM KON",
+        "qcode": "NL0000009827",
+        "ticker": "DSM",
+        "is_active": true
+      },
+      {
+        "name": "DUTCHSTARCOMPANIESONE",
+        "qcode": "NL0012747059",
+        "ticker": "DSC1",
+        "is_active": true
+      },
+      {
+        "name": "EASE2PAY",
+        "qcode": "NL0000345627",
+        "ticker": "DOCD",
+        "is_active": true
+      },
+      {
+        "name": "ENVIPCO",
+        "qcode": "NL0009901610",
+        "ticker": "ENVIPCO",
+        "is_active": true
+      },
+      {
+        "name": "ESPERITE",
+        "qcode": "NL0009272137",
+        "ticker": "CRYO",
+        "is_active": true
+      },
+      {
+        "name": "EUROCASTLE INVEST.",
+        "qcode": "GB00B01C5N27",
+        "ticker": "ECT",
+        "is_active": true
+      },
+      {
+        "name": "EUROCOMMERCIAL",
+        "qcode": "NL0000288876",
+        "ticker": "ECMPA",
+        "is_active": true
+      },
+      {
+        "name": "EURONEXT",
+        "qcode": "NL0006294274",
+        "ticker": "ENX",
+        "is_active": true
+      },
+      {
+        "name": "FAGRON",
+        "qcode": "BE0003874915",
+        "ticker": "FAGR",
+        "is_active": true
+      },
+      {
+        "name": "FLOW TRADERS",
+        "qcode": "NL0011279492",
+        "ticker": "FLOW",
+        "is_active": true
+      },
+      {
+        "name": "FNG",
+        "qcode": "NL0012047849",
+        "ticker": "FNG",
+        "is_active": true
+      },
+      {
+        "name": "FORFARMERS",
+        "qcode": "NL0011832811",
+        "ticker": "FFARM",
+        "is_active": true
+      },
+      {
+        "name": "FUGRO",
+        "qcode": "NL0000352565",
+        "ticker": "FUR",
+        "is_active": true
+      },
+      {
+        "name": "GALAPAGOS",
+        "qcode": "BE0003818359",
+        "ticker": "GLPG",
+        "is_active": true
+      },
+      {
+        "name": "GEMALTO",
+        "qcode": "NL0000400653",
+        "ticker": "GTO",
+        "is_active": true
+      },
+      {
+        "name": "GRANDVISION",
+        "qcode": "NL0010937066",
+        "ticker": "GVNV",
+        "is_active": true
+      },
+      {
+        "name": "GROOTHANDELSGEBOUW",
+        "qcode": "NL0000440824",
+        "ticker": "GROHA",
+        "is_active": true
+      },
+      {
+        "name": "HAL TRUST",
+        "qcode": "BMG455841020",
+        "ticker": "HAL",
+        "is_active": true
+      },
+      {
+        "name": "HEIJMANS",
+        "qcode": "NL0009269109",
+        "ticker": "HEIJM",
+        "is_active": true
+      },
+      {
+        "name": "HEINEKEN HOLDING",
+        "qcode": "NL0000008977",
+        "ticker": "HEIO",
+        "is_active": true
+      },
+      {
+        "name": "HEINEKEN",
+        "qcode": "NL0000009165",
+        "ticker": "HEIA",
+        "is_active": true
+      },
+      {
+        "name": "HES BEHEER",
+        "qcode": "NL0000358125",
+        "ticker": "HES",
+        "is_active": true
+      },
+      {
+        "name": "HOLLAND COLOURS",
+        "qcode": "NL0000440311",
+        "ticker": "HOLCO",
+        "is_active": true
+      },
+      {
+        "name": "HUNTER DOUGLAS",
+        "qcode": "ANN4327C1220",
+        "ticker": "HDG",
+        "is_active": true
+      },
+      {
+        "name": "HYDRATEC",
+        "qcode": "NL0009391242",
+        "ticker": "HYDRA",
+        "is_active": true
+      },
+      {
+        "name": "ICT GROUP",
+        "qcode": "NL0000359537",
+        "ticker": "ICT",
+        "is_active": true
+      },
+      {
+        "name": "IEX GROUP",
+        "qcode": "NL0010556726",
+        "ticker": "IEX",
+        "is_active": true
+      },
+      {
+        "name": "IMCD",
+        "qcode": "NL0010801007",
+        "ticker": "IMCD",
+        "is_active": true
+      },
+      {
+        "name": "ING GROEP",
+        "qcode": "NL0011821202",
+        "ticker": "INGA",
+        "is_active": true
+      },
+      {
+        "name": "INTERTRUST",
+        "qcode": "NL0010937058",
+        "ticker": "INTERTRUST",
+        "is_active": true
+      },
+      {
+        "name": "KARDAN",
+        "qcode": "NL0000113652",
+        "ticker": "KARD",
+        "is_active": true
+      },
+      {
+        "name": "KAS BANK",
+        "qcode": "NL0000362648",
+        "ticker": "KA",
+        "is_active": true
+      },
+      {
+        "name": "KENDRION",
+        "qcode": "NL0000852531",
+        "ticker": "KENDR",
+        "is_active": true
+      },
+      {
+        "name": "KIADIS PHARMA",
+        "qcode": "NL0011323407",
+        "ticker": "KDS",
+        "is_active": true
+      },
+      {
+        "name": "KPN",
+        "qcode": "NL0000009082",
+        "ticker": "KPN",
+        "is_active": true
+      },
+      {
+        "name": "LAVIDE",
+        "qcode": "NL0010545679",
+        "ticker": "LVIDE",
+        "is_active": true
+      },
+      {
+        "name": "NATIONALE NEDERLANDEN",
+        "qcode": "NL0010773842",
+        "ticker": "NN",
+        "is_active": true
+      },
+      {
+        "name": "NEDAP",
+        "qcode": "NL0000371243",
+        "ticker": "NEDAP",
+        "is_active": true
+      },
+      {
+        "name": "NEDSENSE ENTERPR",
+        "qcode": "NL0009312842",
+        "ticker": "NEDSE",
+        "is_active": true
+      },
+      {
+        "name": "NEPIROCKCASTLE",
+        "qcode": "IM00BDD7WV31",
+        "ticker": "NEPI",
+        "is_active": true
+      },
+      {
+        "name": "NEW SOURCES ENERGY",
+        "qcode": "NL0009822014",
+        "ticker": "NSE",
+        "is_active": true
+      },
+      {
+        "name": "NEWAYS ELECTRONICS",
+        "qcode": "NL0000440618",
+        "ticker": "NEWAY",
+        "is_active": true
+      },
+      {
+        "name": "NIBC",
+        "qcode": "NL0012756316-NIBC",
+        "ticker": "NIBC",
+        "is_active": true
+      },
+      {
+        "name": "NOVISOURCE",
+        "qcode": "NL0010696704",
+        "ticker": "NOVI",
+        "is_active": true
+      },
+      {
+        "name": "NSI",
+        "qcode": "NL0012365084",
+        "ticker": "NISTI",
+        "is_active": true
+      },
+      {
+        "name": "OCI",
+        "qcode": "NL0010558797",
+        "ticker": "OCI",
+        "is_active": true
+      },
+      {
+        "name": "ORANJEWOUD A",
+        "qcode": "NL0000370419",
+        "ticker": "ORANW",
+        "is_active": true
+      },
+      {
+        "name": "ORDINA",
+        "qcode": "NL0000440584",
+        "ticker": "ORDI",
+        "is_active": true
+      },
+      {
+        "name": "PERSHING SQUARE HOLDINGS",
+        "qcode": "GG00BPFJTF46",
+        "ticker": "PSH",
+        "is_active": true
+      },
+      {
+        "name": "PHARMING GROUP",
+        "qcode": "NL0010391025",
+        "ticker": "PHARM",
+        "is_active": true
+      },
+      {
+        "name": "PHILIPS KON",
+        "qcode": "NL0000009538",
+        "ticker": "PHIA",
+        "is_active": true
+      },
+      {
+        "name": "POSTNL",
+        "qcode": "NL0009739416",
+        "ticker": "PNL",
+        "is_active": true
+      },
+      {
+        "name": "PROBIODRUG AG",
+        "qcode": "DE0007921835",
+        "ticker": "PBD",
+        "is_active": true
+      },
+      {
+        "name": "R&S",
+        "qcode": "NL0009733351",
+        "ticker": "RNS",
+        "is_active": true
+      },
+      {
+        "name": "RANDSTAD",
+        "qcode": "NL0000379121",
+        "ticker": "RAND",
+        "is_active": true
+      },
+      {
+        "name": "REFRESCO",
+        "qcode": "NL0011214010",
+        "ticker": "RFRG",
+        "is_active": true
+      },
+      {
+        "name": "RELX",
+        "qcode": "GB00B2B0DG97",
+        "ticker": "RELX",
+        "is_active": true
+      },
+      {
+        "name": "RELX",
+        "qcode": "NL0006144495",
+        "ticker": "REN",
+        "is_active": true
+      },
+      {
+        "name": "RETAILESTATES",
+        "qcode": "BE0003720340",
+        "ticker": "RETAIL",
+        "is_active": true
+      },
+      {
+        "name": "ROODMICROTEC",
+        "qcode": "NL0000440477",
+        "ticker": "ROOD",
+        "is_active": true
+      },
+      {
+        "name": "ROYALDELFT",
+        "qcode": "NL0000378669",
+        "ticker": "PORF",
+        "is_active": true
+      },
+      {
+        "name": "SBM OFFSHORE",
+        "qcode": "NL0000360618",
+        "ticker": "SBMO",
+        "is_active": true
+      },
+      {
+        "name": "SHELLA",
+        "qcode": "GB00B03MLX29",
+        "ticker": "RDSA",
+        "is_active": true
+      },
+      {
+        "name": "SIF",
+        "qcode": "NL0011660485",
+        "ticker": "SIFG",
+        "is_active": true
+      },
+      {
+        "name": "SIGNIFY",
+        "qcode": "NL0011821392",
+        "ticker": "LIGHT",
+        "is_active": true
+      },
+      {
+        "name": "SLIGRO FOOD GROUP",
+        "qcode": "NL0000817179",
+        "ticker": "SLIGR",
+        "is_active": true
+      },
+      {
+        "name": "SNOWWORLD",
+        "qcode": "NL0010627865",
+        "ticker": "SNOW",
+        "is_active": true
+      },
+      {
+        "name": "STERN GROEP",
+        "qcode": "NL0000336303",
+        "ticker": "STRN",
+        "is_active": true
+      },
+      {
+        "name": "TAKEAWAY",
+        "qcode": "NL0012015705",
+        "ticker": "TKWY",
+        "is_active": true
+      },
+      {
+        "name": "TELEGRAAF MEDIA GR",
+        "qcode": "NL0000386605",
+        "ticker": "TMG",
+        "is_active": true
+      },
+      {
+        "name": "TEN CATE",
+        "qcode": "NL0000375749",
+        "ticker": "KTC",
+        "is_active": true
+      },
+      {
+        "name": "THUNDERBIRD",
+        "qcode": "VGG885761061",
+        "ticker": "TBIRD",
+        "is_active": true
+      },
+      {
+        "name": "TIE KINETIX",
+        "qcode": "NL0010389508",
+        "ticker": "TIE",
+        "is_active": true
+      },
+      {
+        "name": "TKH GROUP",
+        "qcode": "NL0000852523",
+        "ticker": "TWEKA",
+        "is_active": true
+      },
+      {
+        "name": "TNT EXPRESS",
+        "qcode": "NL0009739424",
+        "ticker": "TNTE",
+        "is_active": true
+      },
+      {
+        "name": "TOMTOM",
+        "qcode": "NL0000387058",
+        "ticker": "TOM2",
+        "is_active": true
+      },
+      {
+        "name": "UNIBAIL-RODAMCO",
+        "qcode": "FR0000124711",
+        "ticker": "UL",
+        "is_active": true
+      },
+      {
+        "name": "UNILEVER DR",
+        "qcode": "NL0000009355",
+        "ticker": "UNA",
+        "is_active": true
+      },
+      {
+        "name": "USG PEOPLE",
+        "qcode": "NL0000354488",
+        "ticker": "USG",
+        "is_active": true
+      },
+      {
+        "name": "VALUE8",
+        "qcode": "NL0010661864",
+        "ticker": "VALUE",
+        "is_active": true
+      },
+      {
+        "name": "VAN LANSCHOT KEMPEN",
+        "qcode": "NL0000302636",
+        "ticker": "VLK",
+        "is_active": true
+      },
+      {
+        "name": "VASTNED",
+        "qcode": "NL0000288918",
+        "ticker": "VASTN",
+        "is_active": true
+      },
+      {
+        "name": "VEON",
+        "qcode": "BMG9349W1038",
+        "ticker": "VEON",
+        "is_active": true
+      },
+      {
+        "name": "DGB",
+        "qcode": "NL0009169515",
+        "ticker": "VNC",
+        "is_active": true
+      },
+      {
+        "name": "VOLKERWESSELS",
+        "qcode": "NL0012294466",
+        "ticker": "VKW",
+        "is_active": true
+      },
+      {
+        "name": "VOPAK",
+        "qcode": "NL0009432491",
+        "ticker": "VPK",
+        "is_active": true
+      },
+      {
+        "name": "WDP",
+        "qcode": "BE0003763779",
+        "ticker": "WDP",
+        "is_active": true
+      },
+      {
+        "name": "WERELDHAVE",
+        "qcode": "NL0000289213",
+        "ticker": "WHA",
+        "is_active": true
+      },
+      {
+        "name": "WESSANEN KON",
+        "qcode": "NL0000395317",
+        "ticker": "WES",
+        "is_active": true
+      },
+      {
+        "name": "WOLTERS KLUWER",
+        "qcode": "NL0000395903",
+        "ticker": "WKL",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "_id": "author_roles",
+    "display_name": "Author Roles",
+    "type": "manageable",
+    "selection_type": "do not show",
+    "unique_field": "qcode",
+    "items": [
+      {
+        "is_active": true,
+        "name": "Writer",
+        "qcode": "writer"
+      }
+    ],
+    "schema": {
+      "name": {
+        "translate": true
+      },
+      "qcode": {}
+    }
+  },
+  {
+    "_id": "desk_types",
+    "display_name": "Desk Types",
+    "type": "unmanageable",
+    "selection_type": "do not show",
+    "items": [
+      {
+        "is_active": true,
+        "name": "authoring",
+        "qcode": "authoring"
+      },
+      {
+        "is_active": true,
+        "name": "production",
+        "qcode": "production"
+      }
+    ]
+  },
+  {
+    "_id": "product_types",
+    "display_name": "Product Types",
+    "type": "unmanageable",
+    "selection_type": "do not show",
+    "items": [
+      {
+        "is_active": true,
+        "name": "API",
+        "qcode": "api"
+      },
+      {
+        "is_active": true,
+        "name": "Direct",
+        "qcode": "direct"
+      },
+      {
+        "is_active": true,
+        "name": "Both",
+        "qcode": "both"
+      }
+    ]
+  },
+  {
+    "_id": "subscriber_types",
+    "display_name": "Subscriber Types",
+    "type": "unmanageable",
+    "selection_type": "do not show",
+    "items": [
+      {
+        "is_active": true,
+        "name": "All",
+        "qcode": "all",
+        "formats": [
+          {
+            "name": "NINJS",
+            "qcode": "ninjs"
+          },
+          {
+            "name": "NewsML G2",
+            "qcode": "newsmlg2"
+          },
+          {
+            "name": "Email",
+            "qcode": "email"
+          },
+          {
+            "name": "Newsroom NINJS",
+            "qcode": "newsroom ninjs"
+          },
+          {
+            "name": "Adobe InDesign (IDML)",
+            "qcode": "idml"
+          }
+        ]
+      },
+      {
+        "is_active": true,
+        "name": "Digital/Internet",
+        "qcode": "digital",
+        "formats": [
+          {
+            "name": "NINJS",
+            "qcode": "ninjs"
+          },
+          {
+            "name": "NewsML G2",
+            "qcode": "newsmlg2"
+          },
+          {
+            "name": "Email",
+            "qcode": "email"
+          },
+          {
+            "name": "Newsroom NINJS",
+            "qcode": "newsroom ninjs"
+          },
+          {
+            "name": "Adobe InDesign (IDML)",
+            "qcode": "idml"
+          }
+        ]
+      },
+      {
+        "is_active": true,
+        "name": "Wire/Paper",
+        "qcode": "wire",
+        "formats": [
+          {
+            "name": "NITF",
+            "qcode": "nitf"
+          },
+          {
+            "name": "Email",
+            "qcode": "email"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "crop_sizes",
+    "display_name": "Image Crop Sizes",
+    "type": "manageable",
+    "unique_field": "name",
+    "items": [
+      {
+        "is_active": true,
+        "name": "4-3",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "is_active": true,
+        "name": "16-9",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "schema": {
+      "name": {},
+      "width": {
+        "type": "int"
+      },
+      "height": {
+        "type": "int"
+      }
+    }
+  },
+  {
+    "_id": "categories",
+    "display_name": "Categories",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "unique_field": "qcode",
+    "items": [
+      {
+        "is_active": true,
+        "name": "Algemeen",
+        "qcode": "Algemeen"
+      },
+      {
+        "is_active": true,
+        "name": "Bekend Nederland",
+        "qcode": "Bekend Nederland"
+      },
+      {
+        "is_active": true,
+        "name": "Sport",
+        "qcode": "Sport"
+      },
+      {
+        "is_active": true,
+        "name": "Weer",
+        "qcode": "Weer"
+      },
+      {
+        "is_active": true,
+        "name": "Live",
+        "qcode": "Live"
+      }
+    ]
+  }
+]
