@@ -72,6 +72,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
         :return: a list of news items which can be saved.
         """
 
+        parser = self.get_feed_parser(provider)
         # http fetch sources
         sources = self._fetch_sources()
         parsed_items = []
@@ -93,7 +94,6 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
                 }
 
                 # parse item
-                parser = self.get_feed_parser(provider)
                 parsed_items.append(
                     parser.parse(article=item_details, provider=provider)
                 )

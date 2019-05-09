@@ -8,9 +8,12 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 
+import json
 import logging
 import datetime
 
+from eve.utils import ParsedRequest
+import superdesk
 from superdesk.io.registry import register_feed_parser
 from superdesk.io.feed_parsers import FeedParser
 from superdesk.metadata.item import ITEM_TYPE, CONTENT_TYPE, GUID_FIELD
@@ -28,6 +31,28 @@ class ANPNewsApiFeedParser(FeedParser):
 
     def __init__(self):
         super().__init__()
+        self._vocabularies = None
+
+    def _prefetch_vocabularies(self):
+        """
+        Prefetch items from vocabularies.
+        """
+
+        # this method is called from `parse`, but it must be executed only once
+        if self._vocabularies is not None:
+            return
+
+        self._vocabularies = {}
+        req = ParsedRequest()
+        req.projection = json.dumps({'items': 1})
+        # prefetch vocabularies -> anp_genres
+        self._vocabularies['anp_genres'] = superdesk.get_resource_service(
+            'vocabularies'
+        ).find_one(
+            req=req, _id='anp_genres'
+        ).get('items', [])
+        # use qcode as a key to speed up work with it in the future methods
+        self._vocabularies['anp_genres'] = {s['qcode']: s for s in self._vocabularies['anp_genres']}
 
     def can_parse(self, article):
         # this parser works only with "anp_news_api" feeding service
@@ -45,6 +70,8 @@ class ANPNewsApiFeedParser(FeedParser):
         :return:
         """
 
+        self._prefetch_vocabularies()
+
         item = {}
         item[ITEM_TYPE] = CONTENT_TYPE.TEXT
         item[GUID_FIELD] = article['id']
@@ -58,10 +85,13 @@ class ANPNewsApiFeedParser(FeedParser):
         item['priority'] = item['urgency']
         item['byline'] = ', '.join(article.get('authors', []))
 
-        for category in article.get('categories', []):
-            item.setdefault('anpa_category', []).append({
-                'name': category,
-                'qcode': category
+        for category_qcode in [
+            c for c in article.get('categories', []) if c in self._vocabularies['anp_genres']
+        ]:
+            item.setdefault('subject', []).append({
+                'name': self._vocabularies['anp_genres'][category_qcode]['name'],
+                'qcode': category_qcode,
+                'scheme': 'anp_genres'
             })
 
         for keyword in article.get('keywords', []):
