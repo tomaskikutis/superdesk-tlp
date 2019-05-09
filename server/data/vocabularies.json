@@ -5643,5 +5643,180 @@
         "qcode": "Live"
       }
     ]
+  },
+  {
+    "_id": "anp_genres",
+    "display_name": "ANP Genres",
+    "type": "manageable",
+    "selection_type": "multi selection",
+    "schema": {
+      "name": {},
+      "qcode": {}
+    },
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "is_active": true,
+        "name": "AFN",
+        "qcode": "AFN"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - 101",
+        "qcode": "XANP/101"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Binnenland",
+        "qcode": "XANP/BIN"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Buitenland",
+        "qcode": "XANP/BUI"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Economie",
+        "qcode": "XANP/ECO"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Entertainment",
+        "qcode": "ANP/ENTERTAINMENT"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Gezond",
+        "qcode": "XANP/GEZOND"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - KCE-Alles",
+        "qcode": "XANP/KCE"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - KCE-Film",
+        "qcode": "ANP/FILM"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - KCE-KunstCult",
+        "qcode": "ANP/KUNST-CULTUUR"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - KCE-Media",
+        "qcode": "ANP/MEDIA"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - KCE-Muziek",
+        "qcode": "ANP/MUZIEK"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Klimaat",
+        "qcode": "XANP/KLIMAAT"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Narrowcast",
+        "qcode": "ANP/NARROWCAST"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Opmerkelijk",
+        "qcode": "ANP/OPMERKELIJK"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Politiek",
+        "qcode": "XANP/POLITIEK"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Science",
+        "qcode": "XANP/SCIENCE"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Sport",
+        "qcode": "XANP/SPO"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Voetbal",
+        "qcode": "XANP/VOETBAL"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Weer",
+        "qcode": "XANP/WEER"
+      },
+      {
+        "is_active": true,
+        "name": "ANP - Weerupdates",
+        "qcode": "XANP/WEERUPDATES"
+      },
+      {
+        "is_active": true,
+        "name": "Automotive",
+        "qcode": "XANP/AUTOMOTIVE"
+      },
+      {
+        "is_active": true,
+        "name": "BuzzE",
+        "qcode": "XANP/ENT"
+      },
+      {
+        "is_active": true,
+        "name": "BuzzO",
+        "qcode": "XANP/BUZZO"
+      },
+      {
+        "is_active": true,
+        "name": "BuzzR",
+        "qcode": "XANP/BUZZR"
+      },
+      {
+        "is_active": true,
+        "name": "BuzzS",
+        "qcode": "XANP/BUZZS"
+      },
+      {
+        "is_active": true,
+        "name": "BuzzT",
+        "qcode": "XANP/BUZZT"
+      },
+      {
+        "is_active": true,
+        "name": "E-Automotive",
+        "qcode": "XANP/E-AUTOMOTIVE"
+      },
+      {
+        "is_active": true,
+        "name": "Talpa - 6 Inside",
+        "qcode": "XANP/6INSIDE"
+      },
+      {
+        "is_active": true,
+        "name": "Talpa - Ticker",
+        "qcode": "XANP/TICKER"
+      },
+      {
+        "is_active": true,
+        "name": "Team NL",
+        "qcode": "XANP/TEAMNL"
+      },
+      {
+        "is_active": true,
+        "name": "TESTFOLDER",
+        "qcode": "ZTESTFOLDER"
+      }
+    ]
   }
 ]

@@ -51,11 +51,7 @@
         "sdWidth": "half",
         "section": "header"
       },
-      "anpa_category": {
-        "order": 4,
-        "sdWidth": "half",
-        "section": "header"
-      },
+      "anpa_category": null,
       "countries": {
         "order": 5,
         "section": "header",
@@ -63,6 +59,11 @@
       },
       "regions": {
         "order": 6,
+        "section": "header",
+        "sdWidth": "half"
+      },
+      "anp_genres": {
+        "order": 4,
         "section": "header",
         "sdWidth": "half"
       },
@@ -127,19 +128,15 @@
         "enabled": true,
         "nullable": true
       },
-      "anpa_category": {
-        "type": "list",
-        "required": false,
-        "enabled": true,
-        "nullable": true
-      },
+      "anpa_category": null,
       "subject": {
         "mandatory_in_list": {
           "scheme": {
+            "regions": null,
             "countries": null,
             "afn_bluechips": null,
             "afn_dutchstocks": null,
-            "regions": null
+            "anp_genres": null
           }
         },
         "schema": {
@@ -151,8 +148,9 @@
               "required": true,
               "nullable": true,
               "allowed": [
+                "regions",
                 "countries",
-                "regions"
+                "anp_genres"
               ]
             },
             "service": {
