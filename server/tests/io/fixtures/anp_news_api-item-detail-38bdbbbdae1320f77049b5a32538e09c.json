@@ -22,7 +22,8 @@
             "ANP/MUZIEK",
             "XANP/101",
             "XANP/BIN",
-            "XANP/KCE"
+            "XANP/KCE",
+            "DUMMY"
         ],
         "entities": [
             {

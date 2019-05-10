@@ -8,13 +8,15 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 
-
+import json
 import re
 from unittest import mock
 import os
 
 from superdesk.tests import TestCase
 from superdesk.io.feeding_services import http_base_service
+from apps.prepopulate.app_populate import AppPopulateCommand
+import anp
 from anp.io.feed_parsers.anp_news_api import ANPNewsApiFeedParser
 from anp.io.feeding_services.anp_news_api import ANPNewsApiFeedingService
 
@@ -50,15 +52,19 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
 
     def setUp(self):
         super().setUp()
+        # load vocabularies
         with self.app.app_context():
-            vocab = [{}]
-            self.app.data.insert('vocabularies', vocab)
+            voc_file = os.path.join(
+                os.path.abspath(os.path.dirname(os.path.dirname(anp.__file__))), 'data', 'vocabularies.json'
+            )
+            AppPopulateCommand().run(voc_file)
+        # load fixtures
         self.fixtures = {}
         dirname = os.path.dirname(os.path.realpath(__file__))
         # sources
         sources = os.path.normpath(os.path.join(dirname, '../fixtures', 'anp_news_api-sources.json'))
         with open(sources, 'r') as f:
-            self.fixtures['sources'] = f.read()
+            self.fixtures['sources'] = json.load(f)
         # items
         for source_id in ('5af9a2e4-3825-45d6-8445-419b1cb365dc',
                           '3dc77946-38dc-4469-b0a9-c10519035824',
@@ -69,7 +75,7 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
                 os.path.join(dirname, '../fixtures', 'anp_news_api-items-{}.json'.format(source_id))
             )
             with open(items, 'r') as f:
-                self.fixtures.setdefault('items', {})[source_id] = f.read()
+                self.fixtures.setdefault('items', {})[source_id] = json.load(f)
         # items details
         for item_id in ('ac3dc857e87ea0a0b98635b314941d12',
                         'bd34da5aa71ea490639e5601f98b238a',
@@ -79,7 +85,7 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
                 os.path.join(dirname, '../fixtures', 'anp_news_api-item-detail-{}.json'.format(item_id))
             )
             with open(items, 'r') as f:
-                self.fixtures.setdefault('item-details', {})[item_id] = f.read()
+                self.fixtures.setdefault('item-details', {})[item_id] = json.load(f)
 
     @mock.patch.object(http_base_service, 'requests')
     @mock.patch.object(ANPNewsApiFeedingService, 'get_feed_parser')
@@ -92,13 +98,13 @@ class ANPNewsApiFeedingServiceTestCase(TestCase):
             match_details = re.match(r'https://newsapi.anp.nl/services/sources/(.*)/items/(.*)$', url)
 
             if url == 'https://newsapi.anp.nl/services/sources':
-                response.content = self.fixtures['sources']
+                response.json.return_value = self.fixtures['sources']
             elif match_items:
                 source_id = match_items.group(1)
-                response.content = self.fixtures['items'][source_id]
+                response.json.return_value = self.fixtures['items'][source_id]
             elif match_details:
                 item_id = match_details.group(2)
-                response.content = self.fixtures['item-details'][item_id]
+                response.json.return_value = self.fixtures['item-details'][item_id]
 
             return response
 

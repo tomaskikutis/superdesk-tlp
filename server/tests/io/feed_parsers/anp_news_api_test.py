@@ -13,6 +13,8 @@ import os
 import json
 import datetime
 from superdesk.tests import TestCase
+from apps.prepopulate.app_populate import AppPopulateCommand
+import anp
 from anp.io.feed_parsers.anp_news_api import ANPNewsApiFeedParser
 
 
@@ -20,13 +22,22 @@ class ANPNewsApiFeedParserTestCase(TestCase):
     filename = 'anp_news_api-item-detail-38bdbbbdae1320f77049b5a32538e09c.json'
 
     def setUp(self):
+        super().setUp()
+        # load vocabularies
+        with self.app.app_context():
+            voc_file = os.path.join(
+                os.path.abspath(os.path.dirname(os.path.dirname(anp.__file__))), 'data', 'vocabularies.json'
+            )
+            AppPopulateCommand().run(voc_file)
+        # load fixture
         dirname = os.path.dirname(os.path.realpath(__file__))
         fixture_path = os.path.normpath(os.path.join(dirname, '../fixtures', self.filename))
-        provider = {'name': 'test'}
         with open(fixture_path, 'r') as f:
             self.article = json.loads(f.read())['data']
-            parser = ANPNewsApiFeedParser()
-            self.item = parser.parse(self.article, provider)
+        # parse article
+        parser = ANPNewsApiFeedParser()
+        provider = {'name': 'test'}
+        self.item = parser.parse(self.article, provider)
 
     def test_can_parse(self):
         self.assertTrue(ANPNewsApiFeedParser().can_parse(self.article))
@@ -88,3 +99,16 @@ class ANPNewsApiFeedParserTestCase(TestCase):
             self.item['byline'],
             'ANP Producties'
         )
+
+        expected_subjects = [
+            {'name': 'ANP - Entertainment', 'qcode': 'ANP/ENTERTAINMENT', 'scheme': 'anp_genres'},
+            {'name': 'ANP - KCE-Muziek', 'qcode': 'ANP/MUZIEK', 'scheme': 'anp_genres'},
+            {'name': 'ANP - 101', 'qcode': 'XANP/101', 'scheme': 'anp_genres'},
+            {'name': 'ANP - Binnenland', 'qcode': 'XANP/BIN', 'scheme': 'anp_genres'},
+            {'name': 'ANP - KCE-Alles', 'qcode': 'XANP/KCE', 'scheme': 'anp_genres'}
+        ]
+        for index, subject in enumerate(self.item['subject']):
+            self.assertDictEqual(
+                subject,
+                expected_subjects[index]
+            )
