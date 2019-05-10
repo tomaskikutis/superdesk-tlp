@@ -162,6 +162,25 @@ EDITOR = {
 SCHEMA['audio'] = SCHEMA['video']
 EDITOR['audio'] = EDITOR['video']
 
+# media required fields for upload
+VALIDATOR_MEDIA_METADATA = {
+    "headline": {
+        "required": False,
+    },
+    "description_text": {
+        "required": True,
+    },
+    "credit": {
+        "required": False,
+    },
+    "byline": {
+        "required": False,
+    },
+    "copyrightnotice": {
+        "required": False,
+    },
+}
+
 # Template for "export as article" from planning
 PLANNING_EXPORT_BODY_TEMPLATE = '''
 {% for item in items %}
