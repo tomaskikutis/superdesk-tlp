@@ -84,7 +84,7 @@ class PhotoSearchProvider(superdesk.SearchProvider):
 
         if params:
             if params.get('orientation'):
-                _params['orientation'] = int(params['orientation'])
+                _params['orientations'] = params['orientation']
             if params.get('reference'):
                 _params['reference'] = params['reference']
             if params.get('filename'):
