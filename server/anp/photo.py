@@ -1,7 +1,6 @@
 
 import math
 import enum
-import requests
 import superdesk
 
 from flask import json, request
@@ -9,7 +8,6 @@ from datetime import datetime
 from xmlrpc.client import ServerProxy
 from superdesk.utils import ListCursor
 from superdesk.utc import local_to_utc
-from superdesk.logging import logger
 from superdesk.media.renditions import update_renditions
 
 
@@ -119,6 +117,9 @@ class PhotoSearchProvider(superdesk.SearchProvider):
             'guid': 'urn:anp:{}'.format(str(data['id'])),
             'type': TYPES[data['objecttype']],
             'source': data['reference2'] or self.source,
+            'credit': data['reference2'] or self.source,
+            'byline': data['reference2'] or self.source,
+            'copyrightnotice': data['reference2'] or self.source,
             'headline': data['title'],
             'description_text': data['description'],
             'firstcreated': firstcreated,
