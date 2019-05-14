@@ -1,7 +1,6 @@
 
 import unittest
 
-from unittest.mock import patch, MagicMock
 from anp.photo import PhotoSearchProvider
 
 
@@ -54,6 +53,9 @@ class ANPPhotoTestCase(unittest.TestCase):
         self.assertEqual('picture', item['type'])
         self.assertEqual('urn:anp:71948104', item['guid'])
         self.assertEqual('AFP', item['source'])
+        self.assertEqual('AFP', item['credit'])
+        self.assertEqual('AFP', item['byline'])
+        self.assertEqual('AFP', item['copyrightnotice'])
         self.assertEqual(RESPONSE['1']['title'], item['headline'])
         self.assertEqual(RESPONSE['1']['description'], item['description_text'])
         self.assertEqual('2019-04-18T11:03:47+00:00', item['firstcreated'].isoformat())
