@@ -1,0 +1,23 @@
+{
+  "hasError": false,
+  "data": [
+    {
+      "id": "8fc3e1304f6d88c5d0845ffc5a1df82f",
+      "origin": "https://www.anpfoto.nl/search.pp?ShowPicture=71961660",
+      "kind": "imgThumb",
+      "mimeType": "image/jpeg"
+    },
+    {
+      "id": "72f40a9ba39bc2e0605abaa7db767bcd",
+      "origin": "https://www.anpfoto.nl/search.pp?ShowPicture=71961660",
+      "kind": "imgMid",
+      "mimeType": "image/jpeg"
+    },
+    {
+      "id": "8e0e18585ff343054b9c7bfa69e0bb1b",
+      "origin": "https://www.anpfoto.nl/search.pp?ShowPicture=71961660",
+      "kind": "imgLow",
+      "mimeType": "image/jpeg"
+    }
+  ]
+}

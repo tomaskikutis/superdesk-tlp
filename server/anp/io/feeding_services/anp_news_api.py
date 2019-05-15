@@ -38,7 +38,11 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
     HTTP_SOURCES_URL = 'https://newsapi.anp.nl/services/sources'
     HTTP_ITEMS_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items'
     HTTP_ITEM_DETAILS_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items/{item_id}'
-    ALLOWED_KINDS = ('TEXTARTICLE',)
+    HTTP_ITEM_MEDIA_LIST_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items/{item_id}/media'
+    HTTP_ITEM_MEDIA_DETAILS_URL = 'https://newsapi.anp.nl/services/sources/{source_id}/items/{item_id}/media/{media_id}'
+    ALLOWED_ITEM_KINDS = ('TEXTARTICLE',)
+    ALLOWED_MEDIA_KINDS = ('imgMid', )
+    ALLOWED_MEDIA_MIMETYPES = ('image/jpeg', )
 
     def get_url(self, url=None, **kwargs):
         """Do an HTTP Get on URL and validate response.
@@ -84,7 +88,7 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
                 to_item=provider.get('private', {}).get('sources', {}).get(source['id'], {}).get('last_item_id')
             )
 
-            for item in [i for i in source['items'] if i['kind'] in self.ALLOWED_KINDS]:
+            for item in [i for i in source['items'] if i['kind'] in self.ALLOWED_ITEM_KINDS]:
                 # http fetch item detail
                 item_details = self._fetch_item_details(source_id=source['id'], item_id=item['id'])
 
@@ -148,7 +152,35 @@ class ANPNewsApiFeedingService(HTTPFeedingServiceBase):
             url=self.HTTP_ITEM_DETAILS_URL.format(source_id=source_id, item_id=item_id)
         )
 
+        if item_details.get('hasMedia'):
+            media_link = self._fetch_media_link(source_id, item_id)
+            if media_link:
+                item_details['media_link'] = media_link
+
         return item_details
+
+    def _fetch_media_link(self, source_id, item_id):
+        """
+        Fetch a list of all available renditions for an item and return a link to file
+
+        :param source_id:
+        :param item_id:
+        :return str or None: link to the image or None
+        """
+        # fetch media renditions
+        media_renditions = self.get_url(
+            url=self.HTTP_ITEM_MEDIA_LIST_URL.format(source_id=source_id, item_id=item_id)
+        )
+        for rend in media_renditions:
+            if rend.get('kind') in self.ALLOWED_MEDIA_KINDS and rend.get('mimeType') in self.ALLOWED_MEDIA_MIMETYPES:
+                media_id = rend.get('id')
+                if media_id:
+                    return self.HTTP_ITEM_MEDIA_DETAILS_URL.format(
+                        source_id=source_id,
+                        item_id=item_id,
+                        media_id=media_id
+                    )
+                return None
 
 
 register_feeding_service(ANPNewsApiFeedingService)

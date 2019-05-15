@@ -16,6 +16,7 @@ from eve.utils import ParsedRequest
 import superdesk
 from superdesk.io.registry import register_feed_parser
 from superdesk.io.feed_parsers import FeedParser
+from superdesk.media.renditions import update_renditions
 from superdesk.metadata.item import ITEM_TYPE, CONTENT_TYPE, GUID_FIELD
 
 logger = logging.getLogger(__name__)
@@ -58,6 +59,30 @@ class ANPNewsApiFeedParser(FeedParser):
         # this parser works only with "anp_news_api" feeding service
         return True
 
+    def _add_featuremedia(self, provider, item, href):
+        associations = item.setdefault('associations', {})
+        association = {
+            ITEM_TYPE: CONTENT_TYPE.PICTURE,
+            GUID_FIELD: href.rsplit('/', 1)[-1],
+            'ingest_provider': provider['feeding_service'],
+            'headline': item['headline'],
+            'description_text': item['headline'],
+            'copyrightnotice': item['copyrightholder']
+        }
+
+        update_renditions(
+            item=association,
+            href=href,
+            old_item=None,
+            request_kwargs={
+                'auth': (
+                    provider['config'].get('username', '').strip(),
+                    provider['config'].get('password', '').strip()
+                )
+            }
+        )
+        associations['featuremedia'] = association
+
     def parse(self, article, provider=None):
         """
         Parse ANP News API artice
@@ -96,6 +121,10 @@ class ANPNewsApiFeedParser(FeedParser):
 
         for keyword in article.get('keywords', []):
             item.setdefault('keywords', []).append(keyword)
+
+        # fetch media if item contains a media_link
+        if article.get('media_link'):
+            self._add_featuremedia(provider, item, article['media_link'])
 
         return item
 
