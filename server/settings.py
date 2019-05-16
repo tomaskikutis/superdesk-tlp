@@ -11,7 +11,6 @@
 
 import os
 from pathlib import Path
-from superdesk.default_settings import INSTALLED_APPS, strtobool
 
 
 def env(variable, fallback_value=None):
@@ -33,6 +32,7 @@ if init_data.exists():
 
 INSTALLED_APPS = [
     'apps.languages',
+    'planning',
     'anp.io',
     'anp.photo',
 ]
