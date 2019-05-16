@@ -208,25 +208,3 @@ PLANNING_EXPORT_BODY_TEMPLATE = '''
 {% endif %}
 {% endfor %}
 '''
-
-# planning expire items
-CELERY_TASK_ROUTES['planning.flag_expired'] = {
-    'queue': celery_queue('expiry'),
-    'routing_key': 'expiry.planning'
-}
-CELERY_BEAT_SCHEDULE['planning:expiry'] = {
-    'task': 'planning.flag_expired',
-    'schedule': crontab(minute='0')
-}
-PLANNING_EXPIRY_MINUTES = 4320
-
-# delete spiked planning items
-CELERY_TASK_ROUTES['planning.delete_spiked'] = {
-    'queue': celery_queue(''),
-    'routing_key': 'delete.planning'
-}
-CELERY_BEAT_SCHEDULE['planning:delete'] = {
-    'task': 'planning.delete_spiked',
-    'schedule': crontab(minute='0')
-}
-PLANNING_DELETE_SPIKED_MINUTES = 4320
