@@ -11,6 +11,10 @@
 
 import os
 from pathlib import Path
+from celery.schedules import crontab
+from superdesk.default_settings import (
+    CELERY_TASK_ROUTES, CELERY_BEAT_SCHEDULE, celery_queue
+)
 
 
 def env(variable, fallback_value=None):
@@ -181,7 +185,9 @@ VALIDATOR_MEDIA_METADATA = {
     },
 }
 
+# PLANNING
 # Template for "export as article" from planning
+# noqa
 PLANNING_EXPORT_BODY_TEMPLATE = '''
 {% for item in items %}
 {% set pieces = [
@@ -195,14 +201,32 @@ PLANNING_EXPORT_BODY_TEMPLATE = '''
 <p>{{ item.description_text }}{% if item.get('links') %} URL: {{ item.links | join(' ') }}{% endif %}</p>
 {% endif %}
 {% if item.contacts %}{% for contact in item.contacts %}
-<p>{{ contact.honorific }} {{ contact.first_name }} {{ contact.last_name }}
-{% if contact.contact_email %} - {{ contact.contact_email|join(' - ') }}
-{% endif %}
-{% if contact.contact_phone %} - {{ contact.contact_phone|selectattr('public')|join(' - ', attribute='number') }}
-{% endif %}</p>
+<p>{{ contact.honorific }} {{ contact.first_name }} {{ contact.last_name }}{% if contact.contact_email %} - {{ contact.contact_email|join(' - ') }}{% endif %}{% if contact.contact_phone %} - {{ contact.contact_phone|selectattr('public')|join(' - ', attribute='number') }}{% endif %}</p>
 {% endfor %}{% endif %}
 {% if item.event and item.event.location %}
 <p>{{ item.event.location|join(', ', attribute='name') }}</p>
 {% endif %}
 {% endfor %}
 '''
+
+# planning expire items
+CELERY_TASK_ROUTES['planning.flag_expired'] = {
+    'queue': celery_queue('expiry'),
+    'routing_key': 'expiry.planning'
+}
+CELERY_BEAT_SCHEDULE['planning:expiry'] = {
+    'task': 'planning.flag_expired',
+    'schedule': crontab(minute='0')
+}
+PLANNING_EXPIRY_MINUTES = 4320
+
+# delete spiked planning items
+CELERY_TASK_ROUTES['planning.delete_spiked'] = {
+    'queue': celery_queue(''),
+    'routing_key': 'delete.planning'
+}
+CELERY_BEAT_SCHEDULE['planning:delete'] = {
+    'task': 'planning.delete_spiked',
+    'schedule': crontab(minute='0')
+}
+PLANNING_DELETE_SPIKED_MINUTES = 4320
