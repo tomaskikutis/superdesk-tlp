@@ -11,7 +11,10 @@
 
 import os
 from pathlib import Path
-from superdesk.default_settings import INSTALLED_APPS, strtobool
+from celery.schedules import crontab
+from superdesk.default_settings import (
+    CELERY_TASK_ROUTES, CELERY_BEAT_SCHEDULE, celery_queue
+)
 
 
 def env(variable, fallback_value=None):
@@ -33,6 +36,7 @@ if init_data.exists():
 
 INSTALLED_APPS = [
     'apps.languages',
+    'planning',
     'anp.io',
     'anp.photo',
 ]
@@ -181,7 +185,9 @@ VALIDATOR_MEDIA_METADATA = {
     },
 }
 
+# PLANNING
 # Template for "export as article" from planning
+# noqa
 PLANNING_EXPORT_BODY_TEMPLATE = '''
 {% for item in items %}
 {% set pieces = [
@@ -195,11 +201,7 @@ PLANNING_EXPORT_BODY_TEMPLATE = '''
 <p>{{ item.description_text }}{% if item.get('links') %} URL: {{ item.links | join(' ') }}{% endif %}</p>
 {% endif %}
 {% if item.contacts %}{% for contact in item.contacts %}
-<p>{{ contact.honorific }} {{ contact.first_name }} {{ contact.last_name }}
-{% if contact.contact_email %} - {{ contact.contact_email|join(' - ') }}
-{% endif %}
-{% if contact.contact_phone %} - {{ contact.contact_phone|selectattr('public')|join(' - ', attribute='number') }}
-{% endif %}</p>
+<p>{{ contact.honorific }} {{ contact.first_name }} {{ contact.last_name }}{% if contact.contact_email %} - {{ contact.contact_email|join(' - ') }}{% endif %}{% if contact.contact_phone %} - {{ contact.contact_phone|selectattr('public')|join(' - ', attribute='number') }}{% endif %}</p>
 {% endfor %}{% endif %}
 {% if item.event and item.event.location %}
 <p>{{ item.event.location|join(', ', attribute='name') }}</p>
