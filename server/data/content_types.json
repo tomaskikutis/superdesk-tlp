@@ -51,7 +51,6 @@
         "sdWidth": "half",
         "section": "header"
       },
-      "anpa_category": null,
       "countries": {
         "order": 5,
         "section": "header",
@@ -67,12 +66,17 @@
         "section": "header",
         "sdWidth": "half"
       },
+      "feature_media": {
+        "order": 11,
+        "section": "content"
+      },
       "slugline": null,
       "language": null,
       "usageterms": null,
       "genre": null,
       "anpa_take_key": null,
       "place": null,
+      "anpa_category": null,
       "subject": null,
       "company_codes": null,
       "authors": null,
@@ -82,7 +86,6 @@
       "footer": null,
       "body_footer": null,
       "sign_off": null,
-      "feature_media": null,
       "media_description": null,
       "attachments": null,
       "afn_bluechips": null,
@@ -128,7 +131,6 @@
         "enabled": true,
         "nullable": true
       },
-      "anpa_category": null,
       "subject": {
         "mandatory_in_list": {
           "scheme": {
@@ -166,12 +168,19 @@
         "required": false,
         "default": []
       },
+      "feature_media": {
+        "type": "media",
+        "required": false,
+        "enabled": true,
+        "nullable": true
+      },
       "slugline": null,
       "language": null,
       "usageterms": null,
       "genre": null,
       "anpa_take_key": null,
       "place": null,
+      "anpa_category": null,
       "company_codes": null,
       "authors": null,
       "sms": null,
@@ -180,7 +189,6 @@
       "footer": null,
       "body_footer": null,
       "sign_off": null,
-      "feature_media": null,
       "media_description": null,
       "attachments": null
     },
