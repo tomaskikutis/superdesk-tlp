@@ -11,10 +11,6 @@
 
 import os
 from pathlib import Path
-from celery.schedules import crontab
-from superdesk.default_settings import (
-    CELERY_TASK_ROUTES, CELERY_BEAT_SCHEDULE, celery_queue
-)
 
 
 def env(variable, fallback_value=None):
@@ -131,16 +127,16 @@ SCHEMA = {
         'headline': {'required': False},
         'description_text': {'required': True},
         'credit': {'required': False},
-        'byline': {'displayOnMediaEditor': False},
-        'copyrightnotice': {'displayOnMediaEditor': False},
+        'byline': {'required': False},
+        'copyrightnotice': {'required': False},
     },
     'video': {
         'headline': {'required': False},
         'description_text': {'required': True},
         'media_type': {'required': False},
         'credit': {'required': False},
-        'byline': {'displayOnMediaEditor': False},
-        'copyrightnotice': {'displayOnMediaEditor': False},
+        'byline': {'required': False},
+        'copyrightnotice': {'required': False},
     },
 }
 
