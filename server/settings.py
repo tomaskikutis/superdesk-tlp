@@ -126,7 +126,6 @@ SCHEMA = {
     'picture': {
         'headline': {'required': False},
         'description_text': {'required': True},
-        'credit': {'required': False},
         'byline': {'required': False},
         'copyrightnotice': {'required': False},
     },
@@ -134,7 +133,6 @@ SCHEMA = {
         'headline': {'required': False},
         'description_text': {'required': True},
         'media_type': {'required': False},
-        'credit': {'required': False},
         'byline': {'required': False},
         'copyrightnotice': {'required': False},
     },
@@ -145,7 +143,6 @@ EDITOR = {
     'picture': {
         'headline': {'order': 1, 'sdWidth': 'full'},
         'description_text': {'order': 2, 'sdWidth': 'full', 'textarea': True},
-        'credit': {'order': 3, 'sdWidth': 'full'},
         'byline': {'displayOnMediaEditor': False},
         'copyrightnotice': {'displayOnMediaEditor': False},
     },
@@ -153,7 +150,6 @@ EDITOR = {
         'headline': {'order': 2, 'sdWidth': 'full'},
         'description_text': {'order': 3, 'sdWidth': 'full', 'textarea': True},
         'media_type': {'order': 4, 'sdWidth': 'full'},
-        'credit': {'order': 5, 'sdWidth': 'full'},
         'byline': {'displayOnMediaEditor': False},
         'copyrightnotice': {'displayOnMediaEditor': False},
     },
@@ -169,9 +165,6 @@ VALIDATOR_MEDIA_METADATA = {
     },
     "description_text": {
         "required": True,
-    },
-    "credit": {
-        "required": False,
     },
     "byline": {
         "required": False,
