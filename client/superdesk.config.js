@@ -40,6 +40,7 @@ module.exports = function(grunt) {
         },
         workspace: {
             planning: true,
+            assignments: true
         }
     };
 };
