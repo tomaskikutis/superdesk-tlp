@@ -104,9 +104,19 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
         }
 
     def _format_list_item(self, item):
-        # video_media_url = item['media'][0]['url'] if item['media'] else None
-        video_media_url = 'http://cdnapi.kaltura.com/p/1878761/sp/187876100/playManifest/entryId/1_usagz19w/flavorIds/1_5spqkazq,1_nslowvhp,1_boih5aji,1_qahc37ag/format/applehttp/protocol/http/a.m3u8'
         image_media_url = item['imageMedia'][0]['url'] if item['imageMedia'] else None
+
+        try:
+            hls_video = {
+                'href': [
+                    mc['sourceUrl']
+                    for mc in item['media'][0]['mediaContent']
+                    if mc['sourceUrl'].rsplit('.', 1)[-1] == 'm3u8'
+                ][0],
+                'mimetype': "application/x-mpegurl"
+            }
+        except (IndexError, KeyError):
+            hls_video = {}
 
         return {
             'type': 'video',
@@ -119,22 +129,20 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'firstcreated': jstimestamp_to_utcdatetime(item['added']),
             'versioncreated': jstimestamp_to_utcdatetime(item['updated']),
             'renditions': {
-                'original': {
-                    'href': 'http://cdnapi.kaltura.com/p/1878761/sp/187876100/playManifest/entryId/1_usagz19w/flavorIds/1_5spqkazq,1_nslowvhp,1_boih5aji,1_qahc37ag/format/applehttp/protocol/http/a.m3u8',
-                    # 'mimetype': "application/x-mpegurl"
-                    # 'href': 'http://localhost:5000/api/upload-raw/5dd4296d58f6623612e0aacb.mp4',
-                    # 'mimetype': "video/mp4"
-                },
-                'thumbnail': {
-                    'href': image_media_url,
-                },
+                'original': hls_video,
                 'viewImage': {
+                    # used as poster
                     'href': image_media_url,
                 },
                 'baseImage': {
                     'href': image_media_url,
                 },
-            }
+                'thumbnail': {
+                    'href': image_media_url,
+                },
+            },
+            # this flag specifies if search provider result's item should be fetched or just related
+            '_fetchable': False
         }
 
     def find(self, query, params=None):
