@@ -65,14 +65,14 @@ DEFAULT_TIMEZONE = "Europe/Amsterdam"
 
 DEFAULT_LANGUAGE = 'nl'
 LANGUAGES = [
-    {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True},
-    {'language': 'fr', 'label': 'French', 'source': True, 'destination': True},
-    {'language': 'en', 'label': 'English', 'source': False, 'destination': False},
-    {'language': 'de', 'label': 'German', 'source': False, 'destination': False},
-    {'language': 'ja', 'label': 'Japanese', 'source': False, 'destination': False},
-    {'language': 'es', 'label': 'Spanish', 'source': False, 'destination': False},
-    {'language': 'ru', 'label': 'Russian', 'source': False, 'destination': False}
+    {'language': 'nl', 'label': 'Dutch', 'source': False, 'destination': True},
+    {'language': 'fr', 'label': 'French', 'source': True, 'destination': False},
+    {'language': 'en', 'label': 'English', 'source': True, 'destination': False},
+    {'language': 'de', 'label': 'German', 'source': True, 'destination': False}
 ]
+
+# publishing of associated and related items
+PUBLISH_ASSOCIATED_ITEMS = True
 
 TIMEZONE_CODE = {
     'aus': 'America/Chicago',
@@ -143,15 +143,15 @@ EDITOR = {
     'picture': {
         'headline': {'order': 1, 'sdWidth': 'full'},
         'description_text': {'order': 2, 'sdWidth': 'full', 'textarea': True},
-        'byline': {'displayOnMediaEditor': False},
-        'copyrightnotice': {'displayOnMediaEditor': False},
+        'byline': {'displayOnMediaEditor': True},
+        'copyrightnotice': {'displayOnMediaEditor': True},
     },
     'video': {
         'headline': {'order': 2, 'sdWidth': 'full'},
         'description_text': {'order': 3, 'sdWidth': 'full', 'textarea': True},
         'media_type': {'order': 4, 'sdWidth': 'full'},
-        'byline': {'displayOnMediaEditor': False},
-        'copyrightnotice': {'displayOnMediaEditor': False},
+        'byline': {'displayOnMediaEditor': True},
+        'copyrightnotice': {'displayOnMediaEditor': True},
     },
 }
 
