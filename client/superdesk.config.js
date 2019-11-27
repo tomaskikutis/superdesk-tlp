@@ -60,6 +60,7 @@ module.exports = function(grunt) {
             editFeaturedImage: true,
             noMissingLink: true,
             nestedItemsInOutputStage: true,
+            hideCreatePackage: true,
             planning: true,
         },
         workspace: {
