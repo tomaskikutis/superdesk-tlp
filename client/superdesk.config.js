@@ -14,18 +14,40 @@ module.exports = function(grunt) {
             '../anp',
             'superdesk-planning',
         ],
-        defaultRoute: '/workspace/personal',
-
-        langOverride: {
-            'en': {
-                'ANPA Category': 'Category',
-                'ANPA CATEGORY': 'CATEGORY'
-            }
-        },
+        defaultRoute: '/workspace/monitoring',
 
         view: {
             timeformat: 'HH:mm',
             dateformat: 'DD.MM.YYYY',
+        },
+        
+        list: {
+            priority: [
+                'priority'
+            ],
+            firstLine: [
+                'wordcount',
+                'slugline',
+                'highlights',
+                'markedDesks',
+                'associations',
+                'publish_queue_errors',
+                'headline',
+                'versioncreated'
+            ],
+            secondLine: [
+                'profile',
+                'state',
+                'embargo',
+                'update',
+                'takekey',
+                'signal',
+                'flags',
+                'updated',
+                'desk',
+                'fetchedDesk',
+                'nestedlink',
+            ]
         },
 
         features: {
@@ -36,6 +58,8 @@ module.exports = function(grunt) {
             editorHighlights: true,
             searchShortcut: true,
             editFeaturedImage: true,
+            noMissingLink: true,
+            nestedItemsInOutputStage: true,
             planning: true,
         },
         workspace: {
