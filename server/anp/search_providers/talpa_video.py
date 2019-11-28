@@ -175,4 +175,3 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             tuple(self._format_list_item(item) for item in programs['items']),
             programs['totalResults']
         )
-
