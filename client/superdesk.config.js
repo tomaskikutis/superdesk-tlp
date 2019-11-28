@@ -23,6 +23,8 @@ module.exports = function(grunt) {
 
         startingDay: '1',
 
+        editor3: { browserSpellCheck: true, },
+        
         view: {
             timeformat: 'HH:mm',
             dateformat: 'DD.MM.YYYY',
