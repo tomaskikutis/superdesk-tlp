@@ -81,6 +81,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
                   added
                   updated
                   sourceProgram
+                  duration
                   imageMedia {{
                     url
                   }}
@@ -126,6 +127,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'headline': item['title'],
             'source': item['sourceProgram'],
             'description_text': item['description'],
+            'duration': item['duration'],
             'firstcreated': jstimestamp_to_utcdatetime(item['added']),
             'versioncreated': jstimestamp_to_utcdatetime(item['updated']),
             'renditions': {
