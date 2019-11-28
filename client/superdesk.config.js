@@ -16,6 +16,13 @@ module.exports = function(grunt) {
         ],
         defaultRoute: '/workspace/monitoring',
 
+        defaultTimezone: 'Europe/Amsterdam',
+        shortTimeFormat: 'HH:mm, DD.MM.YYYY',
+        shortDateFormat: 'HH:mm, DD.MM.YYYY',
+        shortWeekFormat: 'HH:mm, DD.MM.YYYY',
+
+        startingDay: '1',
+
         view: {
             timeformat: 'HH:mm',
             dateformat: 'DD.MM.YYYY',
@@ -47,7 +54,7 @@ module.exports = function(grunt) {
                 'desk',
                 'fetchedDesk',
                 'associatedItems',
-                'nestedlink',
+                'nestedlink'
             ]
         },
 
