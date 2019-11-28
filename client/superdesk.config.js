@@ -46,6 +46,7 @@ module.exports = function(grunt) {
                 'updated',
                 'desk',
                 'fetchedDesk',
+                'associatedItems',
                 'nestedlink',
             ]
         },
