@@ -74,6 +74,9 @@ LANGUAGES = [
 # publishing of associated and related items
 PUBLISH_ASSOCIATED_ITEMS = True
 
+# generate short GUID
+GENERATE_SHORT_GUID = True
+
 TIMEZONE_CODE = {
     'aus': 'America/Chicago',
     'bat': 'Asia/Manila',
