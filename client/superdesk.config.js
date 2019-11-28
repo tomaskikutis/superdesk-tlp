@@ -69,6 +69,8 @@ module.exports = function(grunt) {
             noMissingLink: true,
             nestedItemsInOutputStage: true,
             hideCreatePackage: true,
+            hideLiveSuggestions: true,
+            elasticHighlight: true,
             planning: true,
         },
         workspace: {
