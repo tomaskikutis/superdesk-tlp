@@ -46,7 +46,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
     def _get_query_definition(self, query_variables):
         definition = ''
 
-        for key in query_variables.keys():
+        for key in sorted(query_variables):
             if definition:
                 definition += ', ${}: {}'.format(key, self.query_variables_types[key])
             else:
@@ -57,7 +57,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
     def _get_query_arguments(self, query_variables):
         arguments = ''
 
-        for key in query_variables.keys():
+        for key in sorted(query_variables):
             if arguments:
                 arguments += ', {}: ${}'.format(key, key)
             else:
