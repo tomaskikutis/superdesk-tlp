@@ -69,34 +69,32 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
         # ensure that all graphql variables types are defined
         assert set(self.query_variables_types.keys()) >= set(kwargs.keys())
 
-        query = \
-            r'''
-            query TalpaVideoSearch ({definition}) {{
-              programs({arguments}) {{
-                totalResults
-                items {{
-                  guid
-                  title
-                  description
-                  added
-                  updated
-                  sourceProgram
-                  duration
-                  imageMedia {{
-                    url
-                  }}
-                  media {{
-                    mediaContent {{
-                      sourceUrl
-                    }}
-                  }}
-                }}
-              }}
-            }}
-            '''.format(
-                definition=self._get_query_definition(kwargs),
-                arguments=self._get_query_arguments(kwargs)
-            ).strip()
+        query = ('query TalpaVideoSearch ({definition}) {{\n'
+                 '  programs({arguments}) {{\n'
+                 '    totalResults\n'
+                 '    items {{\n'
+                 '      guid\n'
+                 '      title\n'
+                 '      description\n'
+                 '      added\n'
+                 '      updated\n'
+                 '      sourceProgram\n'
+                 '      duration\n'
+                 '      imageMedia {{\n'
+                 '        url\n'
+                 '      }}\n'
+                 '      media {{\n'
+                 '        mediaContent {{\n'
+                 '          sourceUrl\n'
+                 '        }}\n'
+                 '      }}\n'
+                 '    }}\n'
+                 '  }}\n'
+                 '}}')
+        query = query.format(
+            definition=self._get_query_definition(kwargs),
+            arguments=self._get_query_arguments(kwargs)
+        ).strip()
 
         return {
             'operationName': 'TalpaVideoSearch',
@@ -161,8 +159,6 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
                 del params['searchParam']
         except KeyError:
             pass
-
-        # print(self._build_query(**params)['query'])
 
         resp = self._session.post(
             url=self.url,
