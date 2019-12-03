@@ -103,7 +103,10 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
         }
 
     def _format_list_item(self, item):
-        image_media_url = item['imageMedia'][0]['url'] if item['imageMedia'] else None
+        try:
+            image_media_url = {'href': item['imageMedia'][0]['url']}
+        except (IndexError, KeyError):
+            image_media_url = {}
 
         try:
             hls_video = {
@@ -125,21 +128,16 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'headline': item['title'],
             'source': item['sourceProgram'],
             'description_text': item['description'],
-            'duration': item['duration'],
+            'extra': {
+                'duration': item['duration'],
+            },
             'firstcreated': jstimestamp_to_utcdatetime(item['added']),
             'versioncreated': jstimestamp_to_utcdatetime(item['updated']),
             'renditions': {
                 'original': hls_video,
-                'viewImage': {
-                    # used as poster
-                    'href': image_media_url,
-                },
-                'baseImage': {
-                    'href': image_media_url,
-                },
-                'thumbnail': {
-                    'href': image_media_url,
-                },
+                'viewImage': image_media_url, # used as poster
+                'baseImage': image_media_url,
+                'thumbnail': image_media_url,
             },
             # this flag specifies if search provider result's item should be fetched or just related
             '_fetchable': False

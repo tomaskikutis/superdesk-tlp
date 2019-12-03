@@ -181,56 +181,68 @@ class TalpaVideoTestCase(unittest.TestCase):
         }
         cursor = provider.find(query, {})
         self.assertEqual(3, cursor.count())
+        item_first = cursor[0]
+        item_last = cursor[-1]
+
+        self.assertFalse(item_first['_fetchable'])
+        self.assertEqual(item_first['_id'], 'I8Cug8DR5pT')
+        self.assertEqual(item_first['guid'], 'I8Cug8DR5pT')
+        self.assertEqual(item_first['type'], 'video')
         self.assertEqual(
-            {'_fetchable': False,
-             '_id': 'I8Cug8DR5pT',
-             'description_text': 'In Ranking the Cars gaat Tess Milne langs bij de trotse '
-                                 'voorbij.',
-             'duration': None,
-             'firstcreated': datetime.datetime(2019, 9, 24, 15, 35, 51),
-             'guid': 'I8Cug8DR5pT',
-             'headline': 'Episode: Ranking the Cars - S:NaN - E:6 - 2015-02-23',
-             'pubstatus': 'usable',
-             'renditions': {'baseImage': {'href': None},
-                            'original': {},
-                            'thumbnail': {'href': None},
-                            'viewImage': {'href': None}},
-             'source': None,
-             'type': 'video',
-             'versioncreated': datetime.datetime(2019, 11, 11, 18, 41, 52)},
-            cursor[0]
+            item_first['description_text'], 'In Ranking the Cars gaat Tess Milne langs bij de trotse voorbij.'
+        )
+        self.assertIsNone(item_first['extra']['duration'])
+        self.assertIsNone(item_first['source'])
+        self.assertEqual(item_first['firstcreated'], datetime.datetime(2019, 9, 24, 15, 35, 51))
+        self.assertEqual(item_first['versioncreated'], datetime.datetime(2019, 11, 11, 18, 41, 52))
+        self.assertEqual(item_first['headline'], 'Episode: Ranking the Cars - S:NaN - E:6 - 2015-02-23')
+        self.assertEqual(item_first['pubstatus'], 'usable')
+        self.assertEqual(item_first['renditions']['baseImage'], {})
+        self.assertEqual(item_first['renditions']['original'], {})
+        self.assertEqual(item_first['renditions']['thumbnail'], {})
+        self.assertEqual(item_first['renditions']['viewImage'], {})
+
+        self.assertFalse(item_last['_fetchable'])
+        self.assertEqual(item_last['_id'], 'ti2FVyP555I')
+        self.assertEqual(item_last['guid'], 'ti2FVyP555I')
+        self.assertEqual(item_last['type'], 'video')
+        self.assertEqual(
+            item_last['description_text'],
+            'In Ranking the Cars gaat Tess Milne langs bij de trotse '
+            "eigenaren van opvallende auto's om te achterhalen wat "
+            'het bijzondere verhaal achter de auto is. Van stoere '
+            'racewagen tot klassieke oldtimer, alles komt voorbij '
+            'onder het toeziend oog van Tess.'
+        )
+        self.assertEqual(item_last['extra']['duration'], 1310)
+        self.assertIsNone(item_last['source'])
+        self.assertEqual(item_last['firstcreated'], datetime.datetime(2019, 9, 19, 9, 25, 4))
+        self.assertEqual(item_last['versioncreated'], datetime.datetime(2019, 11, 20, 12, 55, 57))
+        self.assertEqual(item_last['headline'], 'Episode: Ranking the Cars - S:2 - E:16 - 2013-12-30')
+        self.assertEqual(item_last['pubstatus'], 'usable')
+        self.assertEqual(
+            item_last['renditions']['baseImage'],
+            {
+                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
+            }
         )
         self.assertEqual(
-            {'_fetchable': False,
-             '_id': 'ti2FVyP555I',
-             'description_text': 'In Ranking the Cars gaat Tess Milne langs bij de trotse '
-                                 "eigenaren van opvallende auto's om te achterhalen wat "
-                                 'het bijzondere verhaal achter de auto is. Van stoere '
-                                 'racewagen tot klassieke oldtimer, alles komt voorbij '
-                                 'onder het toeziend oog van Tess.',
-             'duration': 1310,
-             'firstcreated': datetime.datetime(2019, 9, 19, 9, 25, 4),
-             'guid': 'ti2FVyP555I',
-             'headline': 'Episode: Ranking the Cars - S:2 - E:16 - 2013-12-30',
-             'pubstatus': 'usable',
-             'renditions': {
-                 'baseImage': {
-                     'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
-                 },
-                 'original': {
-                     'href': 'https://vod-kijk2-prod.talpatvcdn.nl/ti2FVyP555I/92bf99ad-097e-466d-84b0-913cef51e6d8/ti2'
-                             'FVyP555I-index.ism/ti2FVyP555I.m3u8',
-                     'mimetype': 'application/x-mpegurl'
-                 },
-                 'thumbnail': {
-                     'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
-                 },
-                 'viewImage': {
-                     'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
-                 }
-             },
-             'source': None,
-             'type': 'video',
-             'versioncreated': datetime.datetime(2019, 11, 20, 12, 55, 57)},
-            cursor[-1]
+            item_last['renditions']['original'],
+            {
+                'href': 'https://vod-kijk2-prod.talpatvcdn.nl/ti2FVyP555I/92bf99ad-097e-466d-84b0-913cef51e6d8/ti2'
+                        'FVyP555I-index.ism/ti2FVyP555I.m3u8',
+                'mimetype': 'application/x-mpegurl'
+            }
+        )
+        self.assertEqual(
+            item_last['renditions']['thumbnail'],
+            {
+                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
+            }
+        )
+        self.assertEqual(
+            item_last['renditions']['viewImage'],
+            {
+                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
+            }
         )
