@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'apps.languages',
     'planning',
     'anp.io',
-    'anp.photo',
+    'anp.search_providers',
 ]
 
 RENDITIONS = {

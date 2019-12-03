@@ -1,7 +1,7 @@
 
 import unittest
 
-from anp.photo import PhotoSearchProvider
+from anp.search_providers import PhotoSearchProvider
 
 
 RESPONSE = {
