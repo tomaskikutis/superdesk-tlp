@@ -4,44 +4,69 @@
     "display_name": "Priority",
     "type": "manageable",
     "selection_type": "single selection",
+    "unique_field": "qcode",
     "items": [
       {
-        "name": "Persalarm",
+        "name": "1",
+        "short": "Persalarm",
         "qcode": 1,
         "is_active": true
       },
       {
-        "name": "Live",
+        "name": "2",
+        "short": "Live",
         "qcode": 2,
         "is_active": true
       },
       {
-        "name": "Normal",
+        "name": "3",
+        "short": "Normal",
         "qcode": 3,
         "is_active": true
       },
       {
-        "name": "Lower",
+        "name": "4",
+        "short": "Lower",
         "qcode": 4,
         "is_active": true
       },
       {
-        "name": "unused",
+        "name": "5",
+        "short": "unused",
         "qcode": 5,
         "is_active": false
       },
       {
-        "name": "unused",
+        "name": "6",
+        "short": "unused",
         "qcode": 6,
         "is_active": false
       }
-    ]
+    ],
+    "schema": {
+      "name": {
+        "translate": true
+      },
+      "qcode": {
+        "type": "integer"
+      },
+      "color": {
+        "type": "color",
+        "label": "Сolour"
+      },
+      "short": {
+        "type": "short",
+        "label": "List Name",
+        "maxlength": 2,
+        "translate": true
+      }
+    }
   },
   {
     "_id": "urgency",
     "display_name": "Urgency",
     "type": "manageable",
-    "selection_type": "multi selection",
+    "selection_type": "single selection",
     "unique_field": "qcode",
     "items": [
       {
