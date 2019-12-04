@@ -3,6 +3,7 @@ import requests
 
 import superdesk
 from superdesk.utils import ListCursor
+from superdesk.metadata.item import CONTENT_STATE, ITEM_STATE
 
 
 def jstimestamp_to_utcdatetime(jstimestamp):
@@ -124,6 +125,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'type': 'video',
             'pubstatus': 'usable',
             '_id': item['guid'],
+            ITEM_STATE: CONTENT_STATE.PUBLISHED,
             'guid': item['guid'],
             'headline': item['title'],
             'source': item['sourceProgram'],

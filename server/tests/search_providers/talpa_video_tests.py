@@ -3,6 +3,7 @@ import unittest
 from unittest import mock
 from requests import Response
 
+from superdesk.metadata.item import CONTENT_STATE, ITEM_STATE
 from anp.search_providers import TalpaVideoSearchProvider
 
 
@@ -188,6 +189,7 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(item_first['_id'], 'I8Cug8DR5pT')
         self.assertEqual(item_first['guid'], 'I8Cug8DR5pT')
         self.assertEqual(item_first['type'], 'video')
+        self.assertEqual(item_first[ITEM_STATE], CONTENT_STATE.PUBLISHED)
         self.assertEqual(
             item_first['description_text'], 'In Ranking the Cars gaat Tess Milne langs bij de trotse voorbij.'
         )
@@ -206,6 +208,7 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(item_last['_id'], 'ti2FVyP555I')
         self.assertEqual(item_last['guid'], 'ti2FVyP555I')
         self.assertEqual(item_last['type'], 'video')
+        self.assertEqual(item_first[ITEM_STATE], CONTENT_STATE.PUBLISHED)
         self.assertEqual(
             item_last['description_text'],
             'In Ranking the Cars gaat Tess Milne langs bij de trotse '
