@@ -6074,5 +6074,47 @@
         "qcode": 3
       }
     ]
+  },
+  {
+    "_id": "genre",
+    "display_name": "Genre",
+    "type": "manageable",
+    "unique_field": "qcode",
+    "service": {
+      "all": 1
+    },
+    "items": [
+      {
+        "name": "ANALYSIS",
+        "qcode": "ANALYSIS",
+        "is_active": true
+      },
+      {
+        "name": "ARCHIVE",
+        "qcode": "ARCHIVE",
+        "is_active": true
+      },
+      {
+        "name": "BACKGROUND",
+        "qcode": "BACKGROUND",
+        "is_active": true
+      },
+      {
+        "name": "CURRENT",
+        "qcode": "CURRENT",
+        "is_active": true
+      },
+      {
+        "name": "FORECAST",
+        "qcode": "FORECAST",
+        "is_active": true
+      },
+      {
+        "name": "HISTORY",
+        "qcode": "HISTORY",
+        "is_active": true
+      }
+    ],
+    "selection_type": "multi selection"
   }
 ]
