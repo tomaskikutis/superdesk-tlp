@@ -31,7 +31,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
 
     label = 'Talpa'
     source = 'Talpa'
-    url = 'https://graph.kijk.nl/graphql'
+    url = 'https://news.video.talpa.network/graphql'
 
     query_variables_types = {
         'limit': 'Int',
