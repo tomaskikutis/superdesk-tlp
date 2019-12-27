@@ -131,7 +131,7 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'source': item['sourceProgram'],
             'description_text': item['description'],
             'extra': {
-                'duration': item['duration'],
+                'duration': item['duration'] if item['duration'] else 0,
             },
             'firstcreated': jstimestamp_to_utcdatetime(item['added']),
             'versioncreated': jstimestamp_to_utcdatetime(item['updated']),
