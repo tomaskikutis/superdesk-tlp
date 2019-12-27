@@ -193,7 +193,7 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(
             item_first['description_text'], 'In Ranking the Cars gaat Tess Milne langs bij de trotse voorbij.'
         )
-        self.assertIsNone(item_first['extra']['duration'])
+        self.assertEqual(item_first['extra']['duration'], 0)
         self.assertIsNone(item_first['source'])
         self.assertEqual(item_first['firstcreated'], datetime.datetime(2019, 9, 24, 15, 35, 51))
         self.assertEqual(item_first['versioncreated'], datetime.datetime(2019, 11, 11, 18, 41, 52))
