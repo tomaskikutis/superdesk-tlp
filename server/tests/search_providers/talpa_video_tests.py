@@ -96,11 +96,11 @@ class PostResponse200(Response):
 class TalpaVideoTestCase(unittest.TestCase):
 
     def test_instance(self):
-        provider = TalpaVideoSearchProvider({})
+        provider = TalpaVideoSearchProvider({'config':{'url':'https://graph.kijk.nl/graphql'}})
         self.assertEqual('Talpa', provider.label)
 
     def test_build_query(self):
-        provider = TalpaVideoSearchProvider({})
+        provider = TalpaVideoSearchProvider({'config':{'url':'https://graph.kijk.nl/graphql'}})
 
         params = {
             'searchParam': 'cars films'
@@ -171,7 +171,7 @@ class TalpaVideoTestCase(unittest.TestCase):
         )
 
     def test_find(self):
-        provider = TalpaVideoSearchProvider({})
+        provider = TalpaVideoSearchProvider({'config':{'url':'https://graph.kijk.nl/graphql'}})
         # mock self._session
         provider._session = mock.MagicMock()
         provider._session.post.return_value = PostResponse200()
