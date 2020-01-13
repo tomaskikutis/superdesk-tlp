@@ -31,7 +31,6 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
 
     label = 'Talpa'
     source = 'Talpa'
-    url = 'https://news.video.talpa.network/graphql'
 
     query_variables_types = {
         'limit': 'Int',
@@ -42,6 +41,9 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
 
     def __init__(self, provider):
         super().__init__(provider)
+        self.url = provider.get('config', {}).get('url', '')
+
+        assert self.url != '', 'Empty Provider URL'
         self._session = requests.Session()
 
     def _get_query_definition(self, query_variables):
