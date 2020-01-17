@@ -199,10 +199,9 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(item_first['versioncreated'], datetime.datetime(2019, 11, 11, 18, 41, 52))
         self.assertEqual(item_first['headline'], 'Episode: Ranking the Cars - S:NaN - E:6 - 2015-02-23')
         self.assertEqual(item_first['pubstatus'], 'usable')
-        self.assertEqual(item_first['renditions']['baseImage'], {})
         self.assertEqual(item_first['renditions']['original'], {})
-        self.assertEqual(item_first['renditions']['thumbnail'], {})
-        self.assertEqual(item_first['renditions']['viewImage'], {})
+        self.assertEqual(item_first['renditions']['thumbnail'], None)
+        self.assertEqual(item_first['renditions']['viewImage'], None)
 
         self.assertFalse(item_last['_fetchable'])
         self.assertEqual(item_last['_id'], 'ti2FVyP555I')
@@ -224,12 +223,6 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(item_last['headline'], 'Episode: Ranking the Cars - S:2 - E:16 - 2013-12-30')
         self.assertEqual(item_last['pubstatus'], 'usable')
         self.assertEqual(
-            item_last['renditions']['baseImage'],
-            {
-                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
-            }
-        )
-        self.assertEqual(
             item_last['renditions']['original'],
             {
                 'href': 'https://vod-kijk2-prod.talpatvcdn.nl/ti2FVyP555I/92bf99ad-097e-466d-84b0-913cef51e6d8/ti2'
@@ -240,12 +233,14 @@ class TalpaVideoTestCase(unittest.TestCase):
         self.assertEqual(
             item_last['renditions']['thumbnail'],
             {
-                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
+                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg',
+                'mimetype': 'image/jpeg',
             }
         )
         self.assertEqual(
             item_last['renditions']['viewImage'],
             {
-                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg'
+                'href': 'https://redactioneel.s3-eu-west-1.amazonaws.com/images/redactioneel/336614-LS.jpg',
+                'mimetype': 'image/jpeg',
             }
         )

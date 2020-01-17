@@ -1,5 +1,6 @@
 from datetime import datetime
 import requests
+import mimetypes
 
 import superdesk
 from superdesk.utils import ListCursor
@@ -107,9 +108,13 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
 
     def _format_list_item(self, item):
         try:
-            image_media_url = {'href': item['imageMedia'][0]['url']}
+            image_media_url = item['imageMedia'][0]['url']
+            image_rendition = {
+                'href': image_media_url,
+                'mimetype': mimetypes.guess_type(image_media_url)[0],
+            }
         except (IndexError, KeyError):
-            image_media_url = {}
+            image_rendition = None
 
         try:
             hls_video = {
@@ -139,9 +144,8 @@ class TalpaVideoSearchProvider(superdesk.SearchProvider):
             'versioncreated': jstimestamp_to_utcdatetime(item['updated']),
             'renditions': {
                 'original': hls_video,
-                'viewImage': image_media_url, # used as poster
-                'baseImage': image_media_url,
-                'thumbnail': image_media_url,
+                'viewImage': image_rendition,  # used in grid view
+                'thumbnail': image_rendition, # used as poster
             },
             # this flag specifies if search provider result's item should be fetched or just related
             '_fetchable': False
