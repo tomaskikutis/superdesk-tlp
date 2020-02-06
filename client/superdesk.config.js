@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     return {
         apps: [
             'anp',
-            'superdesk-planning',
+            //'superdesk-planning',
         ],
         importApps: [
             '../anp',
-            'superdesk-planning',
+            //'superdesk-planning',
         ],
         defaultRoute: '/workspace/monitoring',
 
