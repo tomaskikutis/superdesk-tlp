@@ -59,6 +59,13 @@ module.exports = function(grunt) {
                 'nestedlink'
             ]
         },
+        
+        langOverride: {
+            'en': {
+                'Copyright notice': 'Source',
+                'Byline': 'Author'
+            }
+        },
 
         features: {
             preview: 1,
