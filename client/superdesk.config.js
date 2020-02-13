@@ -63,7 +63,8 @@ module.exports = function(grunt) {
         langOverride: {
             'en': {
                 'Copyright notice': 'Source',
-                'Byline': 'Author'
+                'Byline': 'Author',
+                'ANPA Category': 'Category'
             }
         },
 
