@@ -1,40 +1,22 @@
 language: python
 
-python: "3.5"
-
-sudo: false
-dist: trusty
+python: 3.6
 
 services:
-    - mongodb
-    - elasticsearch
-    - redis-server
-
-addons:
-  apt:
-    sources:
-    - mongodb-3.0-precise
-    packages:
-    - mongodb-org-server
+    - docker
 
 cache:
-  directories:
-    - $HOME/.cache/pip
-    - $HOME/.npm
+    - pip
+    - npm
 
 before_install:
-    - nvm install 6.10
-    - nvm use 6.10
-    - node --version
-    - npm install -g npm@3
-    - npm install -g grunt-cli
+    - docker-compose -f .travis-docker-compose.yml up -d
 
 install:
-    - cd $TRAVIS_BUILD_DIR/server && pip install -r dev-requirements.txt
-    - cd $TRAVIS_BUILD_DIR/client && npm install
+    - cd server && pip install -r dev-requirements.txt && cd ..
+    - cd client && npm install && cd ..
 
 script:
-    - cd $TRAVIS_BUILD_DIR/server && flake8
-    - cd $TRAVIS_BUILD_DIR/server && nosetests
-    - cd $TRAVIS_BUILD_DIR/client && node --max_old_space_size=4098 ./node_modules/.bin/grunt build
-    - cd $TRAVIS_BUILD_DIR/server && python manage.py users:create -u test -p test -e test@localhost --admin
+    - cd server && flake8 && nosetests && cd ..
+    - cd client && node --max_old_space_size=4098 ./node_modules/.bin/grunt build && cd ..
+    - cd server && python manage.py users:create -u test -p test -e test@localhost --admin && cd ..
