@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'planning',
     'anp.io',
     'anp.search_providers',
+    'anp.formatters',
 ]
 
 RENDITIONS = {
