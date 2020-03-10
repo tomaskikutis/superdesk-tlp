@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'anp.io',
     'anp.search_providers',
     'anp.formatters',
+    'anp.validate'
 ]
 
 RENDITIONS = {
