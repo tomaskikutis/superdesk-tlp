@@ -93,6 +93,10 @@ module.exports = function(grunt) {
         workspace: {
             planning: true,
             assignments: true
+        },
+        pictures: {
+            minWidth: 1440,
+            minHeight: 1520,
         }
     };
 };
